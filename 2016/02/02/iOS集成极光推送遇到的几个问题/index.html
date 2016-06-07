@@ -69,8 +69,10 @@
 
 
 
+  
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+
+  <link rel="alternate" href="/atom.xml" title="Zhuyooong’ Blog" type="application/atom+xml" />
 
 
 
@@ -87,7 +89,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS集成极光推送遇到的几个问题">
 <meta property="og:url" content="http://yoursite.com/2016/02/02/iOS集成极光推送遇到的几个问题/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Zhuyooong’ Blog">
 <meta property="og:description" content="其实官方的iOS SDK 集成指南和iOS SDK 教程两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（2.1.0版本的）。
 #1、APNs证书和主证书的区别我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1334313-0790fa68e43bd1cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -115,10 +117,10 @@
   };
 </script>
 
-  <title> iOS集成极光推送遇到的几个问题 | Hexo </title>
+  <title> iOS集成极光推送遇到的几个问题 | Zhuyooong’ Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
 
@@ -146,7 +148,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">Zhuyooong’ Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -277,17 +279,17 @@
       
         <p>其实官方的<a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和<a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK 教程</a>两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0版本的</a>）。</p>
 <p>#1、APNs证书和主证书的区别<br><img src="http://upload-images.jianshu.io/upload_images/1334313-0790fa68e43bd1cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。<br><img src="http://upload-images.jianshu.io/upload_images/1334313-31981a625ae9aed8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而且在XCode里Code Signing也是不能选择的。<br>APNs证书其实是只表示了有推送功能，主证书还是必不可少的。所以现在只是又添加了两个证书，其他的是不用变的，所以现在就有4个证书了。作为一个有轻微强迫症的人，创建完APNs证书就顺手把主证书删了，在这里让我折腾了好久。</p>
-<p>#2、启动SDK需要传的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (void)setupWithOption:(NSDictionary *)launchingOption</span><br><span class="line">appKey:(NSString *)appKey</span><br><span class="line">channel:(NSString *)channel</span><br><span class="line">apsForProduction:(BOOL)isProduction;</span><br></pre></td></tr></table></figure></p>
+<p>#2、启动SDK需要传的参数<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)<span class="string">setupWithOption:</span>(NSDictionary *)launchingOption</span><br><span class="line"><span class="string">appKey:</span>(NSString *)appKey</span><br><span class="line"><span class="string">channel:</span>(NSString *)channel</span><br><span class="line"><span class="string">apsForProduction:</span>(BOOL)isProduction;</span><br></pre></td></tr></table></figure></p>
 <p>前两个就不必说了。<br>channel 发布渠道。我刚开始也不知道要怎么填，iOS?App Store?Publish channel?其实这只是一个标识而已，不会有什么具体影响。而且是可选的，所以填nil也是没关系的。<br>isProduction 是否生产环境。看起来很有用的一个参数，但实际发现YES或NO是没区别的，在框架里边应该是另有判断。但还必须得填，所以在生产和开发环境之间切换时是没必要一定要改这个参数的。</p>
 <p>#3、<a href="http://docs.jpush.io/client/ios_api/#api-ios" target="_blank" rel="external">标签与别名 API</a><br>之前的教程文档是没有这个的，下载的Demo里也没有。但是项目里肯定是要有这个的。</p>
 <blockquote>
 <p>###别名 alias</p>
-<p>###标签 tag<br>为安装了应用程序的用户，打上标签。其目的主要是方便开发者根据标签，来批量下发 Push 消息。可为每个用户打多个标签。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (void) setTags:(NSSet *)tags alias:(NSString *)alias fetchCompletionHandle:(void (^)(int iResCode, NSSet *iTags, NSString *iAlias))completionHandler;</span><br></pre></td></tr></table></figure></p>
+<p>###标签 tag<br>为安装了应用程序的用户，打上标签。其目的主要是方便开发者根据标签，来批量下发 Push 消息。可为每个用户打多个标签。<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>) setTags:(<span class="built_in">NSSet</span> *)tags alias:(<span class="built_in">NSString</span> *)alias fetchCompletionHandle:(<span class="keyword">void</span> (^)(<span class="keyword">int</span> iResCode, <span class="built_in">NSSet</span> *iTags, <span class="built_in">NSString</span> *iAlias))completionHandler;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p>call back结果可以忽略，但最好判断一下， 返回值为 0 才设置成功，才可以向目标推送。我一般是有block就不会用其他的，但使用block时需要注意循环引用问题。</p>
-<p>#4、收到通知后的处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler</span><br></pre></td></tr></table></figure></p>
-<p>是在iOS7之后的方法，所以之前的方法可以不用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillEnterForeground:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
-<p>applicationWillEnterForegroun是在didReceiveRemoteNotification之后运行的，所以在这个方法里想处数据是不行的。然后<code>[application setApplicationIconBadgeNumber:0];</code>是偶尔会抽风一下的，所以最好这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[application setApplicationIconBadgeNumber: 1];</span><br><span class="line">[application setApplicationIconBadgeNumber:0];</span><br></pre></td></tr></table></figure></p>
+<p>#4、收到通知后的处理<br><figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="params">(void)</span>application:<span class="params">(UIApplication *)</span>application didReceiveRemoteNotification:<span class="params">(NSDictionary *)</span>userInfo fetchCompletionHandler:<span class="params">(void (^)</span><span class="params">(UIBackgroundFetchResult result)</span>)completionHandler</span><br></pre></td></tr></table></figure></p>
+<p>是在iOS7之后的方法，所以之前的方法可以不用了。<br><figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="params">(void)</span>applicationWillEnterForeground:<span class="params">(UIApplication *)</span>application</span><br></pre></td></tr></table></figure></p>
+<p>applicationWillEnterForegroun是在didReceiveRemoteNotification之后运行的，所以在这个方法里想处数据是不行的。然后<code>[application setApplicationIconBadgeNumber:0];</code>是偶尔会抽风一下的，所以最好这样写：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[application setApplicationIconBadgeNumber: 1]</span><span class="comment">;</span></span><br><span class="line"><span class="section">[application setApplicationIconBadgeNumber:0]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <p>当然，不要忘了<code>[application cancelAllLocalNotifications];</code></p>
 <p>还有，关于跳转到特定页面的问题。反正我是没找到如何在AppDelegate里找到当前的页面，所以只能用<code>self.window.rootViewController</code>了。返回的话直接<code>self.view.window.rootViewController = vc;</code>吧。<br>记得用<code>application.applicationState == UIApplicationStateActive</code>判断一下应用处于的状态。如果用户正在运行应用，或许还有更好的，但我就是弹一个UIAlertView。</p>
 
@@ -380,8 +382,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="Zhuyooong" />
+          <p class="site-author-name" itemprop="name">Zhuyooong</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
@@ -408,6 +410,17 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ZhuYooong" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
           
         </div>
 
@@ -444,12 +457,12 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Zhuyooong</span>
 </div>
 
 <div class="powered-by">

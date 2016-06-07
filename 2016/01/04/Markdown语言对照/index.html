@@ -69,10 +69,8 @@
 
 
 
-  
 
-
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Zhuyooong’ Blog" type="application/atom+xml" />
 
 
 
@@ -98,7 +96,7 @@ H6 :Header 6 ###### Heade">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown语言对照">
 <meta property="og:url" content="http://yoursite.com/2016/01/04/Markdown语言对照/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Zhuyooong’ Blog">
 <meta property="og:description" content="目录[TOC] 
 [TOC]
 标题
@@ -141,10 +139,10 @@ H6 :Header 6 ###### Heade">
   };
 </script>
 
-  <title> Markdown语言对照 | Hexo </title>
+  <title> Markdown语言对照 | Zhuyooong’ Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
 
@@ -172,7 +170,7 @@ H6 :Header 6 ###### Heade">
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">Zhuyooong’ Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -340,7 +338,7 @@ H6 :Header 6 ###### Heade">
 $$
 \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
 $$
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\Gamma(z) = \int_0^\infty t^&#123;z-1&#125;e^&#123;-t&#125;dt\,.</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br><span class="line">\<span class="built-in">Gamma</span>(z) = \int_0^\infty t^&#123;z<span class="number">-1</span>&#125;e^&#123;-t&#125;dt\,.</span><br><span class="line"><span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
 
 * 引用 :
 &gt; 大楚兴，陈胜王！
@@ -359,7 +357,7 @@ $$
 &gt; 2.   这是第二行列表项。
 &gt; 
 &gt; 给出一些例子代码：
-&gt;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;return shell_exec(&quot;echo $input | $markdown_script&quot;);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+&gt;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">return</span> shell_<span class="built_in">exec</span>(<span class="string">"echo <span class="variable">$input</span> | <span class="variable">$markdown_script</span>"</span>);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </code></pre></li>
 </ul>
 <pre><code>* 内嵌代码/高亮 :`alert(&apos;Hello World&apos;);` `` `alert(&apos;Hello World&apos;);` `` （如果高亮的内容包含 \` 号，可以用 \`` 包裹起来）
@@ -371,17 +369,17 @@ Woow | Woow | Woow
 Woow | Woow | Woow 
 Woow | Woow | Woow 
 Woow | Woow | Woow
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">左对齐是:---   居中对齐是:---:   右对齐是---:</span><br><span class="line"></span><br><span class="line">* 序列图</span><br><span class="line">```sequence</span><br><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">左对齐是<span class="symbol">:---</span>   居中对齐是<span class="symbol">:---</span>:   右对齐是---:</span><br><span class="line"></span><br><span class="line">* 序列图</span><br><span class="line">```sequence</span><br><span class="line">Alice-&gt;<span class="symbol">Bob:</span> Hello Bob, how are you?</span><br><span class="line">Note right of <span class="symbol">Bob:</span> Bob thinks</span><br><span class="line">Bob--&gt;<span class="symbol">Alice:</span> I am good thanks!</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```sequence</span><br><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```sequence</span><br><span class="line"><span class="symbol">Alice</span>-&gt;<span class="keyword">Bob: </span>Hello <span class="keyword">Bob, </span>how are you?</span><br><span class="line"><span class="symbol">Note</span> right of <span class="keyword">Bob: </span><span class="keyword">Bob </span>thinks</span><br><span class="line"><span class="keyword">Bob--&gt;Alice: </span>I am good thanks!</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">* 流程图</span><br><span class="line">```flow</span><br><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">* 流程图</span><br><span class="line">```flow</span><br><span class="line">st=&gt;start: <span class="type">Start</span></span><br><span class="line">e=&gt;<span class="keyword">end</span></span><br><span class="line"><span class="keyword">op</span>=&gt;operation: <span class="type">My</span> <span class="type">Operation</span></span><br><span class="line">cond=&gt;condition: <span class="type">Yes</span> or <span class="type">No</span>?</span><br><span class="line"></span><br><span class="line">st-&gt;<span class="keyword">op</span>-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;<span class="keyword">op</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```flow</span><br><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```flow</span><br><span class="line">st=&gt;start: <span class="type">Start</span></span><br><span class="line">e=&gt;<span class="keyword">end</span></span><br><span class="line"><span class="keyword">op</span>=&gt;operation: <span class="type">My</span> <span class="type">Operation</span></span><br><span class="line">cond=&gt;condition: <span class="type">Yes</span> or <span class="type">No</span>?</span><br><span class="line"></span><br><span class="line">st-&gt;<span class="keyword">op</span>-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;<span class="keyword">op</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># &lt;i class=&quot;icon-hdd&quot;&gt;&lt;/i&gt;链接</span><br><span class="line">* 网络链接 :[Baidu](https://www.baidu.com) `[Baidu](https://www.baidu.com)` or</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># &lt;i class="icon-hdd"&gt;&lt;/i&gt;链接</span></span><br><span class="line"><span class="bullet">* </span>网络链接 :[<span class="string">Baidu</span>](<span class="link">https://www.baidu.com</span>) <span class="code">`[Baidu](https://www.baidu.com)`</span> or</span><br></pre></td></tr></table></figure>
 </code></pre><p><a href="https://www.baidu.com" target="_blank" rel="external">Baidu</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">* 本地链接 :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) `[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)`</span><br><span class="line">* 网络图片 :</span><br><span class="line">![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">`![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`</span><br><span class="line">* 本地图片 :</span><br><span class="line">![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) </span><br><span class="line">`![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)` </span><br><span class="line">* 图片链接：</span><br><span class="line">[![](https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg)](https://www.zhihu.com)</span><br><span class="line">`[![](https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg)](https://www.zhihu.com)`</span><br><span class="line">* 内部跳转： [标题](#标题)   `[标题](#标题)`</span><br><span class="line"># &lt;i class=&quot;icon-refresh&quot;&gt;&lt;/i&gt;脚注</span><br><span class="line">BlaBlaBla...这是一段脚注[^footer1]，接着BlaBlaBla...</span><br><span class="line">......</span><br><span class="line">[^footer1]:这是脚注内容，Blablabla</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>本地链接 :[<span class="string">link text</span>](<span class="link">file:///Users/mac/Desktop/Test/README.md "link text"</span>) <span class="code">`[link text](file:///Users/mac/Desktop/Test/README.md "link text")`</span></span><br><span class="line"><span class="bullet">* </span>网络图片 :</span><br><span class="line">![<span class="string">德鲁伊</span>](<span class="link">http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br><span class="line"><span class="code">`![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`</span></span><br><span class="line"><span class="bullet">* </span>本地图片 :</span><br><span class="line">![<span class="string">新浪</span>](<span class="link">http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>) </span><br><span class="line"><span class="code">`![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`</span> </span><br><span class="line"><span class="bullet">* </span>图片链接：</span><br><span class="line">[<span class="string">![</span>](<span class="link">https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg</span>)](<span class="link">https://www.zhihu.com</span>)</span><br><span class="line"><span class="code">`[![](https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg)](https://www.zhihu.com)`</span></span><br><span class="line"><span class="bullet">* </span>内部跳转： [<span class="string">标题</span>](<span class="link">#标题</span>)   <span class="code">`[标题](#标题)`</span></span><br><span class="line"><span class="section"># &lt;i class="icon-refresh"&gt;&lt;/i&gt;脚注</span></span><br><span class="line">BlaBlaBla...这是一段脚注[^footer1]，接着BlaBlaBla...</span><br><span class="line">......</span><br><span class="line">[<span class="symbol">^footer1</span><span class="link">]:这是脚注内容，Blablabla</span></span><br></pre></td></tr></table></figure>
 <p>BlaBlaBla…这是一段脚注<a href="这是脚注内容，Blablabla">^footer1</a>，接着BlaBlaBla…<br>……</p>
 <p>```</p>
 
@@ -474,8 +472,8 @@ Woow | Woow | Woow
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="Zhuyooong" />
+          <p class="site-author-name" itemprop="name">Zhuyooong</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
@@ -502,6 +500,17 @@ Woow | Woow | Woow
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ZhuYooong" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
           
         </div>
 
@@ -538,12 +547,12 @@ Woow | Woow | Woow
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Zhuyooong</span>
 </div>
 
 <div class="powered-by">
