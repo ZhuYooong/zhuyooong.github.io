@@ -231,8 +231,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/02/hello-world/" itemprop="url">
-                  Hello World
+                <a class="post-title-link" href="/2016/02/02/iOS集成极光推送遇到的几个问题/" itemprop="url">
+                  iOS集成极光推送遇到的几个问题
                 </a>
               
             
@@ -245,8 +245,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-05-02T16:57:57+08:00" content="2016-05-02">
-              2016-05-02
+            <time itemprop="dateCreated" datetime="2016-02-02T20:42:51+08:00" content="2016-02-02">
+              2016-02-02
             </time>
           </span>
 
@@ -275,15 +275,21 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p>其实官方的<a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和<a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK 教程</a>两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0版本的</a>）。</p>
+<p>#1、APNs证书和主证书的区别<br><img src="http://upload-images.jianshu.io/upload_images/1334313-0790fa68e43bd1cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。<br><img src="http://upload-images.jianshu.io/upload_images/1334313-31981a625ae9aed8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而且在XCode里Code Signing也是不能选择的。<br>APNs证书其实是只表示了有推送功能，主证书还是必不可少的。所以现在只是又添加了两个证书，其他的是不用变的，所以现在就有4个证书了。作为一个有轻微强迫症的人，创建完APNs证书就顺手把主证书删了，在这里让我折腾了好久。</p>
+<p>#2、启动SDK需要传的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (void)setupWithOption:(NSDictionary *)launchingOption</span><br><span class="line">appKey:(NSString *)appKey</span><br><span class="line">channel:(NSString *)channel</span><br><span class="line">apsForProduction:(BOOL)isProduction;</span><br></pre></td></tr></table></figure></p>
+<p>前两个就不必说了。<br>channel 发布渠道。我刚开始也不知道要怎么填，iOS?App Store?Publish channel?其实这只是一个标识而已，不会有什么具体影响。而且是可选的，所以填nil也是没关系的。<br>isProduction 是否生产环境。看起来很有用的一个参数，但实际发现YES或NO是没区别的，在框架里边应该是另有判断。但还必须得填，所以在生产和开发环境之间切换时是没必要一定要改这个参数的。</p>
+<p>#3、<a href="http://docs.jpush.io/client/ios_api/#api-ios" target="_blank" rel="external">标签与别名 API</a><br>之前的教程文档是没有这个的，下载的Demo里也没有。但是项目里肯定是要有这个的。</p>
+<blockquote>
+<p>###别名 alias</p>
+<p>###标签 tag<br>为安装了应用程序的用户，打上标签。其目的主要是方便开发者根据标签，来批量下发 Push 消息。可为每个用户打多个标签。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (void) setTags:(NSSet *)tags alias:(NSString *)alias fetchCompletionHandle:(void (^)(int iResCode, NSSet *iTags, NSString *iAlias))completionHandler;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>call back结果可以忽略，但最好判断一下， 返回值为 0 才设置成功，才可以向目标推送。我一般是有block就不会用其他的，但使用block时需要注意循环引用问题。</p>
+<p>#4、收到通知后的处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler</span><br></pre></td></tr></table></figure></p>
+<p>是在iOS7之后的方法，所以之前的方法可以不用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)applicationWillEnterForeground:(UIApplication *)application</span><br></pre></td></tr></table></figure></p>
+<p>applicationWillEnterForegroun是在didReceiveRemoteNotification之后运行的，所以在这个方法里想处数据是不行的。然后<code>[application setApplicationIconBadgeNumber:0];</code>是偶尔会抽风一下的，所以最好这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[application setApplicationIconBadgeNumber: 1];</span><br><span class="line">[application setApplicationIconBadgeNumber:0];</span><br></pre></td></tr></table></figure></p>
+<p>当然，不要忘了<code>[application cancelAllLocalNotifications];</code></p>
+<p>还有，关于跳转到特定页面的问题。反正我是没找到如何在AppDelegate里找到当前的页面，所以只能用<code>self.window.rootViewController</code>了。返回的话直接<code>self.view.window.rootViewController = vc;</code>吧。<br>记得用<code>application.applicationState == UIApplicationStateActive</code>判断一下应用处于的状态。如果用户正在运行应用，或许还有更好的，但我就是弹一个UIAlertView。</p>
 
           
         
@@ -377,18 +383,19 @@
       
         
           
-            <h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><ul>
-<li>H1 :    <h1 id="Header-1-Header1-or"><a href="#Header-1-Header1-or" class="headerlink" title="Header 1 # Header1 or"></a>Header 1 <code># Header1</code> or</h1><h1 id="Header-1"><a href="#Header-1" class="headerlink" title="Header 1"></a>Header 1</h1><h1 id="Header-1-1"><a href="#Header-1-1" class="headerlink" title="Header 1"></a>Header 1</h1></li>
-<li>H2 :<h2 id="Header-2-Header-2-or"><a href="#Header-2-Header-2-or" class="headerlink" title="Header 2 ## Header 2 or"></a>Header 2 <code>## Header 2</code> or</h2></li>
-</ul>
-<h2 id="Header-2-必须和上边隔一行，要不然会被视为分隔线"><a href="#Header-2-必须和上边隔一行，要不然会被视为分隔线" class="headerlink" title="Header 2 (必须和上边隔一行，要不然会被视为分隔线)"></a>Header 2 (必须和上边隔一行，要不然会被视为分隔线)</h2><h2 id="Header-2-必须和上边隔一行，要不然会被视为分隔线-1"><a href="#Header-2-必须和上边隔一行，要不然会被视为分隔线-1" class="headerlink" title="Header 2 (必须和上边隔一行，要不然会被视为分隔线)"></a>Header 2 (必须和上边隔一行，要不然会被视为分隔线)</h2><ul>
+            <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a><i class="icon-file"></i>目录</h1><p>[TOC] </p>
+<p><code>[TOC]</code></p>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a><i class="icon-folder-open"></i>标题</h1><ul>
+<li><p>H1 :    </p>
+<h1 id="Header-1-Header1-or"><a href="#Header-1-Header1-or" class="headerlink" title="Header 1 # Header1 or"></a>Header 1 <code># Header1</code> or</h1><h1 id="Header-1"><a href="#Header-1" class="headerlink" title="Header 1"></a>Header 1</h1><h1 id="Header-1-1"><a href="#Header-1-1" class="headerlink" title="Header 1"></a>Header 1</h1></li>
+<li><p>H2 :</p>
+<h2 id="Header-2-Header-2-or"><a href="#Header-2-Header-2-or" class="headerlink" title="Header 2 ## Header 2 or"></a>Header 2 <code>## Header 2</code> or</h2></li>
 <li>H3 :<h3 id="Header-3-Header-3"><a href="#Header-3-Header-3" class="headerlink" title="Header 3 ### Header 3"></a>Header 3 <code>### Header 3</code></h3></li>
 <li>H4 :<h4 id="Header-4-Header-4"><a href="#Header-4-Header-4" class="headerlink" title="Header 4 #### Header 4"></a>Header 4 <code>#### Header 4</code></h4></li>
 <li>H5 :<h5 id="Header-5-Header-5"><a href="#Header-5-Header-5" class="headerlink" title="Header 5 ##### Header 5"></a>Header 5 <code>##### Header 5</code></h5></li>
 <li>H6 :<h6 id="Header-6-Header-6"><a href="#Header-6-Header-6" class="headerlink" title="Header 6 ###### Header 6"></a>Header 6 <code>###### Header 6</code></h6></li>
 </ul>
-<p>#列表</p>
-<ul>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a><i class="icon-pencil"></i>列表</h1><ul>
 <li>无序列表（使用星号、加号或减号）</li>
 </ul>
 <ul>
@@ -404,72 +411,62 @@
 <li>Second</li>
 <li>Third</li>
 </ol>
-<p>#文本样式</p>
-<ul>
+<h1 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a><i class="icon-trash"></i>文本样式</h1><ul>
 <li>加粗 :<strong>Bold</strong> <code>**Bold**</code> or <code>__Bold__</code></li>
 <li>斜体字 :<em>Italics</em> <code>*Italics*</code> or <code>_Italics_</code></li>
 <li>斜粗体 :<strong><em>text</em></strong> <code>***text***</code> or <code>___text___</code><br>（如果要在文字前后直接插入普通的星号或底线，用反斜线（转义符）：*this text is surrounded by literal asterisks* <code>\*this text is surrounded by literal asterisks\*</code>）</li>
 <li>小型文本 ：<small>文本内容</small> <code>&lt;small&gt;文本内容&lt;/small&gt;</code></li>
-<li>删除线 :<del>text</del> <code>~~text~~</code></li>
-<li>单行长文字<br>阿斯顿撒娇的哈里斯卡大师级发了十几封卡上佛佛阿司法局阿深办发哈深爬服非圣诞节和数据库的哈萨克就等哈说考虑到哈市开发商坎大哈可升级大飞嘎斯常骄傲深阿哦哈非常怕啥<br>段首加加6个空格或3个Tab</li>
-<li>引用 :<blockquote>
-<p>大楚兴，陈胜王！</p>
-</blockquote>
-</li>
+<li>删除线 :<del>text</del> 两边加~~</li>
+<li><p>快捷键：<kbd>Ctrl+[</kbd> <code>&lt;kbd&gt;Ctrl+[&lt;/kbd&gt;</code></p>
+<pre><code>* 数学公式：
+$$
+\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
+$$
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\Gamma(z) = \int_0^\infty t^&#123;z-1&#125;e^&#123;-t&#125;dt\,.</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+* 引用 :
+&gt; 大楚兴，陈胜王！
+
+`&gt; 大楚兴，陈胜王！`(和下文要隔一行)
+
+#####区块引用可以嵌套
+&gt; This is the first level of quoting.
+&gt; &gt; This is nested block quote.
+&gt;
+&gt; Back to the first level.
+**引用的区块内也可以使用其他的 Markdown 语法**
+&gt; ## 这是一个标题。
+&gt; 
+&gt; 1.   这是第一行列表项。
+&gt; 2.   这是第二行列表项。
+&gt; 
+&gt; 给出一些例子代码：
+&gt;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;return shell_exec(&quot;echo $input | $markdown_script&quot;);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</code></pre></li>
 </ul>
-<p><code>&gt; 大楚兴，陈胜王！</code>(和下文要隔一行)</p>
-<p><strong>区块引用可以嵌套</strong></p>
-<blockquote>
-<p>This is the first level of quoting.</p>
-<blockquote>
-<p>This is nested block quote.</p>
-</blockquote>
-<p>Back to the first level.</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is the first level of quoting.</span><br><span class="line">&gt; &gt; This is nested block quote.</span><br><span class="line">&gt;</span><br><span class="line">&gt; Back to the first level.</span><br></pre></td></tr></table></figure>
-<p><strong>引用的区块内也可以使用其他的 Markdown 语法</strong></p>
-<blockquote>
-<h2 id="这是一个标题。"><a href="#这是一个标题。" class="headerlink" title="这是一个标题。"></a>这是一个标题。</h2><ol>
-<li>这是第一行列表项。</li>
-<li>这是第二行列表项。</li>
-</ol>
-<p>给出一些例子代码：</p>
-<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; ## 这是一个标题。</span><br><span class="line">&gt; </span><br><span class="line">&gt; 1.   这是第一行列表项。</span><br><span class="line">&gt; 2.   这是第二行列表项。</span><br><span class="line">&gt; </span><br><span class="line">&gt; 给出一些例子代码：</span><br><span class="line">&gt; </span><br><span class="line">&gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>内嵌代码/高亮 :<code>alert(&#39;Hello World&#39;);</code> <code>`alert(&#39;Hello World&#39;);` </code> （如果高亮的内容包含 ` 号，可以用 `` 包裹起来）</li>
-<li>代码块 :（是用 <figure class="highlight plain"><figcaption><span>~~~ 包裹的) or 每行前加6个空格或3个Tab</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">lazy var formatter: NSDateFormatter = &#123;</span><br><span class="line">let dateFormatter = NSDateFormatter()</span><br><span class="line">dateFormatter.formatterBehavior = .Behavior10_4</span><br><span class="line">dateFormatter.dateFormat = &quot;HH:mm:ss.SSS&quot;</span><br><span class="line">return dateFormatter</span><br><span class="line">&#125;()</span><br><span class="line">* 分割线 :</span><br><span class="line">___</span><br><span class="line">`___` or `***`</span><br><span class="line">* 表格</span><br><span class="line"></span><br><span class="line">Woow | Woow | Woow </span><br><span class="line">:-----|:-----:| ----:</span><br><span class="line">Woow | Woow | Woow </span><br><span class="line">Woow | Woow | Woow </span><br><span class="line">Woow | Woow | Woow</span><br></pre></td></tr></table></figure></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Woow</th>
-<th style="text-align:center">Woow</th>
-<th style="text-align:right">Woow </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Woow</td>
-<td style="text-align:center">Woow</td>
-<td style="text-align:right">Woow </td>
-</tr>
-<tr>
-<td style="text-align:left">Woow</td>
-<td style="text-align:center">Woow</td>
-<td style="text-align:right">Woow </td>
-</tr>
-<tr>
-<td style="text-align:left">Woow</td>
-<td style="text-align:center">Woow</td>
-<td style="text-align:right">Woow<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左对齐是:---   居中对齐是:---:   右对齐是---:</span><br><span class="line">#链接</span><br><span class="line">* 网络链接 :[Baidu](https://www.baidu.com) `[Baidu](https://www.baidu.com)` or</span><br></pre></td></tr></table></figure></td>
-</tr>
-</tbody>
-</table>
-<p>[Baidu][id]<br>[id]:<a href="https://www.baidu.com" target="_blank" rel="external">https://www.baidu.com</a> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* 本地链接 :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) `[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)`</span><br><span class="line">* 电子邮件 :&lt;1114390581@qq.com&gt; `&lt;1114390581@qq.com&gt;`</span><br><span class="line">* 网络图片 :![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">`![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`</span><br><span class="line">* 本地图片 :![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) </span><br><span class="line">`![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`</span><br><span class="line"></span><br><span class="line"># 脚注</span><br><span class="line">\</span><br></pre></td></tr></table></figure></p>
+<pre><code>* 内嵌代码/高亮 :`alert(&apos;Hello World&apos;);` `` `alert(&apos;Hello World&apos;);` `` （如果高亮的内容包含 \` 号，可以用 \`` 包裹起来）
+
+* 代码块 :（是用 <figure class="highlight plain"><figcaption><span>~~~ 包裹的)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">``` </span><br><span class="line">lazy var formatter: NSDateFormatter = &#123;</span><br><span class="line">let dateFormatter = NSDateFormatter()</span><br><span class="line">dateFormatter.formatterBehavior = .Behavior10_4</span><br><span class="line">dateFormatter.dateFormat = &quot;HH:mm:ss.SSS&quot;</span><br><span class="line">return dateFormatter</span><br><span class="line">&#125;()</span><br><span class="line">``` </span><br><span class="line">* 分割线 :</span><br><span class="line">___</span><br><span class="line">`___` or `***`</span><br><span class="line"></span><br><span class="line">* 表格</span><br><span class="line">Woow | Woow | Woow </span><br><span class="line">:-----|:-----:| ----:</span><br><span class="line">Woow | Woow | Woow </span><br><span class="line">Woow | Woow | Woow </span><br><span class="line">Woow | Woow | Woow</span><br></pre></td></tr></table></figure>
+
+Woow | Woow | Woow 
+:-----|:-----:| ----:
+Woow | Woow | Woow 
+Woow | Woow | Woow 
+Woow | Woow | Woow
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">左对齐是:---   居中对齐是:---:   右对齐是---:</span><br><span class="line"></span><br><span class="line">* 序列图</span><br><span class="line">```sequence</span><br><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```sequence</span><br><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">* 流程图</span><br><span class="line">```flow</span><br><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```flow</span><br><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># &lt;i class=&quot;icon-hdd&quot;&gt;&lt;/i&gt;链接</span><br><span class="line">* 网络链接 :[Baidu](https://www.baidu.com) `[Baidu](https://www.baidu.com)` or</span><br></pre></td></tr></table></figure>
+</code></pre><p><a href="https://www.baidu.com" target="_blank" rel="external">Baidu</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">* 本地链接 :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) `[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)`</span><br><span class="line">* 网络图片 :</span><br><span class="line">![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">`![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`</span><br><span class="line">* 本地图片 :</span><br><span class="line">![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) </span><br><span class="line">`![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)` </span><br><span class="line">* 图片链接：</span><br><span class="line">[![](https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg)](https://www.zhihu.com)</span><br><span class="line">`[![](https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg)](https://www.zhihu.com)`</span><br><span class="line">* 内部跳转： [标题](#标题)   `[标题](#标题)`</span><br><span class="line"># &lt;i class=&quot;icon-refresh&quot;&gt;&lt;/i&gt;脚注</span><br><span class="line">BlaBlaBla...这是一段脚注[^footer1]，接着BlaBlaBla...</span><br><span class="line">......</span><br><span class="line">[^footer1]:这是脚注内容，Blablabla</span><br></pre></td></tr></table></figure>
 <p>BlaBlaBla…这是一段脚注<a href="这是脚注内容，Blablabla">^footer1</a>，接着BlaBlaBla…<br>……</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BlaBlaBla...这是一段脚注[^footer1]，接着BlaBlaBla...</span><br><span class="line">......</span><br><span class="line">[^footer1]:这是脚注内容，Blablabla</span><br></pre></td></tr></table></figure>
+<p>```</p>
+
           
         
       
