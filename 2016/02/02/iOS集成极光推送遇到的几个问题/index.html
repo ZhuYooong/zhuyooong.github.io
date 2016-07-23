@@ -85,21 +85,33 @@
 
 
 <meta name="description" content="其实官方的iOS SDK 集成指南和iOS SDK 教程两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（2.1.0版本的）。
-#1、APNs证书和主证书的区别我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而">
+1、APNs证书和主证书的区别
+
+我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
+
+首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS集成极光推送遇到的几个问题">
 <meta property="og:url" content="http://yoursite.com/2016/02/02/iOS集成极光推送遇到的几个问题/index.html">
 <meta property="og:site_name" content="Zhuyooong’ Blog">
 <meta property="og:description" content="其实官方的iOS SDK 集成指南和iOS SDK 教程两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（2.1.0版本的）。
-#1、APNs证书和主证书的区别我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1334313-0790fa68e43bd1cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1334313-31981a625ae9aed8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-06-07T12:48:41.000Z">
+1、APNs证书和主证书的区别
+
+我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
+
+首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书">
+<meta property="og:image" content="https://cvws.icloud-content.com/B/AScgqJSKWtgXz59DOHsSHkKzJWU8AQdu3X7orEuKpyPadtKqrhfEIvGS/Jpush1.png?o=AqAMjkft6FPn7n6d2qDdfzFahvqWy7JnCUr3Tr_xNv2S&v=1&x=3&a=BXsDc7y1zxpnA0ecNA&e=1469176719&k=Ggyyyon4TDIb2rfAGl-s2w&fl=&r=fd4497c6-66a4-4bbc-a5d1-811084e1bb22-1&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=34&s=6Iq55hvv2ahvW-y93K4eozharU8&cd=i">
+<meta property="og:image" content="https://cvws.icloud-content.com/B/Aeobgf4StnPqlykp6zJHMgNn_G2TAVniPmzwqKFTFcPcfT29TKULndVq/Jpush2.png?o=Ajas5vdX4-aJgecyPgXZdNy2xnpicsevUypwDi0tLjUm&v=1&x=3&a=BV6_UaAjzsAXA0icNA&e=1469176764&k=lZFSWhrLVhqbLVXKAeq-OQ&fl=&r=9363ee56-bcfe-4960-aac0-d4b11bfeb1a4-1&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=34&s=a_BgMicIaVc2gwqO-1-RDML_1Jk&cd=i">
+<meta property="og:updated_time" content="2016-07-23T08:55:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS集成极光推送遇到的几个问题">
 <meta name="twitter:description" content="其实官方的iOS SDK 集成指南和iOS SDK 教程两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（2.1.0版本的）。
-#1、APNs证书和主证书的区别我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1334313-0790fa68e43bd1cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+1、APNs证书和主证书的区别
+
+我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
+
+首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书">
+<meta name="twitter:image" content="https://cvws.icloud-content.com/B/AScgqJSKWtgXz59DOHsSHkKzJWU8AQdu3X7orEuKpyPadtKqrhfEIvGS/Jpush1.png?o=AqAMjkft6FPn7n6d2qDdfzFahvqWy7JnCUr3Tr_xNv2S&v=1&x=3&a=BXsDc7y1zxpnA0ecNA&e=1469176719&k=Ggyyyon4TDIb2rfAGl-s2w&fl=&r=fd4497c6-66a4-4bbc-a5d1-811084e1bb22-1&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=34&s=6Iq55hvv2ahvW-y93K4eozharU8&cd=i">
 
 
 
@@ -175,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -185,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -248,7 +260,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-02-02T20:42:51+08:00" content="2016-02-02">
               2016-02-02
             </time>
@@ -278,20 +290,38 @@
 
       
         <p>其实官方的<a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和<a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK 教程</a>两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0版本的</a>）。</p>
-<p>#1、APNs证书和主证书的区别<br><img src="http://upload-images.jianshu.io/upload_images/1334313-0790fa68e43bd1cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。<br><img src="http://upload-images.jianshu.io/upload_images/1334313-31981a625ae9aed8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而且在XCode里Code Signing也是不能选择的。<br>APNs证书其实是只表示了有推送功能，主证书还是必不可少的。所以现在只是又添加了两个证书，其他的是不用变的，所以现在就有4个证书了。作为一个有轻微强迫症的人，创建完APNs证书就顺手把主证书删了，在这里让我折腾了好久。</p>
-<p>#2、启动SDK需要传的参数<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)<span class="string">setupWithOption:</span>(NSDictionary *)launchingOption</span><br><span class="line"><span class="string">appKey:</span>(NSString *)appKey</span><br><span class="line"><span class="string">channel:</span>(NSString *)channel</span><br><span class="line"><span class="string">apsForProduction:</span>(BOOL)isProduction;</span><br></pre></td></tr></table></figure></p>
-<p>前两个就不必说了。<br>channel 发布渠道。我刚开始也不知道要怎么填，iOS?App Store?Publish channel?其实这只是一个标识而已，不会有什么具体影响。而且是可选的，所以填nil也是没关系的。<br>isProduction 是否生产环境。看起来很有用的一个参数，但实际发现YES或NO是没区别的，在框架里边应该是另有判断。但还必须得填，所以在生产和开发环境之间切换时是没必要一定要改这个参数的。</p>
-<p>#3、<a href="http://docs.jpush.io/client/ios_api/#api-ios" target="_blank" rel="external">标签与别名 API</a><br>之前的教程文档是没有这个的，下载的Demo里也没有。但是项目里肯定是要有这个的。</p>
+<h1>1、APNs证书和主证书的区别</h1>
+<p><img src="https://cvws.icloud-content.com/B/AScgqJSKWtgXz59DOHsSHkKzJWU8AQdu3X7orEuKpyPadtKqrhfEIvGS/Jpush1.png?o=AqAMjkft6FPn7n6d2qDdfzFahvqWy7JnCUr3Tr_xNv2S&amp;v=1&amp;x=3&amp;a=BXsDc7y1zxpnA0ecNA&amp;e=1469176719&amp;k=Ggyyyon4TDIb2rfAGl-s2w&amp;fl=&amp;r=fd4497c6-66a4-4bbc-a5d1-811084e1bb22-1&amp;ckc=com.apple.clouddocs&amp;ckz=com.apple.CloudDocs&amp;p=34&amp;s=6Iq55hvv2ahvW-y93K4eozharU8&amp;cd=i" alt="">
+我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
+<img src="https://cvws.icloud-content.com/B/Aeobgf4StnPqlykp6zJHMgNn_G2TAVniPmzwqKFTFcPcfT29TKULndVq/Jpush2.png?o=Ajas5vdX4-aJgecyPgXZdNy2xnpicsevUypwDi0tLjUm&amp;v=1&amp;x=3&amp;a=BV6_UaAjzsAXA0icNA&amp;e=1469176764&amp;k=lZFSWhrLVhqbLVXKAeq-OQ&amp;fl=&amp;r=9363ee56-bcfe-4960-aac0-d4b11bfeb1a4-1&amp;ckc=com.apple.clouddocs&amp;ckz=com.apple.CloudDocs&amp;p=34&amp;s=a_BgMicIaVc2gwqO-1-RDML_1Jk&amp;cd=i" alt="">
+首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而且在XCode里Code Signing也是不能选择的。
+APNs证书其实是只表示了有推送功能，主证书还是必不可少的。所以现在只是又添加了两个证书，其他的是不用变的，所以现在就有4个证书了。作为一个有轻微强迫症的人，创建完APNs证书就顺手把主证书删了，在这里让我折腾了好久。</p>
+<h1>2、启动SDK需要传的参数</h1>
+<p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)<span class="string">setupWithOption:</span>(NSDictionary *)launchingOption</span><br><span class="line"><span class="string">appKey:</span>(NSString *)appKey</span><br><span class="line"><span class="string">channel:</span>(NSString *)channel</span><br><span class="line"><span class="string">apsForProduction:</span>(BOOL)isProduction;</span><br></pre></td></tr></table></figure></p>
+<p>前两个就不必说了。
+channel 发布渠道。我刚开始也不知道要怎么填，iOS?App Store?Publish channel?其实这只是一个标识而已，不会有什么具体影响。而且是可选的，所以填nil也是没关系的。
+isProduction 是否生产环境。看起来很有用的一个参数，但实际发现YES或NO是没区别的，在框架里边应该是另有判断。但还必须得填，所以在生产和开发环境之间切换时是没必要一定要改这个参数的。</p>
+<h1>3、<a href="http://docs.jpush.io/client/ios_api/#api-ios" target="_blank" rel="external">标签与别名 API</a></h1>
+<p>之前的教程文档是没有这个的，下载的Demo里也没有。但是项目里肯定是要有这个的。</p>
 <blockquote>
-<p>###别名 alias</p>
-<p>###标签 tag<br>为安装了应用程序的用户，打上标签。其目的主要是方便开发者根据标签，来批量下发 Push 消息。可为每个用户打多个标签。<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>) setTags:(<span class="built_in">NSSet</span> *)tags alias:(<span class="built_in">NSString</span> *)alias fetchCompletionHandle:(<span class="keyword">void</span> (^)(<span class="keyword">int</span> iResCode, <span class="built_in">NSSet</span> *iTags, <span class="built_in">NSString</span> *iAlias))completionHandler;</span><br></pre></td></tr></table></figure></p>
+<h3>别名 alias</h3>
+<p>为安装了应用程序的用户，取个别名来标识。以后给该用户 Push 消息时，就可以用此别名来指定。每个用户只能指定一个别名。</p>
+<h3>标签 tag</h3>
+<p>为安装了应用程序的用户，打上标签。其目的主要是方便开发者根据标签，来批量下发 Push 消息。可为每个用户打多个标签。</p>
 </blockquote>
-<p>call back结果可以忽略，但最好判断一下， 返回值为 0 才设置成功，才可以向目标推送。我一般是有block就不会用其他的，但使用block时需要注意循环引用问题。</p>
-<p>#4、收到通知后的处理<br><figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="params">(void)</span>application:<span class="params">(UIApplication *)</span>application didReceiveRemoteNotification:<span class="params">(NSDictionary *)</span>userInfo fetchCompletionHandler:<span class="params">(void (^)</span><span class="params">(UIBackgroundFetchResult result)</span>)completionHandler</span><br></pre></td></tr></table></figure></p>
-<p>是在iOS7之后的方法，所以之前的方法可以不用了。<br><figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="params">(void)</span>applicationWillEnterForeground:<span class="params">(UIApplication *)</span>application</span><br></pre></td></tr></table></figure></p>
-<p>applicationWillEnterForegroun是在didReceiveRemoteNotification之后运行的，所以在这个方法里想处数据是不行的。然后<code>[application setApplicationIconBadgeNumber:0];</code>是偶尔会抽风一下的，所以最好这样写：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[application setApplicationIconBadgeNumber: 1]</span><span class="comment">;</span></span><br><span class="line"><span class="section">[application setApplicationIconBadgeNumber:0]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>) setTags:(<span class="built_in">NSSet</span> *)tags alias:(<span class="built_in">NSString</span> *)alias fetchCompletionHandle:(<span class="keyword">void</span> (^)(<span class="keyword">int</span> iResCode, <span class="built_in">NSSet</span> *iTags, <span class="built_in">NSString</span> *iAlias))completionHandler;</span><br></pre></td></tr></table></figure></p>
+<p>call back结果可以忽略，但最好判断一下， 返回值为 0 才设置成功，才可以向目标推送。我一般是有block就不会用其他的，但使用block时需要注意循环引用问题。而且这个方法是覆盖之前的设置，不是新增。
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ <span class="comment">(void)</span>setTags:<span class="comment">(NSSet *)</span>tags callbackSelector:<span class="comment">(SEL)</span>cbSelector object:<span class="comment">(id)</span>theTarget;</span><br><span class="line">+ <span class="comment">(void)</span>setAlias:<span class="comment">(NSString *)</span>alias callbackSelector:<span class="comment">(SEL)</span>cbSelector object:<span class="comment">(id)</span>theTarget;</span><br></pre></td></tr></table></figure></p>
+<p>tag和alias分别设置会比只调同时设置两个的那个接口稳定，虽然我也不知道为什么。</p>
+<h1>4、收到通知后的处理</h1>
+<p><figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="params">(void)</span>application:<span class="params">(UIApplication *)</span>application didReceiveRemoteNotification:<span class="params">(NSDictionary *)</span>userInfo fetchCompletionHandler:<span class="params">(void (^)</span><span class="params">(UIBackgroundFetchResult result)</span>)completionHandler</span><br></pre></td></tr></table></figure></p>
+<p>是在iOS7之后的方法，所以之前的方法可以不用了。
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="params">(void)</span>applicationWillEnterForeground:<span class="params">(UIApplication *)</span>application</span><br></pre></td></tr></table></figure></p>
+<p>applicationWillEnterForegroun是在didReceiveRemoteNotification之后运行的，所以在这个方法里想处数据是不行的。然后<code>[application setApplicationIconBadgeNumber:0];</code>是偶尔会抽风一下的，所以最好这样写：
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[application setApplicationIconBadgeNumber:1]</span><span class="comment">;</span></span><br><span class="line"><span class="section">[application setApplicationIconBadgeNumber:0]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <p>当然，不要忘了<code>[application cancelAllLocalNotifications];</code></p>
-<p>还有，关于跳转到特定页面的问题。反正我是没找到如何在AppDelegate里找到当前的页面，所以只能用<code>self.window.rootViewController</code>了。返回的话直接<code>self.view.window.rootViewController = vc;</code>吧。<br>记得用<code>application.applicationState == UIApplicationStateActive</code>判断一下应用处于的状态。如果用户正在运行应用，或许还有更好的，但我就是弹一个UIAlertView。</p>
+<p>还有，关于跳转到特定页面的问题。反正我是没找到如何在AppDelegate里找到当前的页面，所以只能用<code>self.window.rootViewController</code>了。返回的话直接<code>self.view.window.rootViewController = vc;</code>吧。
+记得用<code>application.applicationState == UIApplicationStateActive</code>判断一下应用处于的状态。如果用户正在运行应用，或许还有更好的，但我就是弹一个UIAlertView。</p>
 
       
     </div>
@@ -370,10 +400,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -390,7 +420,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -439,7 +469,7 @@
               
             
             
-              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">1、APNs证书和主证书的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">2、启动SDK需要传的参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">3、标签与别名 API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.0.1.</span> <span class="nav-text">别名 alias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.0.2.</span> <span class="nav-text">标签 tag</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">4、收到通知后的处理</span></a></li></ol></div>
             
           </div>
         </section>
@@ -466,7 +496,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
