@@ -428,21 +428,21 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 <h6>Header 6 <code>###### Header 6</code></h6>
 <h1>列表</h1>
 <ul>
-<li>无序列表（使用星号、加号或减号）</li>
-</ul>
+<li>无序列表（使用星号、加号或减号）
 <ul>
 <li>First</li>
 <li>Second</li>
 <li>Third</li>
 </ul>
-<ul>
-<li>有序列表（用数字接着一个英文句点）</li>
-</ul>
+</li>
+<li>有序列表（用数字接着一个英文句点）
 <ol>
 <li>First</li>
 <li>Second</li>
 <li>Third</li>
 </ol>
+</li>
+</ul>
 <h1>文本样式</h1>
 <ul>
 <li>
@@ -462,37 +462,107 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 <p>删除线:<s>text</s> 两边加~~</p>
 </li>
 <li>
-<p>快捷键：&lt;kbd&gt;Ctrl+[&lt;/kbd&gt; <code>&lt;kbd&gt;Ctrl+[&lt;/kbd&gt;</code>
-* 内嵌代码/高亮 :<code>alert('Hello World');</code> <code>`alert('Hello World');`</code> （如果高亮的内容包含 ` 号，可以用 `` 包裹起来）
-* 代码块:（用 <figure class="highlight plain"><figcaption><span>~~~ 包裹或者每行缩进4个空格或2个制表符)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure></p>
-<pre><code>           lazy var formatter: NSDateFormatter = {
-           let dateFormatter = NSDateFormatter()
-           dateFormatter.formatterBehavior = .Behavior10_4
-           dateFormatter.dateFormat = &quot;HH:mm:ss.SSS&quot;
-           return dateFormatter
-           }()
-           <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* 分割线 <span class="symbol">:<span class="string">`___`</span></span> <span class="keyword">or</span> <span class="string">`***`</span></span><br><span class="line">__<span class="number">_</span></span><br><span class="line">* 表格：左对齐是<span class="symbol">:---</span>   居中对齐是<span class="symbol">:---</span>:   右对齐是---:</span><br><span class="line"></span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line"><span class="symbol">:-----|</span><span class="symbol">:-----</span><span class="symbol">:|</span> ----:</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br></pre></td></tr></table></figure>
-
-           Woow | Woow | Woow
-           :-----|:-----:| ----:
-           Woow | Woow | Woow
-           Woow | Woow | Woow
-           Woow | Woow | Woow
-           <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="section"># 引用</span></span><br><span class="line"><span class="quote">&gt; 大楚兴，陈胜王！</span></span><br><span class="line"></span><br><span class="line"><span class="code">`&gt; 大楚兴，陈胜王！`</span>(和下文要隔一行)</span><br><span class="line"></span><br><span class="line"><span class="section">##### 区块引用可以嵌套</span></span><br><span class="line"><span class="quote">&gt; This is the first level of quoting.</span></span><br><span class="line"><span class="quote">&gt; &gt; This is nested block quote.</span></span><br><span class="line"><span class="quote">&gt;</span><br><span class="line">&gt; Back to the first level.</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**引用的区块内也可以使用其他的 Markdown 语法**</span></span><br><span class="line"><span class="quote">&gt; ## 这是一个标题。</span></span><br><span class="line"><span class="quote">&gt;</span><br><span class="line">&gt; 1.   这是第一行列表项。</span></span><br><span class="line"><span class="quote">&gt; 2.   这是第二行列表项。</span></span><br><span class="line"><span class="quote">&gt;</span><br><span class="line">&gt; 给出一些例子代码：</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-
-           &gt;return shell_exec(&quot;echo $input | $markdown_script&quot;);<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="section"># 链接</span></span><br><span class="line"><span class="bullet">* </span>网络链接 :[<span class="string">Baidu</span>](<span class="link">https://www.baidu.com</span>) <span class="code">`[Baidu](https://www.baidu.com)`</span> or</span><br></pre></td></tr></table></figure>
-</code></pre>
+<p>快捷键：&lt;kbd&gt;Ctrl+[&lt;/kbd&gt; <code>&lt;kbd&gt;Ctrl+[&lt;/kbd&gt;</code></p>
+</li>
+<li>
+<p>内嵌代码/高亮 :<code>alert('Hello World');</code> <code>`alert('Hello World');`</code> （如果高亮的内容包含 ` 号，可以用 `` 包裹起来）</p>
+</li>
+<li>
+<p>代码块:（用 <figure class="highlight plain"><figcaption><span>~~~ 包裹或者每行缩进4个空格或2个制表符)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">lazy var formatter: NSDateFormatter = &#123;</span><br><span class="line">let dateFormatter = NSDateFormatter()</span><br><span class="line">dateFormatter.formatterBehavior = .Behavior10_4</span><br><span class="line">dateFormatter.dateFormat = &quot;HH:mm:ss.SSS&quot;</span><br><span class="line">return dateFormatter</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>分割线 :<code>___</code> or <code>***</code></p>
 </li>
 </ul>
-<p>[Baidu][id]
-[id]:https://www.baidu.com <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>本地链接 :[<span class="string">link text</span>](<span class="link">file:///Users/mac/Desktop/Test/README.md "link text"</span>) <span class="code">`[link text](file:///Users/mac/Desktop/Test/README.md "link text")`</span></span><br><span class="line"><span class="bullet">* </span>网络图片 :<span class="code">`![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`</span></span><br><span class="line">![<span class="string">德鲁伊</span>](<span class="link">http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br><span class="line"><span class="bullet">* </span>本地图片 :<span class="code">`![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`</span></span><br><span class="line">![<span class="string">新浪</span>](<span class="link">http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span>)</span><br><span class="line"><span class="bullet">* </span>图片链接：<span class="code">`[![](https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg)](https://www.zhihu.com)`</span></span><br><span class="line">[<span class="string">![</span>](<span class="link">https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg</span>)](<span class="link">https://www.zhihu.com</span>)</span><br><span class="line"><span class="bullet">* </span>内部跳转： [<span class="string">标题</span>](<span class="link">#标题</span>)   <span class="code">`[标题](#标题)`</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 脚注</span></span><br><span class="line">BlaBlaBla...这是一段脚注[^footer1]，接着BlaBlaBla...</span><br><span class="line">......</span><br><span class="line">[<span class="symbol">^footer1</span><span class="link">]:这是脚注内容，Blablabla</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<ul>
+<li>表格：左对齐是:---   居中对齐是:---:   右对齐是---:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Woow</th>
+<th style="text-align:center">Woow</th>
+<th style="text-align:right">Woow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Woow</td>
+<td style="text-align:center">Woow</td>
+<td style="text-align:right">Woow</td>
+</tr>
+<tr>
+<td style="text-align:left">Woow</td>
+<td style="text-align:center">Woow</td>
+<td style="text-align:right">Woow</td>
+</tr>
+<tr>
+<td style="text-align:left">Woow</td>
+<td style="text-align:center">Woow</td>
+<td style="text-align:right">Woow</td>
+</tr>
+</tbody>
+</table>
+<p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line"><span class="symbol">:-----|</span><span class="symbol">:-----</span><span class="symbol">:|</span> ----:</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br></pre></td></tr></table></figure></p>
+<h1>引用</h1>
+<blockquote>
+<p>大楚兴，陈胜王！</p>
+</blockquote>
+<p><code>&gt; 大楚兴，陈胜王！</code>(和下文要隔一行)</p>
+<h5>区块引用可以嵌套</h5>
+<blockquote>
+<p>This is the first level of quoting.</p>
+<blockquote>
+<p>This is nested block quote.</p>
+</blockquote>
+<p>Back to the first level.</p>
+</blockquote>
+<p><strong>引用的区块内也可以使用其他的 Markdown 语法</strong></p>
+<blockquote>
+<h2>这是一个标题。</h2>
+<ol>
+<li>这是第一行列表项。</li>
+<li>这是第二行列表项。</li>
+</ol>
+<p>给出一些例子代码：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">return</span> shell_<span class="built_in">exec</span>(<span class="string">"echo <span class="variable">$input</span> | <span class="variable">$markdown_script</span>"</span>);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1>链接</h1>
+<ul>
+<li>
+<p>网络链接 :<a href="https://www.baidu.com" target="_blank" rel="external">Baidu</a> <code>[Baidu](https://www.baidu.com)</code> or
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">Baidu</span>][<span class="symbol">id</span>]</span><br><span class="line">[<span class="symbol">id</span><span class="link">]:https://www.baidu.com</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>本地链接 :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) <code>[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)</code></p>
+</li>
+<li>
+<p>网络图片 :<code>![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</code>
+<img src="http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="德鲁伊"></p>
+</li>
+<li>
+<p>本地图片 :<code>![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</code>
+<img src="http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新浪"></p>
+</li>
+<li>
+<p>图片链接：<code>[![](https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg)](https://www.zhihu.com)</code>
+<a href="https://www.zhihu.com" target="_blank" rel="external"><img src="https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg" alt=""></a></p>
+</li>
+<li>
+<p>内部跳转： <a href="#%E6%A0%87%E9%A2%98">标题</a>   <code>[标题](#标题)</code></p>
+</li>
+</ul>
+<h1>脚注</h1>
 <p>BlaBlaBla...这是一段脚注[^footer1]，接着BlaBlaBla...
 ......
-[^footer1]:这是脚注内容，Blablabla</p>
-<pre><code>
-# 其它
-* Hexo只支持最基础的Markdown语法，所以需要安装[扩展](https://github.com/celsomiranda/hexo-renderer-markdown-it)。
-* 和Hexo的Markdown引擎差不多的编辑器真心不多，我现在用[Atom](https://atom.io)，感觉还行（Preference -&gt; Settings -&gt; 选中Soft Wrap开启自动换行）。</code></pre>
+[^footer1]:这是脚注内容，Blablabla
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">BlaBlaBla</span>...这是一段脚注[^footer1]，接着<span class="symbol">BlaBlaBla</span>...</span><br><span class="line">......</span><br><span class="line">[^footer1]:这是脚注内容，<span class="symbol">Blablabla</span></span><br></pre></td></tr></table></figure></p>
+<h1>其它</h1>
+<ul>
+<li>Hexo只支持最基础的Markdown语法，所以需要安装<a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="external">扩展</a>。</li>
+<li>和Hexo的Markdown引擎差不多的编辑器真心不多，我现在用<a href="https://atom.io" target="_blank" rel="external">Atom</a>，感觉还行（Preference -&gt; Settings -&gt; 选中Soft Wrap开启自动换行）。</li>
+</ul>
 
           
         
