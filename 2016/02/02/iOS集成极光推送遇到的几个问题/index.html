@@ -100,9 +100,9 @@
 我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
 
 首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书">
-<meta property="og:image" content="https://cvws.icloud-content.com/B/AScgqJSKWtgXz59DOHsSHkKzJWU8AQdu3X7orEuKpyPadtKqrhfEIvGS/Jpush1.png?o=AqAMjkft6FPn7n6d2qDdfzFahvqWy7JnCUr3Tr_xNv2S&v=1&x=3&a=BXsDc7y1zxpnA0ecNA&e=1469176719&k=Ggyyyon4TDIb2rfAGl-s2w&fl=&r=fd4497c6-66a4-4bbc-a5d1-811084e1bb22-1&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=34&s=6Iq55hvv2ahvW-y93K4eozharU8&cd=i">
-<meta property="og:image" content="https://cvws.icloud-content.com/B/Aeobgf4StnPqlykp6zJHMgNn_G2TAVniPmzwqKFTFcPcfT29TKULndVq/Jpush2.png?o=Ajas5vdX4-aJgecyPgXZdNy2xnpicsevUypwDi0tLjUm&v=1&x=3&a=BV6_UaAjzsAXA0icNA&e=1469176764&k=lZFSWhrLVhqbLVXKAeq-OQ&fl=&r=9363ee56-bcfe-4960-aac0-d4b11bfeb1a4-1&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=34&s=a_BgMicIaVc2gwqO-1-RDML_1Jk&cd=i">
-<meta property="og:updated_time" content="2016-07-23T08:55:43.000Z">
+<meta property="og:image" content="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush1.png">
+<meta property="og:image" content="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush2.png">
+<meta property="og:updated_time" content="2016-07-23T09:21:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS集成极光推送遇到的几个问题">
 <meta name="twitter:description" content="其实官方的iOS SDK 集成指南和iOS SDK 教程两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（2.1.0版本的）。
@@ -111,7 +111,7 @@
 我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
 
 首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书">
-<meta name="twitter:image" content="https://cvws.icloud-content.com/B/AScgqJSKWtgXz59DOHsSHkKzJWU8AQdu3X7orEuKpyPadtKqrhfEIvGS/Jpush1.png?o=AqAMjkft6FPn7n6d2qDdfzFahvqWy7JnCUr3Tr_xNv2S&v=1&x=3&a=BXsDc7y1zxpnA0ecNA&e=1469176719&k=Ggyyyon4TDIb2rfAGl-s2w&fl=&r=fd4497c6-66a4-4bbc-a5d1-811084e1bb22-1&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=34&s=6Iq55hvv2ahvW-y93K4eozharU8&cd=i">
+<meta name="twitter:image" content="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush1.png">
 
 
 
@@ -187,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -260,7 +260,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-02-02T20:42:51+08:00" content="2016-02-02">
               2016-02-02
             </time>
@@ -291,9 +291,9 @@
       
         <p>其实官方的<a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和<a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK 教程</a>两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0版本的</a>）。</p>
 <h1>1、APNs证书和主证书的区别</h1>
-<p><img src="https://cvws.icloud-content.com/B/AScgqJSKWtgXz59DOHsSHkKzJWU8AQdu3X7orEuKpyPadtKqrhfEIvGS/Jpush1.png?o=AqAMjkft6FPn7n6d2qDdfzFahvqWy7JnCUr3Tr_xNv2S&amp;v=1&amp;x=3&amp;a=BXsDc7y1zxpnA0ecNA&amp;e=1469176719&amp;k=Ggyyyon4TDIb2rfAGl-s2w&amp;fl=&amp;r=fd4497c6-66a4-4bbc-a5d1-811084e1bb22-1&amp;ckc=com.apple.clouddocs&amp;ckz=com.apple.CloudDocs&amp;p=34&amp;s=6Iq55hvv2ahvW-y93K4eozharU8&amp;cd=i" alt="">
+<p><img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush1.png" alt="">
 我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
-<img src="https://cvws.icloud-content.com/B/Aeobgf4StnPqlykp6zJHMgNn_G2TAVniPmzwqKFTFcPcfT29TKULndVq/Jpush2.png?o=Ajas5vdX4-aJgecyPgXZdNy2xnpicsevUypwDi0tLjUm&amp;v=1&amp;x=3&amp;a=BV6_UaAjzsAXA0icNA&amp;e=1469176764&amp;k=lZFSWhrLVhqbLVXKAeq-OQ&amp;fl=&amp;r=9363ee56-bcfe-4960-aac0-d4b11bfeb1a4-1&amp;ckc=com.apple.clouddocs&amp;ckz=com.apple.CloudDocs&amp;p=34&amp;s=a_BgMicIaVc2gwqO-1-RDML_1Jk&amp;cd=i" alt="">
+<img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush2.png" alt="">
 首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而且在XCode里Code Signing也是不能选择的。
 APNs证书其实是只表示了有推送功能，主证书还是必不可少的。所以现在只是又添加了两个证书，其他的是不用变的，所以现在就有4个证书了。作为一个有轻微强迫症的人，创建完APNs证书就顺手把主证书删了，在这里让我折腾了好久。</p>
 <h1>2、启动SDK需要传的参数</h1>
@@ -400,10 +400,10 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -420,7 +420,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -496,7 +496,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

@@ -168,7 +168,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -178,7 +178,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -244,7 +244,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-02-02T20:42:51+08:00" content="2016-02-02">
               2016-02-02
             </time>
@@ -277,9 +277,9 @@
           
             <p>其实官方的<a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和<a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK 教程</a>两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0版本的</a>）。</p>
 <h1>1、APNs证书和主证书的区别</h1>
-<p><img src="https://cvws.icloud-content.com/B/AScgqJSKWtgXz59DOHsSHkKzJWU8AQdu3X7orEuKpyPadtKqrhfEIvGS/Jpush1.png?o=AqAMjkft6FPn7n6d2qDdfzFahvqWy7JnCUr3Tr_xNv2S&amp;v=1&amp;x=3&amp;a=BXsDc7y1zxpnA0ecNA&amp;e=1469176719&amp;k=Ggyyyon4TDIb2rfAGl-s2w&amp;fl=&amp;r=fd4497c6-66a4-4bbc-a5d1-811084e1bb22-1&amp;ckc=com.apple.clouddocs&amp;ckz=com.apple.CloudDocs&amp;p=34&amp;s=6Iq55hvv2ahvW-y93K4eozharU8&amp;cd=i" alt="">
+<p><img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush1.png" alt="">
 我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
-<img src="https://cvws.icloud-content.com/B/Aeobgf4StnPqlykp6zJHMgNn_G2TAVniPmzwqKFTFcPcfT29TKULndVq/Jpush2.png?o=Ajas5vdX4-aJgecyPgXZdNy2xnpicsevUypwDi0tLjUm&amp;v=1&amp;x=3&amp;a=BV6_UaAjzsAXA0icNA&amp;e=1469176764&amp;k=lZFSWhrLVhqbLVXKAeq-OQ&amp;fl=&amp;r=9363ee56-bcfe-4960-aac0-d4b11bfeb1a4-1&amp;ckc=com.apple.clouddocs&amp;ckz=com.apple.CloudDocs&amp;p=34&amp;s=a_BgMicIaVc2gwqO-1-RDML_1Jk&amp;cd=i" alt="">
+<img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush2.png" alt="">
 首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而且在XCode里Code Signing也是不能选择的。
 APNs证书其实是只表示了有推送功能，主证书还是必不可少的。所以现在只是又添加了两个证书，其他的是不用变的，所以现在就有4个证书了。作为一个有轻微强迫症的人，创建完APNs证书就顺手把主证书删了，在这里让我折腾了好久。</p>
 <h1>2、启动SDK需要传的参数</h1>
@@ -370,7 +370,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-01-04T15:11:28+08:00" content="2016-01-04">
               2016-01-04
             </time>
@@ -538,16 +538,16 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 <p>本地链接 :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) <code>[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)</code></p>
 </li>
 <li>
-<p>网络图片 :<code>![德鲁伊](http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</code>
-<img src="http://upload-images.jianshu.io/upload_images/1334313-93fdf2ca0d08b8ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="德鲁伊"></p>
+<p>网络图片 :<code>![德鲁伊](https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown1.png)</code>
+<img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown1.png" alt="德鲁伊"></p>
 </li>
 <li>
-<p>本地图片 :<code>![新浪](http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</code>
-<img src="http://upload-images.jianshu.io/upload_images/1334313-76fcda5b752b9a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新浪"></p>
+<p>本地图片 :<code>![新浪](https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown2.png)</code>
+<img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown2.png" alt="新浪"></p>
 </li>
 <li>
-<p>图片链接：<code>[![](https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg)](https://www.zhihu.com)</code>
-<a href="https://www.zhihu.com" target="_blank" rel="external"><img src="https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/icon/weather/aladdin/jpg/a1.jpg" alt=""></a></p>
+<p>图片链接：<code>[![](https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown3.jpg)](https://www.zhihu.com)</code>
+<a href="https://www.zhihu.com" target="_blank" rel="external"><img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown3.jpg" alt=""></a></p>
 </li>
 <li>
 <p>内部跳转： <a href="#%E6%A0%87%E9%A2%98">标题</a>   <code>[标题](#标题)</code></p>
@@ -633,7 +633,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -698,7 +698,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
