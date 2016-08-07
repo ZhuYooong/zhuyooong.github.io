@@ -403,7 +403,7 @@ pod update --verbose --no-repo-update
     <link href="http://yoursite.com/2016/04/15/%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2016/04/15/在-Mac-上搭建-Hexo-博客/</id>
     <published>2016-04-15T11:29:33.000Z</published>
-    <updated>2016-08-07T12:25:12.000Z</updated>
+    <updated>2016-08-07T12:28:48.000Z</updated>
     <content type="html"><![CDATA[<h1>&#x4E00;&#x3001;&#x8F6F;&#x4EF6;&#x73AF;&#x5883;&#x51C6;&#x5907;</h1>
 <ul>
 <li>&#x5982;&#x679C;&#x901A;&#x8FC7;&#x7EC8;&#x7AEF;&#x5B89;&#x88C5;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x5728;&#x6307;&#x4EE4;&#x524D;&#x52A0;&#x5165;<code>sudo</code>&#x83B7;&#x5F97; root &#x6743;&#x9650;</li>
@@ -446,8 +446,7 @@ pod update --verbose --no-repo-update
 <p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6253;&#x5F00; _config.yml &#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x4FEE;&#x6539;&#x4E3A;&#x5982;&#x4E0B;&#x6548;&#x679C;&#xFF1A;
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourID/yourID.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
 <p>repo &#x4E5F;&#x53EF;&#x4EE5;&#x53BB;&#x76F4;&#x63A5;&#x53BB;&#x4F60;&#x7684;&#x4ED3;&#x5E93;&#x53BB;&#x590D;&#x5236;&#x5B8C;&#x6574;&#x5730;&#x5740;&#x586B;&#x5199;</p>
-<p><img src="/2016/04/15/&#x5728;-Mac-&#x4E0A;&#x642D;&#x5EFA;-Hexo-&#x535A;&#x5BA2;/2016/04/15/%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/Hexo3.png" alt=""></p>
-<p><img src="/2016/04/15/&#x5728;-Mac-&#x4E0A;&#x642D;&#x5EFA;-Hexo-&#x535A;&#x5BA2;/2016/04/15/&#x5728;-Mac-&#x4E0A;&#x642D;&#x5EFA;-Hexo-&#x535A;&#x5BA2;/Hexo3.png" alt="This is an example image" title="This is an example image"></p>
+<p><img src="/2016/04/15/&#x5728;-Mac-&#x4E0A;&#x642D;&#x5EFA;-Hexo-&#x535A;&#x5BA2;/Hexo3.png" alt=""></p>
 <h2>4&#x3001;&#x53D1;&#x8868;&#x6587;&#x7AE0;</h2>
 <p>&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6587;&#x7AE0;&#xFF1A;<code>hexo new &#x201C;the Title of Article&#x201D;</code> or <code>hexo n &#x201C;the Title of Article&#x201D;</code></p>
 <p>&#x7F16;&#x8F91;&#x597D;&#x540E;&#xFF0C;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;:</p>
