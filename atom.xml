@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-23T09:21:38.000Z</updated>
+  <updated>2016-08-07T11:56:12.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,23 +15,477 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[iOS 第三方库备忘]]></title>
+    <link href="http://yoursite.com/2016/07/03/iOS-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2016/07/03/iOS-第三方库备忘/</id>
+    <published>2016-07-03T11:30:56.000Z</published>
+    <updated>2016-08-07T11:56:12.000Z</updated>
+    <content type="html"><![CDATA[<h2>网络请求</h2>
+<h3>HTTP</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a> <code>pod 'AFNetworking'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> <code>pod 'Alamofire'</code></li>
+<li><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> <code>pod 'Moya/RxSwift'</code></li>
+</ul>
+<h3>Socket</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/robbiehanson/CocoaAsyncSocket" target="_blank" rel="external">CocoaAsyncSocket</a> <code>pod 'CocoaAsyncSocket'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/AlwaysRightInstitute/SwiftSockets" target="_blank" rel="external">SwiftSockets</a> <code>pod 'SwiftSockets'</code></li>
+</ul>
+<h2>网络图片加载</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">SDWebImage</a> <code>pod 'SDWebImage'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/onevcat/Kingfisher" target="_blank" rel="external">Kingfisher</a> <code>pod 'Kingfisher'</code></li>
+<li><a href="https://github.com/kiavashfaisali/KFSwiftImageLoader" target="_blank" rel="external">KFSwiftImageLoader</a> <code>pod 'KFSwiftImageLoader'</code></li>
+<li><a href="https://github.com/hirohisa/ImageLoaderSwift" target="_blank" rel="external">ImageLoaderSwift</a> <code>pod 'ImageLoader'</code></li>
+<li><a href="https://github.com/natelyman/SwiftImageLoader" target="_blank" rel="external">SwiftImageLoader</a></li>
+</ul>
+<h2>自动布局</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a> <code>pod 'Masonry'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external">SnapKit</a> <code>pod 'SnapKit'</code></li>
+</ul>
+<h2>Json 解析</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/open-source-parsers/jsoncpp" target="_blank" rel="external">jsoncpp</a> (C++ 的，比OC好用)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/hkellaway/Gloss" target="_blank" rel="external">Gloss</a> <code>pod 'Gloss'</code></li>
+<li><a href="https://github.com/SwiftyJSON/SwiftyJSON" target="_blank" rel="external">SwiftyJSON</a> <code>pod 'SwiftyJSON'</code></li>
+<li><a href="https://github.com/ikesyo/Himotoki" target="_blank" rel="external">Himotoki</a> <code>pod 'Himotoki'</code></li>
+<li><a href="https://github.com/Mantle/Mantle" target="_blank" rel="external">Mantle</a> <code>pod 'Mantle'</code></li>
+</ul>
+<h2>XML 解析</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/graetzer/GDataXML-HTML" target="_blank" rel="external">GDataXML-HTML</a> <code>pod 'GDataXML-HTML'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/tadija/AEXML" target="_blank" rel="external">AEXML</a> <code>pod 'AEXML'</code></li>
+</ul>
+<h2>上拉刷新，下拉加载</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">MJRefresh</a> <code>pod 'MJRefresh'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/boyXiong/XWSwiftRefresh" target="_blank" rel="external">XWSwiftRefresh</a> <code>pod 'XWSwiftRefresh'</code></li>
+<li><a href="https://github.com/gontovnik/DGElasticPullToRefresh" target="_blank" rel="external">DGElasticPullToRefresh</a> (下拉加载) <code>pod 'DGElasticPullToRefresh'</code></li>
+</ul>
+<h2>提示框</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="external">MBProgressHUD</a> <code>pod 'MBProgressHUD'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/pkluz/PKHUD" target="_blank" rel="external">PKHUD</a> <code>pod 'PKHUD'</code></li>
+<li><a href="https://github.com/Jinxiansen/JHUD" target="_blank" rel="external">JHUD</a> (与空白页或出错页相结合) <code>pod 'JHUD'</code></li>
+</ul>
+<h2>弹出视图</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/pljhonglu/LewPopupViewController" target="_blank" rel="external">LewPopupViewController</a></li>
+<li><a href="https://github.com/runway20/PopoverView" target="_blank" rel="external">PopoverView</a> (带小箭头)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/sag333ar/SRKControls" target="_blank" rel="external">SRKControls</a> (日期选择) <code>pod 'SRKControls'</code></li>
+<li><a href="https://github.com/corin8823/Popover" target="_blank" rel="external">Popover</a> (带小箭头) <code>pod 'Popover'</code></li>
+</ul>
+<h2>HexColor</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/mRs-/HexColors" target="_blank" rel="external">HexColors</a> <code>pod 'HexColors'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/artman/HexColor" target="_blank" rel="external">HexColor</a> <code>pod 'HxColor'</code></li>
+</ul>
+<h2>数据库处理</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/ccgus/fmdb" target="_blank" rel="external">FMDB</a> <code>pod 'FMDB'</code></li>
+<li><a href="https://github.com/realm/realm-cocoa" target="_blank" rel="external">Realm</a> <code>pod 'Realm/Headers'</code>(OC版) or <code>pod 'RealmSwift'</code>(Swift版)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/magicalpanda/MagicalRecord" target="_blank" rel="external">MagicalRecord</a> <code>pod 'MagicalRecord'</code></li>
+</ul>
+<h2>空白页或出错页</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="external">DZNEmptyDataSet</a> <code>pod 'DZNEmptyDataSet'</code></li>
+</ul>
+<h2>UINavigationController 手势</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/forkingdog/FDFullscreenPopGesture" target="_blank" rel="external">FDFullscreenPopGesture</a> <code>pod 'FDFullscreenPopGesture'</code></li>
+</ul>
+<h2>响应式编程</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="external">ReactiveCocoa</a> <code>pod 'ReactiveCocoa'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/ReactiveX/RxSwift" target="_blank" rel="external">RxSwift</a> <code>pod 'RxSwift'</code></li>
+</ul>
+<h2>图片浏览</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/vitoziv/VIPhotoView" target="_blank" rel="external">VIPhotoView</a> <code>pod 'VIPhotoView'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/suzuki-0000/SKPhotoBrowser" target="_blank" rel="external">SKPhotoBrowser</a> <code>pod 'SKPhotoBrowser'</code></li>
+</ul>
+<h2>UIImagePickerController 图片多选</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/B-Sides/ELCImagePickerController" target="_blank" rel="external">ELCImagePickerController</a> <code>pod 'ELCImagePickerController'</code></li>
+</ul>
+<h2>即时通讯</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/jmesnil/MQTTKit" target="_blank" rel="external">MQTTKit</a> <code>pod 'MQTTKit'</code></li>
+</ul>
+<h2>UICollectionViewFlowLayout 拖动排序</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/lxcid/LXReorderableCollectionViewFlowLayout" target="_blank" rel="external">LXReorderableCollectionViewFlowLayout</a> <code>pod 'LXReorderableCollectionViewFlowLayout'</code></li>
+</ul>
+<h2>UIButton 单选自定义</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/DavydLiu/DLRadioButton" target="_blank" rel="external">DLRadioButton</a> <code>pod 'DLRadioButton'</code></li>
+</ul>
+<h2>抽屉式导航栏</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/JVillella/JVFloatingDrawer" target="_blank" rel="external">JVFloatingDrawer</a> <code>pod 'JVFloatingDrawer'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/KyleGoddard/KGFloatingDrawer" target="_blank" rel="external">KGFloatingDrawer</a> <code>pod 'KGFloatingDrawer'</code></li>
+</ul>
+<h2>版本新特性</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/CharlinFeng/CoreNewFeatureVC" target="_blank" rel="external">CoreNewFeatureVC</a></li>
+</ul>
+<h2>获取坐标或当前地址</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/smallqiang/MMLocationManager" target="_blank" rel="external">MMLocationManager</a></li>
+</ul>
+<h2>图表</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/chasseurmic/TWRCharts" target="_blank" rel="external">TWRCharts</a> <code>pod 'TWRCharts'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/danielgindi/Charts" target="_blank" rel="external">Charts</a> <code>pod 'Charts'</code> or <code>pod 'Charts/Realm'</code>以支持 Realm</li>
+</ul>
+<h2>表头图片进行放大的效果</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/ws00801526/CExpandHeaderViewExample" target="_blank" rel="external">CExpandHeaderViewExample</a></li>
+</ul>
+<h2>日期处理库</h2>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/malcommac/SwiftDate" target="_blank" rel="external">SwiftDate</a> <code>pod 'SwiftDate'</code></li>
+</ul>
+<h2>压缩和解压缩</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/mattconnolly/ZipArchive" target="_blank" rel="external">ZipArchive</a> <code>pod 'ZipArchive'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/ZipArchive/ZipArchive" target="_blank" rel="external">SSZipArchive</a> <code>pod 'SSZipArchive'</code></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2>网络请求</h2>
+<h3>HTTP</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="externa]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[使用 Moya/RxSwift 进行网络请求]]></title>
+    <link href="http://yoursite.com/2016/06/20/%E4%BD%BF%E7%94%A8-Moya-RxSwift-%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
+    <id>http://yoursite.com/2016/06/20/使用-Moya-RxSwift-进行网络请求/</id>
+    <published>2016-06-20T11:30:40.000Z</published>
+    <updated>2016-08-07T11:56:39.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> 其实就是一个对 <a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> 的更高层的封装。</p>
+<p>Alamofire 进行网络请求：
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">func</span> <span class="selector-tag">GETRequest</span>(<span class="attribute">URLString</span>: URLStringConvertible, <span class="attribute">NetData</span>: (<span class="attribute">data</span>: NSData?)-&gt;Void) &#123;</span><br><span class="line">    <span class="selector-tag">Alamofire</span><span class="selector-class">.request</span>(.GET, URLString)<span class="selector-class">.responseJSON</span> &#123;</span><br><span class="line">        <span class="selector-tag">response</span> <span class="selector-tag">in</span></span><br><span class="line">        <span class="selector-tag">switch</span> <span class="selector-tag">response</span><span class="selector-class">.result</span> &#123;</span><br><span class="line">        case <span class="selector-class">.Success</span>:</span><br><span class="line">            <span class="selector-tag">NetData</span>(<span class="attribute">data</span>: response.data)</span><br><span class="line">        <span class="selector-tag">case</span> <span class="selector-class">.Failure</span>( _):</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Moya 进行网络请求：
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">requestDataWithTarget</span>&lt;T: Decodable&gt;<span class="params">(target: ArtsyAPI, type: T.<span class="keyword">Type</span>, successClosure: [T] -&gt; Void, failClosure: ORMError -&gt; Void)</span></span> &#123;</span><br><span class="line">    <span class="type">RxMoyaProvider</span>&lt;<span class="type">ArtsyAPI</span>&gt;().request(target).mapSuccessfulHTTPToObject(<span class="type">T</span>).subscribe(</span><br><span class="line">        onNext: &#123; item <span class="keyword">in</span></span><br><span class="line">            successClosure(item)</span><br><span class="line">        &#125;,</span><br><span class="line">        onError: &#123; error <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> error = error <span class="keyword">as</span>? <span class="type">ORMError</span> &#123;</span><br><span class="line">                failClosure(error)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).addDisposableTo(<span class="type">DisposeBag</span>())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可见 Moya 将<code>url</code>、<code>method</code>、<code>parameters</code>、<code>json解析</code>等都隐藏起来，封装到其他地方了。当然，我选择 Moya 最主要的理由其实是 Moya 本身提供了 RxSwift 扩展，可以无缝衔接 RxSwift 和 ReactiveCocoa。这里我借鉴了 <a href="https://github.com/artsy/Emergence" target="_blank" rel="external">Emergence</a> 在网络请求方面的方法，这对于响应式编程和 MVVM 架构的学习还是还是很有帮助的。</p>
+<p>使用 Moya 的第一步就是定义一个 Target，Target 本身其实就是一个符合 TargetType protocol 的集合。
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> WeatherAPI: TargetType &#123;</span><br><span class="line">    case loadWeatherInfo()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> baseURL: NSURL &#123; <span class="keyword">return</span> NSURL(string: <span class="string">"http://weather.123.duba.net"</span>)! &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> path: String &#123; <span class="keyword">return</span> <span class="string">"/static/weather_info/101110101.html"</span> &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> method: Moya.Method &#123; <span class="keyword">return</span> .GET &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> parameters: [String: AnyObject]? &#123; <span class="keyword">return</span> nil &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> sampleData: NSData &#123; <span class="keyword">return</span> NSData() &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中 sampleData 是单元测试用的，所以 Moya 的另外一个优点是单元测试很方便。</p>
+<p>而 json 解析方面，Emergence 中的方法已经很好了，可以直接拿来用。数据的初步解析和判断可以根据具体情况适当修改。
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ORMError</span> : <span class="title">ErrorType</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="type">ORMNoRepresentor</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">ORMNotSuccessfulHTTP</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">ORMNoData</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">ORMCouldNotMakeObjectError</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Observable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">mapSuccessfulHTTPToObject</span>&lt;T: Decodable&gt;<span class="params">(type: T.<span class="keyword">Type</span>)</span></span> -&gt; <span class="type">Observable</span>&lt;[<span class="type">T</span>]&gt; &#123;</span><br><span class="line">        <span class="function"><span class="keyword">func</span> <span class="title">resultFromJSON</span><span class="params">(object:[String: AnyObject], classType: T.<span class="keyword">Type</span>)</span></span> -&gt; <span class="type">T</span>? &#123;</span><br><span class="line">            <span class="keyword">return</span> classType.<span class="keyword">init</span>(json: object)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">map</span> &#123; representor <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> response = representor <span class="keyword">as</span>? <span class="type">Response</span> <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="type">ORMError</span>.<span class="type">ORMNoRepresentor</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">guard</span> ((<span class="number">200</span>...<span class="number">209</span>) ~= response.statusCode) <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">let</span> json = <span class="keyword">try</span>? <span class="type">NSJSONSerialization</span>.<span class="type">JSONObjectWithData</span>(response.data, options: .<span class="type">AllowFragments</span>) <span class="keyword">as</span>? [<span class="type">String</span>: <span class="type">AnyObject</span>] &#123;</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">"Got error message: <span class="subst">\(json)</span>"</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">throw</span> <span class="type">ORMError</span>.<span class="type">ORMNotSuccessfulHTTP</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                <span class="keyword">guard</span> <span class="keyword">let</span> json = <span class="keyword">try</span> <span class="type">NSJSONSerialization</span>.<span class="type">JSONObjectWithData</span>(response.data, options: .<span class="type">AllowFragments</span>) <span class="keyword">as</span>? [<span class="type">String</span>: <span class="type">AnyObject</span>] <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="type">ORMError</span>.<span class="type">ORMCouldNotMakeObjectError</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">let</span> status = json[<span class="string">"status"</span>] <span class="keyword">as</span>? <span class="type">String</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> status == <span class="string">"100"</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> <span class="keyword">let</span> result = json[<span class="string">"result"</span>] <span class="keyword">as</span>? [<span class="type">String</span>: <span class="type">AnyObject</span>] &#123;</span><br><span class="line">                            <span class="keyword">if</span> <span class="keyword">let</span> array = result[<span class="string">"array"</span>] <span class="keyword">as</span>? [[<span class="type">String</span> : <span class="type">AnyObject</span>]] &#123;</span><br><span class="line">                                <span class="keyword">var</span> objects = [<span class="type">T</span>]()</span><br><span class="line">                                <span class="keyword">for</span> dict <span class="keyword">in</span> array &#123;</span><br><span class="line">                                    <span class="keyword">if</span> <span class="keyword">let</span> obj = resultFromJSON(dict, classType:type) &#123;</span><br><span class="line">                                        objects.append(obj)</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;</span><br><span class="line">                                <span class="keyword">return</span> objects</span><br><span class="line">                            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                                <span class="keyword">return</span> [resultFromJSON(result, classType:type)!]</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">throw</span> <span class="type">ORMError</span>.<span class="type">ORMNoData</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;<span class="keyword">else</span> <span class="keyword">if</span> status == <span class="string">"200"</span> &#123;</span><br><span class="line">                        <span class="keyword">throw</span> <span class="type">ORMError</span>.<span class="type">ORMNoRepresentor</span></span><br><span class="line">                    &#125;<span class="keyword">else</span> <span class="keyword">if</span> status == <span class="string">"300"</span> &#123;</span><br><span class="line">                        <span class="keyword">throw</span> <span class="type">ORMError</span>.<span class="type">ORMNoData</span></span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">throw</span> <span class="type">ORMError</span>.<span class="type">ORMCouldNotMakeObjectError</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">throw</span> <span class="type">ORMError</span>.<span class="type">ORMCouldNotMakeObjectError</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然，这还需要一个 json 解析转换库搭配，swift 的相关第三方开源库很多，<a href="http://blog.callmewhy.com/2015/11/01/moya-rxswift-argo-lets-go/" target="_blank" rel="external">通过 Moya+RxSwift+Argo 完成网络请求</a> 用的是 <a href="https://github.com/thoughtbot/argo" target="_blank" rel="external">Argo</a>，Emergence 用的是 <a href="https://github.com/hkellaway/Gloss" target="_blank" rel="external">Gloss</a>，这个看个人喜好，我选的是 Gloss。
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"><span class="keyword">import</span> Gloss</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">WeatherInfo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> cityName: <span class="type">String</span>?</span><br><span class="line">    <span class="keyword">let</span> weather: <span class="type">String</span>?</span><br><span class="line">    <span class="keyword">let</span> temp: <span class="type">String</span>?</span><br><span class="line">    <span class="keyword">let</span> date: <span class="type">String</span>?</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">WeatherInfo</span>: <span class="title">Decodable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>?(json: <span class="type">JSON</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.cityName = <span class="string">"city"</span> &lt;~~ json</span><br><span class="line">        <span class="keyword">self</span>.weather = <span class="string">"weather1"</span> &lt;~~ json</span><br><span class="line">        <span class="keyword">self</span>.temp = <span class="string">"temp1"</span> &lt;~~ json</span><br><span class="line">        <span class="keyword">self</span>.date = <span class="string">"date_y"</span> &lt;~~ json</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后，网络请求就很简单了。
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TENetDataManager<span class="selector-class">.sharedNetDataManager</span><span class="selector-class">.requestDataWithTarget</span>(ArtsyAPI.executeEmpLogin(empAccount: userNameStr, empPassword: passwordStr), type: UserInfo<span class="selector-class">.self</span>, successClosure: &#123; (result) <span class="keyword">in</span></span><br><span class="line"></span><br><span class="line">&#125;) &#123; (error) <span class="keyword">in</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> 其实就是一个对 <a href="https://github.com/Alamofire/Alamofire" t]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CocoaPods 的安装和使用]]></title>
+    <link href="http://yoursite.com/2016/05/12/CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/05/12/CocoaPods-的安装和使用/</id>
+    <published>2016-05-12T11:29:56.000Z</published>
+    <updated>2016-08-07T11:56:01.000Z</updated>
+    <content type="html"><![CDATA[<h1>一、环境搭建(最好可以在代理环境下进行，要不然会很慢或者 Time Out)</h1>
+<h2>1、<a href="https://ruby-china.org/wiki/install_ruby_guide" target="_blank" rel="external">安装 Ruby 环境</a></h2>
+<h3>1.1 安装系统需要的包</h3>
+<p>安装 <a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">Homebrew</a></p>
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<p>安装 Rails 必要的一些三方库</p>
+<pre><code>brew install libxml2 libxslt libiconv
+</code></pre>
+<h3>1.2 安装 <a href="https://ruby-china.org/wiki/rvm-guide" target="_blank" rel="external">RVM</a></h3>
+<p>RVM 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的管理和切换。</p>
+<pre><code>gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable
+</code></pre>
+<p>如果上面的连接失败，可以尝试:</p>
+<pre><code>curl -L https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
+</code></pre>
+<p>载入 RVM 环境:</p>
+<pre><code>source ~/.rvm/scripts/rvm
+</code></pre>
+<p>修改 RVM 下载 Ruby 的源，到 Ruby China 的镜像:</p>
+<pre><code>echo &quot;ruby_url=https://cache.ruby-china.org/pub/ruby&quot; &gt; ~/.rvm/user/db
+</code></pre>
+<h3>1.3 用 RVM 安装 Ruby 环境</h3>
+<p>安装一个 Ruby 版本，我们大可以按照 Ruby China 的教程：</p>
+<pre><code>rvm requirements
+rvm install 2.3.0
+</code></pre>
+<p>但对于一个软件不升级到最新版就不舒服星人来说，需要的则是列出已知的 Ruby 版本：</p>
+<pre><code>rvm list known
+</code></pre>
+<p><img src="CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/CocoaPods1.png" alt=""></p>
+<p>然后在其中找到最新版然后安装：</p>
+<pre><code>rvm install 2.2
+</code></pre>
+<p>查询已经安装的 ruby:</p>
+<pre><code>rvm list
+</code></pre>
+<p>设置为默认版本:</p>
+<pre><code>rvm use 2.2.4 --default
+</code></pre>
+<p>卸载一个已安装不需要的版本：</p>
+<pre><code>rvm remove 2.0.0
+</code></pre>
+<p>安装 Bundler:</p>
+<pre><code>gem install bundler
+</code></pre>
+<h3>1.4 安装 Rails 环境</h3>
+<pre><code>gem install rails
+</code></pre>
+<h2>2、安装<a href="https://cocoapods.org" target="_blank" rel="external">CocoaPods</a></h2>
+<h3>2.1 升级 gem(也可以先<code>gem -v</code>检查一下版本):</h3>
+<pre><code>sudo gem update --system
+</code></pre>
+<h3>2.2 替换 ruby 软件源：</h3>
+<p><a href="https://rubygems.org" target="_blank" rel="external">RubyGems</a> 被墙了，所以需要换成国内的镜像资源</p>
+<pre><code>gem sources --remove https://rubygems.org/
+gem sources -a https://ruby.taobao.org/
+</code></pre>
+<p>一般使用的都是<a href="https://ruby.taobao.org/" target="_blank" rel="external">淘宝</a>的资源<code>https://ruby.taobao.org/</code>，但偶尔也会出现连接不上的情况，这时候可以换 <a href="https://gems.ruby-china.org" target="_blank" rel="external">Ruby China</a> <code>https://gems.ruby-china.org</code>试试。</p>
+<p>验证你的 Ruby 镜像,确保只有一个源：</p>
+<pre><code>gem sources -l
+</code></pre>
+<h3>2.3 安装 CocoaPods:</h3>
+<pre><code>sudo gem install cocoapods
+pod setup
+</code></pre>
+<p>Cocoapods 将它的信息下载到~/.cocoapods目录下时，因为所有的项目的 Podspec 文件都托管在 GitHub 上，速度会比较慢，换成国内镜像的话会快很多：</p>
+<pre><code>pod repo remove master
+pod repo add master https://gitcafe.com/akuandev/Specs.git
+pod repo update
+</code></pre>
+<p><a href="http://www.oschina.net" target="_blank" rel="external">oschina</a> 上的地址<code>http://git.oschina.net/akuandev/Specs.git</code>也可以。</p>
+<h1>二、CocoaPods 的使用</h1>
+<h2>1、通过终端使用</h2>
+<h3>1.1 建立 Podfile 文件</h3>
+<p>cd 到项目所在目录</p>
+<pre><code>vim Podfile
+</code></pre>
+<h3>1.2 <a href="https://guides.cocoapods.org/syntax/podfile.html#podfile" target="_blank" rel="external">Podfile 语法</a></h3>
+<p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">source <span class="string">'https://github.com/CocoaPods/Specs.git'</span> <span class="comment">//指定镜像仓库的源</span></span><br><span class="line">platform :ios, <span class="string">'8.0'</span>                            <span class="comment">//指定所支持系统和最低版本</span></span><br><span class="line">inhibit_all_warnings!                           <span class="comment">//屏蔽所有 warning</span></span><br><span class="line">use_frameworks!                                 <span class="comment">//可以用 framework 的 pod 替代静态库的</span></span><br><span class="line">generate_bridge_support!                        <span class="comment">//指定后从所有已经安装的 pod 的头文件中会生成一个 BridgeSupport 元数据文档</span></span><br><span class="line">workspace <span class="string">'项目空间名'</span>                            <span class="comment">//指定项目空间名</span></span><br><span class="line">xcodeproj <span class="string">'工程文件名'</span>                            <span class="comment">//指定 xcodeproj 工程文件路径</span></span><br><span class="line">target ’Tenementer’ <span class="keyword">do</span>                          <span class="comment">//指定对应的 Target</span></span><br><span class="line">link_with <span class="string">'target名称1'</span>, <span class="string">'target名称2'</span>           <span class="comment">//链接用户工程里面的 target</span></span><br><span class="line">pod <span class="string">'Moya/RxSwift'</span>                              <span class="comment">//引入库，什么版本都可以（一般是最新版本）</span></span><br><span class="line">pod <span class="string">'Kingfisher'</span>, <span class="string">'0.9'</span>                         <span class="comment">//指定版本</span></span><br><span class="line">pod <span class="string">'Gloss'</span>, <span class="string">'&lt; 0.7.2'</span>                          <span class="comment">//指定版本的范围：&gt;   &lt;   &gt;=   &lt;=</span></span><br><span class="line">pod <span class="string">'Alamofire'</span>, <span class="string">'~&gt; 3.4.0'</span>                     <span class="comment">//从指定版本到倒数第二位版本号升1为止，比如 '~&gt; 3.4.0'是指 3.4.0 &lt;= 版本 &lt; 3.5.0 的最新版本</span></span><br><span class="line">pod <span class="string">'库名'</span>, :podspec =&gt; <span class="string">'podspec文件路径'</span>         <span class="comment">//指定导入库的 podspec 文件路径</span></span><br><span class="line">pod <span class="string">'库名'</span>, :git =&gt; <span class="string">'源码git地址'</span>                 <span class="comment">//指定导入库的源码 git 地址(branch \ tag \ commit)</span></span><br><span class="line">pod <span class="string">'库名'</span>, :tag =&gt; <span class="string">'tag名'</span>                      <span class="comment">//指定导入库的 Tag 分支</span></span><br><span class="line">pod <span class="string">'SnapKit'</span>, :path =&gt; <span class="string">'~/Documents/SnapKit'</span>   <span class="comment">//使用本地文件</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<h3>1.3 下载第三方库</h3>
+<p>cd 到项目所在目录</p>
+<pre><code>pod install
+</code></pre>
+<p>成功后使用 CocoaPods 生成的 .xcworkspace 文件来打开工程，而不是以前的 .xcodeproj 文件。
+以后要更改 Podfile 文件，改为执行<code>pod update</code>命令。</p>
+<ul>
+<li>
+<p>执行<code>pod install</code>或者<code>pod update</code>的时候会升级 CocoaPods 的 spec 仓库，加一个参数可以省略这一步，然后速度就会提升不少。加参数的命令如下：</p>
+<pre><code>pod install --verbose --no-repo-update
+pod update --verbose --no-repo-update
+</code></pre>
+</li>
+</ul>
+<h3>1.4 查找第三方库</h3>
+<p>你如果不知道 cocoaPods 管理的库中，是否有你想要的库，那么你可以通过<code>pod search</code>命令进行查找。</p>
+<h3>1.5 导入头文件</h3>
+<p>选择 target（就是左边你的工程 target ）—&gt; BuildSettings —&gt; search Paths 下的 User Header Search Paths，双击后面的空白区域，点击 “+” 号添加一项：并且输入：“$(PODS_ROOT)”，选择 recursive。</p>
+<p><img src="CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/CocoaPods2.png" alt=""></p>
+<h2>2、通过 <a href="http://alcatraz.io" target="_blank" rel="external">Alcatraz</a> 插件使用</h2>
+<h3>2.1 安装 Alcatraz</h3>
+<pre><code>curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+</code></pre>
+<p>但是这个方法需要挂代理才能下载安装，而且速度也不快。也可以选择通过 <a href="https://github.com/alcatraz/Alcatraz" target="_blank" rel="external">GitHub</a> <code>https://github.com/alcatraz/Alcatraz</code>直接下载。
+等到出现<code>** BUILD SUCCEEDED **</code>就成功了。</p>
+<h3>2.2 安装 CocoaPods 插件</h3>
+<p>重启Xcode，Window -&gt; Package Manager -&gt; 搜索 cocoapods -&gt; 点击 install。</p>
+<p><img src="CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/CocoaPods3.png" alt=""></p>
+<p>再重启 Xcode，Product 看到 CocoaPods 选项，就表示成功。</p>
+<h3>2.3 创建 Podfile 文件</h3>
+<p>Product -&gt; CocoaPods -&gt; Creat/Edit Podfile，弹出的 Podfile 文件语法和之前的没区别。</p>
+<p><img src="CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/CocoaPods4.png" alt=""></p>
+<h3>2.4 下载第三方库</h3>
+<p>Product -&gt; CocoaPods -&gt; Install Pods 或者 Update Pods。最后提示 SDK 导入成功，以及 Do you want to open the workspace?，点击 Yes 后重新打开工程。</p>
+<ul>
+<li>Mac 更新最新系统后， cocoa pods 插件报错<code>Expanded GEM_PATH:/usr/bin</code>，Product -&gt; CocoaPods -&gt; GEM_PATH: 手动修改/usr/local/bin就好了。</li>
+</ul>
+<p><img src="CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/CocoaPods5.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1>一、环境搭建(最好可以在代理环境下进行，要不然会很慢或者 Time Out)</h1>
+<h2>1、<a href="https://ruby-china.org/wiki/install_ruby_guide" target="_blank" rel="external]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[在 Mac 上搭建 Hexo 博客]]></title>
+    <link href="http://yoursite.com/2016/04/15/%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2016/04/15/在-Mac-上搭建-Hexo-博客/</id>
+    <published>2016-04-15T11:29:33.000Z</published>
+    <updated>2016-08-07T11:55:45.000Z</updated>
+    <content type="html"><![CDATA[<h1>一、软件环境准备</h1>
+<ul>
+<li>如果通过终端安装出现问题，可以尝试在指令前加入<code>sudo</code>获得 root 权限</li>
+</ul>
+<h2>1、安装 <a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">homebrew</a></h2>
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<h2>2、安装 Git</h2>
+<p><code>brew install git</code>或者在 <a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="external">Git 官网</a>下载安装包</p>
+<ul>
+<li>如果已经安装过 Xcode，也可以通过<code>xcode-select --install</code>安装 Command Line Tools。Command Line Tools 是 Xcode 中的一款工具，自带 Git</li>
+</ul>
+<h2>3、安装 node.js</h2>
+<p><code>brew install node</code>或者在 <a href="https://nodejs.org/en/" target="_blank" rel="external">node.js 官网</a>直接下载安装包</p>
+<h2>4、在 <a href="https://github.com" target="_blank" rel="external">github</a> 上创建仓库</h2>
+<p><img src="%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/Hexo1.png" alt=""></p>
+<ul>
+<li>创建仓库完成之后，在本地创建一个名为 hexo 的站点文件夹，把仓库 clone 到里边，起名为 public</li>
+</ul>
+<h2>5、安装 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo</a></h2>
+<p><code>sudo npm install -g hexo</code></p>
+<ul>
+<li>如果出现<code>Cannot find module</code>错误，那是 GFW 的问题，通过<code>npm install hexo --no-optional</code>换个源试试或者挂代理都可以解决</li>
+</ul>
+<h1>二、Hexo 正式搭建</h1>
+<h2>1、创建 SSH key</h2>
+<p>添加 SSH key 是让我们以后同步到 GitHub 上时不用输密码，并不影响博客的搭建和使用。
+可以<a href="http://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html" target="_blank" rel="external">通过终端创建 SSH 秘钥</a>或者通过官网下载 <a href="https://desktop.github.com" target="_blank" rel="external">Github Desktop</a> 就可以完成创建。</p>
+<h2>2、建立本地站点</h2>
+<p>cd 到之前创建的 hexo 目录下</p>
+<p>初始化 hexo：<code>hexo init</code></p>
+<p>安装依赖：<code>npm install</code></p>
+<p>生成静态页面：<code>hexo generate</code></p>
+<p>开启本地服务器：<code>hexo server</code> or <code>hexo s</code></p>
+<p>现在在浏览器里输入<code>http://0.0.0.0:4000</code>就可以看到效果了</p>
+<p><img src="%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/Hexo2.png" alt=""></p>
+<h2>3、部署 Hexo 到 GitHub 上</h2>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre>
+<p>安装完成后，打开 _config.yml 文件，在文件末尾修改为如下效果：
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourID/yourID.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
+<p>repo 也可以去直接去你的仓库去复制完整地址填写</p>
+<p><img src="%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/Hexo3.png" alt=""></p>
+<h2>4、发表文章</h2>
+<p>创建新的文章：<code>hexo new “the Title of Article”</code> or <code>hexo n “the Title of Article”</code></p>
+<p>编辑好后，执行如下命令:</p>
+<p>clean 本地项目缓存：<code>hexo clean</code></p>
+<p>生成静态网页：<code>hexo generate</code> or <code>hexo g</code></p>
+<p>布到 github：<code>hexo deploy</code> or <code>hexo d</code></p>
+<ul>
+<li>如果出现<code>Native thread-sleep not available.</code>错误，可以运行<code>apt-get install spawn-sync</code>安装或者<code>apt-get update spawn-sync</code>升级可以解决</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1>一、软件环境准备</h1>
+<ul>
+<li>如果通过终端安装出现问题，可以尝试在指令前加入<code>sudo</code>获得 root 权限</li>
+</ul>
+<h2>1、安装 <a href="http://brew.sh/index_zh-cn.html" ]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[iOS集成极光推送遇到的几个问题]]></title>
     <link href="http://yoursite.com/2016/02/02/iOS%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81%E9%81%87%E5%88%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2016/02/02/iOS集成极光推送遇到的几个问题/</id>
     <published>2016-02-02T12:42:51.000Z</published>
-    <updated>2016-07-23T09:21:38.000Z</updated>
-    <content type="html"><![CDATA[<p>其实官方的<a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和<a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK 教程</a>两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0版本的</a>）。</p>
-<h1>1、APNs证书和主证书的区别</h1>
-<p><img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush1.png" alt="">
-我刚开始做推送的时候本来以为APNs证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
-<img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Jpush2.png" alt="">
+    <updated>2016-08-07T11:50:17.000Z</updated>
+    <content type="html"><![CDATA[<p>其实官方的 <a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和 <a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK 教程</a>两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0版本的</a>）。</p>
+<h1>1、APNs 证书和主证书的区别</h1>
+<p><img src="iOS%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81%E9%81%87%E5%88%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/Jpush1.png" alt="">
+我刚开始做推送的时候本来以为 APNs 证书就是主证书里加了个允许推送而已，事实证明我还是太天真了。
+<img src="iOS%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81%E9%81%87%E5%88%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/Jpush2.png" alt="">
 首先是创建Provisioning Profile文件时选择证书列表时是不能选择APNs证书的，而且在XCode里Code Signing也是不能选择的。
-APNs证书其实是只表示了有推送功能，主证书还是必不可少的。所以现在只是又添加了两个证书，其他的是不用变的，所以现在就有4个证书了。作为一个有轻微强迫症的人，创建完APNs证书就顺手把主证书删了，在这里让我折腾了好久。</p>
-<h1>2、启动SDK需要传的参数</h1>
+APNs 证书其实是只表示了有推送功能，主证书还是必不可少的。所以现在只是又添加了两个证书，其他的是不用变的，所以现在就有4个证书了。作为一个有轻微强迫症的人，创建完 APNs 证书就顺手把主证书删了，在这里让我折腾了好久。</p>
+<h1>2、启动 SDK 需要传的参数</h1>
 <p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)<span class="string">setupWithOption:</span>(NSDictionary *)launchingOption</span><br><span class="line"><span class="string">appKey:</span>(NSString *)appKey</span><br><span class="line"><span class="string">channel:</span>(NSString *)channel</span><br><span class="line"><span class="string">apsForProduction:</span>(BOOL)isProduction;</span><br></pre></td></tr></table></figure></p>
 <p>前两个就不必说了。
-channel 发布渠道。我刚开始也不知道要怎么填，iOS?App Store?Publish channel?其实这只是一个标识而已，不会有什么具体影响。而且是可选的，所以填nil也是没关系的。
-isProduction 是否生产环境。看起来很有用的一个参数，但实际发现YES或NO是没区别的，在框架里边应该是另有判断。但还必须得填，所以在生产和开发环境之间切换时是没必要一定要改这个参数的。</p>
+channel 发布渠道。我刚开始也不知道要怎么填，iOS? App Store? Publish channel? 其实这只是一个标识而已，不会有什么具体影响。而且是可选的，所以填nil也是没关系的。
+isProduction 是否生产环境。看起来很有用的一个参数，但实际发现 YES 或 NO 是没区别的，在框架里边应该是另有判断。但还必须得填，所以在生产和开发环境之间切换时是没必要一定要改这个参数的。</p>
 <h1>3、<a href="http://docs.jpush.io/client/ios_api/#api-ios" target="_blank" rel="external">标签与别名 API</a></h1>
 <p>之前的教程文档是没有这个的，下载的Demo里也没有。但是项目里肯定是要有这个的。</p>
 <blockquote>
@@ -41,21 +495,21 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 <p>为安装了应用程序的用户，打上标签。其目的主要是方便开发者根据标签，来批量下发 Push 消息。可为每个用户打多个标签。</p>
 </blockquote>
 <p><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>) setTags:(<span class="built_in">NSSet</span> *)tags alias:(<span class="built_in">NSString</span> *)alias fetchCompletionHandle:(<span class="keyword">void</span> (^)(<span class="keyword">int</span> iResCode, <span class="built_in">NSSet</span> *iTags, <span class="built_in">NSString</span> *iAlias))completionHandler;</span><br></pre></td></tr></table></figure></p>
-<p>call back结果可以忽略，但最好判断一下， 返回值为 0 才设置成功，才可以向目标推送。我一般是有block就不会用其他的，但使用block时需要注意循环引用问题。而且这个方法是覆盖之前的设置，不是新增。
+<p>call back 结果可以忽略，但最好判断一下， 返回值为 0 才设置成功，才可以向目标推送。我一般是有 block 就不会用其他的，但使用 block 时需要注意循环引用问题。而且这个方法是覆盖之前的设置，不是新增。
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ <span class="comment">(void)</span>setTags:<span class="comment">(NSSet *)</span>tags callbackSelector:<span class="comment">(SEL)</span>cbSelector object:<span class="comment">(id)</span>theTarget;</span><br><span class="line">+ <span class="comment">(void)</span>setAlias:<span class="comment">(NSString *)</span>alias callbackSelector:<span class="comment">(SEL)</span>cbSelector object:<span class="comment">(id)</span>theTarget;</span><br></pre></td></tr></table></figure></p>
-<p>tag和alias分别设置会比只调同时设置两个的那个接口稳定，虽然我也不知道为什么。</p>
+<p>tag 和 alias 分别设置会比只调同时设置两个的那个接口稳定，虽然我也不知道为什么。</p>
 <h1>4、收到通知后的处理</h1>
 <p><figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="params">(void)</span>application:<span class="params">(UIApplication *)</span>application didReceiveRemoteNotification:<span class="params">(NSDictionary *)</span>userInfo fetchCompletionHandler:<span class="params">(void (^)</span><span class="params">(UIBackgroundFetchResult result)</span>)completionHandler</span><br></pre></td></tr></table></figure></p>
-<p>是在iOS7之后的方法，所以之前的方法可以不用了。
+<p>是在 iOS7 之后的方法，所以之前的方法可以不用了。
 <figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="params">(void)</span>applicationWillEnterForeground:<span class="params">(UIApplication *)</span>application</span><br></pre></td></tr></table></figure></p>
 <p>applicationWillEnterForegroun是在didReceiveRemoteNotification之后运行的，所以在这个方法里想处数据是不行的。然后<code>[application setApplicationIconBadgeNumber:0];</code>是偶尔会抽风一下的，所以最好这样写：
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[application setApplicationIconBadgeNumber:1]</span><span class="comment">;</span></span><br><span class="line"><span class="section">[application setApplicationIconBadgeNumber:0]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <p>当然，不要忘了<code>[application cancelAllLocalNotifications];</code></p>
-<p>还有，关于跳转到特定页面的问题。反正我是没找到如何在AppDelegate里找到当前的页面，所以只能用<code>self.window.rootViewController</code>了。返回的话直接<code>self.view.window.rootViewController = vc;</code>吧。
+<p>还有，关于跳转到特定页面的问题。反正我是没找到如何在 AppDelegate 里找到当前的页面，所以只能用<code>self.window.rootViewController</code>了。返回的话直接<code>self.view.window.rootViewController = vc;</code>吧。
 记得用<code>application.applicationState == UIApplicationStateActive</code>判断一下应用处于的状态。如果用户正在运行应用，或许还有更好的，但我就是弹一个UIAlertView。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>其实官方的<a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和<a href="http://docs.jpush.io/cli]]>
+    <![CDATA[<p>其实官方的 <a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和 <a href="http://docs.jpush.io/c]]>
     </summary>
     
   </entry>
@@ -65,7 +519,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
     <link href="http://yoursite.com/2016/01/04/Markdown%E8%AF%AD%E8%A8%80%E5%AF%B9%E7%85%A7/"/>
     <id>http://yoursite.com/2016/01/04/Markdown语言对照/</id>
     <published>2016-01-04T07:11:28.000Z</published>
-    <updated>2016-07-23T09:23:22.000Z</updated>
+    <updated>2016-08-07T11:49:46.000Z</updated>
     <content type="html"><![CDATA[<h1>标题</h1>
 <ul>
 <li>H1 :</li>
@@ -203,30 +657,25 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 <p>本地链接 :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) <code>[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)</code></p>
 </li>
 <li>
-<p>网络图片 :<code>![德鲁伊](https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown1.png)</code>
-<img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown1.png" alt="德鲁伊"></p>
+<p>网络图片 :<code>![百度](https://www.baidu.com/img/bd_logo1.png)</code>
+<img src="https://www.baidu.com/img/bd_logo1.png" alt="百度"></p>
 </li>
 <li>
-<p>本地图片 :<code>![新浪](https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown2.png)</code>
-<img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown2.png" alt="新浪"></p>
+<p>本地图片 :<code>![新浪](Markdown语言对照/Markdown2.png)</code>
+<img src="Markdown%E8%AF%AD%E8%A8%80%E5%AF%B9%E7%85%A7/Markdown2.png" alt="新浪"></p>
 </li>
 <li>
-<p>图片链接：<code>[![](https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown3.jpg)](https://www.zhihu.com)</code>
-<a href="https://www.zhihu.com" target="_blank" rel="external"><img src="https://github.com/ZhuYooong/zhuyooong.github.io/blob/master/images/Markdown3.jpg" alt=""></a></p>
+<p>图片链接：<code>[![](Markdown语言对照/Markdown3.jpg)](https://www.zhihu.com)</code>
+<a href="https://www.zhihu.com" target="_blank" rel="external"><img src="Markdown%E8%AF%AD%E8%A8%80%E5%AF%B9%E7%85%A7/Markdown3.jpg" alt=""></a></p>
 </li>
 <li>
-<p>内部跳转： <a href="#%E6%A0%87%E9%A2%98">标题</a>   <code>[标题](#标题)</code></p>
+<p>内部跳转： [标题](# 标题)   <code>[标题](# 标题)</code></p>
 </li>
 </ul>
-<h1>脚注</h1>
-<p>BlaBlaBla...这是一段脚注[^footer1]，接着BlaBlaBla...
-......
-[^footer1]:这是脚注内容，Blablabla
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">BlaBlaBla</span>...这是一段脚注[^footer1]，接着<span class="symbol">BlaBlaBla</span>...</span><br><span class="line">......</span><br><span class="line">[^footer1]:这是脚注内容，<span class="symbol">Blablabla</span></span><br></pre></td></tr></table></figure></p>
 <h1>其它</h1>
 <ul>
-<li>Hexo只支持最基础的Markdown语法，所以需要安装<a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="external">扩展</a>。</li>
-<li>和Hexo的Markdown引擎差不多的编辑器真心不多，我现在用<a href="https://atom.io" target="_blank" rel="external">Atom</a>，感觉还行（Preference -&gt; Settings -&gt; 选中Soft Wrap开启自动换行）。</li>
+<li>Hexo 只支持最基础的 Markdown 语法，所以需要安装<a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="external">扩展</a>。</li>
+<li>和 Hexo 的 Markdown 引擎差不多的编辑器真心不多，我现在用<a href="https://atom.io" target="_blank" rel="external">Atom</a>，感觉还行（Preference -&gt; Settings -&gt; 选中Soft Wrap开启自动换行）。</li>
 </ul>
 ]]></content>
     <summary type="html">

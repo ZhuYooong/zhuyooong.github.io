@@ -1,0 +1,811 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Zhuyooong’ Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="网络请求
+HTTP
+Objective-C：
+
+AFNetworking pod &apos;AFNetworking&apos;
+
+Swift：
+
+Alamofire pod &apos;Alamofire&apos;
+Moya pod &apos;Moya/RxSwift&apos;
+
+Socket
+Objective-C：
+
+CocoaAsyncSocket pod &apos;CocoaAsyncSocket&apos;
+
+Swift：
+
+SwiftSockets p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 第三方库备忘">
+<meta property="og:url" content="http://yoursite.com/2016/07/03/iOS-第三方库备忘/index.html">
+<meta property="og:site_name" content="Zhuyooong’ Blog">
+<meta property="og:description" content="网络请求
+HTTP
+Objective-C：
+
+AFNetworking pod &apos;AFNetworking&apos;
+
+Swift：
+
+Alamofire pod &apos;Alamofire&apos;
+Moya pod &apos;Moya/RxSwift&apos;
+
+Socket
+Objective-C：
+
+CocoaAsyncSocket pod &apos;CocoaAsyncSocket&apos;
+
+Swift：
+
+SwiftSockets p">
+<meta property="og:updated_time" content="2016-08-07T11:56:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 第三方库备忘">
+<meta name="twitter:description" content="网络请求
+HTTP
+Objective-C：
+
+AFNetworking pod &apos;AFNetworking&apos;
+
+Swift：
+
+Alamofire pod &apos;Alamofire&apos;
+Moya pod &apos;Moya/RxSwift&apos;
+
+Socket
+Objective-C：
+
+CocoaAsyncSocket pod &apos;CocoaAsyncSocket&apos;
+
+Swift：
+
+SwiftSockets p">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> iOS 第三方库备忘 | Zhuyooong’ Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhuyooong’ Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS 第三方库备忘
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-03T19:30:56+08:00" content="2016-07-03">
+              2016-07-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2>网络请求</h2>
+<h3>HTTP</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a> <code>pod 'AFNetworking'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> <code>pod 'Alamofire'</code></li>
+<li><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> <code>pod 'Moya/RxSwift'</code></li>
+</ul>
+<h3>Socket</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/robbiehanson/CocoaAsyncSocket" target="_blank" rel="external">CocoaAsyncSocket</a> <code>pod 'CocoaAsyncSocket'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/AlwaysRightInstitute/SwiftSockets" target="_blank" rel="external">SwiftSockets</a> <code>pod 'SwiftSockets'</code></li>
+</ul>
+<h2>网络图片加载</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">SDWebImage</a> <code>pod 'SDWebImage'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/onevcat/Kingfisher" target="_blank" rel="external">Kingfisher</a> <code>pod 'Kingfisher'</code></li>
+<li><a href="https://github.com/kiavashfaisali/KFSwiftImageLoader" target="_blank" rel="external">KFSwiftImageLoader</a> <code>pod 'KFSwiftImageLoader'</code></li>
+<li><a href="https://github.com/hirohisa/ImageLoaderSwift" target="_blank" rel="external">ImageLoaderSwift</a> <code>pod 'ImageLoader'</code></li>
+<li><a href="https://github.com/natelyman/SwiftImageLoader" target="_blank" rel="external">SwiftImageLoader</a></li>
+</ul>
+<h2>自动布局</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a> <code>pod 'Masonry'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external">SnapKit</a> <code>pod 'SnapKit'</code></li>
+</ul>
+<h2>Json 解析</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/open-source-parsers/jsoncpp" target="_blank" rel="external">jsoncpp</a> (C++ 的，比OC好用)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/hkellaway/Gloss" target="_blank" rel="external">Gloss</a> <code>pod 'Gloss'</code></li>
+<li><a href="https://github.com/SwiftyJSON/SwiftyJSON" target="_blank" rel="external">SwiftyJSON</a> <code>pod 'SwiftyJSON'</code></li>
+<li><a href="https://github.com/ikesyo/Himotoki" target="_blank" rel="external">Himotoki</a> <code>pod 'Himotoki'</code></li>
+<li><a href="https://github.com/Mantle/Mantle" target="_blank" rel="external">Mantle</a> <code>pod 'Mantle'</code></li>
+</ul>
+<h2>XML 解析</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/graetzer/GDataXML-HTML" target="_blank" rel="external">GDataXML-HTML</a> <code>pod 'GDataXML-HTML'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/tadija/AEXML" target="_blank" rel="external">AEXML</a> <code>pod 'AEXML'</code></li>
+</ul>
+<h2>上拉刷新，下拉加载</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">MJRefresh</a> <code>pod 'MJRefresh'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/boyXiong/XWSwiftRefresh" target="_blank" rel="external">XWSwiftRefresh</a> <code>pod 'XWSwiftRefresh'</code></li>
+<li><a href="https://github.com/gontovnik/DGElasticPullToRefresh" target="_blank" rel="external">DGElasticPullToRefresh</a> (下拉加载) <code>pod 'DGElasticPullToRefresh'</code></li>
+</ul>
+<h2>提示框</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="external">MBProgressHUD</a> <code>pod 'MBProgressHUD'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/pkluz/PKHUD" target="_blank" rel="external">PKHUD</a> <code>pod 'PKHUD'</code></li>
+<li><a href="https://github.com/Jinxiansen/JHUD" target="_blank" rel="external">JHUD</a> (与空白页或出错页相结合) <code>pod 'JHUD'</code></li>
+</ul>
+<h2>弹出视图</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/pljhonglu/LewPopupViewController" target="_blank" rel="external">LewPopupViewController</a></li>
+<li><a href="https://github.com/runway20/PopoverView" target="_blank" rel="external">PopoverView</a> (带小箭头)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/sag333ar/SRKControls" target="_blank" rel="external">SRKControls</a> (日期选择) <code>pod 'SRKControls'</code></li>
+<li><a href="https://github.com/corin8823/Popover" target="_blank" rel="external">Popover</a> (带小箭头) <code>pod 'Popover'</code></li>
+</ul>
+<h2>HexColor</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/mRs-/HexColors" target="_blank" rel="external">HexColors</a> <code>pod 'HexColors'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/artman/HexColor" target="_blank" rel="external">HexColor</a> <code>pod 'HxColor'</code></li>
+</ul>
+<h2>数据库处理</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/ccgus/fmdb" target="_blank" rel="external">FMDB</a> <code>pod 'FMDB'</code></li>
+<li><a href="https://github.com/realm/realm-cocoa" target="_blank" rel="external">Realm</a> <code>pod 'Realm/Headers'</code>(OC版) or <code>pod 'RealmSwift'</code>(Swift版)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/magicalpanda/MagicalRecord" target="_blank" rel="external">MagicalRecord</a> <code>pod 'MagicalRecord'</code></li>
+</ul>
+<h2>空白页或出错页</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="external">DZNEmptyDataSet</a> <code>pod 'DZNEmptyDataSet'</code></li>
+</ul>
+<h2>UINavigationController 手势</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/forkingdog/FDFullscreenPopGesture" target="_blank" rel="external">FDFullscreenPopGesture</a> <code>pod 'FDFullscreenPopGesture'</code></li>
+</ul>
+<h2>响应式编程</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="external">ReactiveCocoa</a> <code>pod 'ReactiveCocoa'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/ReactiveX/RxSwift" target="_blank" rel="external">RxSwift</a> <code>pod 'RxSwift'</code></li>
+</ul>
+<h2>图片浏览</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/vitoziv/VIPhotoView" target="_blank" rel="external">VIPhotoView</a> <code>pod 'VIPhotoView'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/suzuki-0000/SKPhotoBrowser" target="_blank" rel="external">SKPhotoBrowser</a> <code>pod 'SKPhotoBrowser'</code></li>
+</ul>
+<h2>UIImagePickerController 图片多选</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/B-Sides/ELCImagePickerController" target="_blank" rel="external">ELCImagePickerController</a> <code>pod 'ELCImagePickerController'</code></li>
+</ul>
+<h2>即时通讯</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/jmesnil/MQTTKit" target="_blank" rel="external">MQTTKit</a> <code>pod 'MQTTKit'</code></li>
+</ul>
+<h2>UICollectionViewFlowLayout 拖动排序</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/lxcid/LXReorderableCollectionViewFlowLayout" target="_blank" rel="external">LXReorderableCollectionViewFlowLayout</a> <code>pod 'LXReorderableCollectionViewFlowLayout'</code></li>
+</ul>
+<h2>UIButton 单选自定义</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/DavydLiu/DLRadioButton" target="_blank" rel="external">DLRadioButton</a> <code>pod 'DLRadioButton'</code></li>
+</ul>
+<h2>抽屉式导航栏</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/JVillella/JVFloatingDrawer" target="_blank" rel="external">JVFloatingDrawer</a> <code>pod 'JVFloatingDrawer'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/KyleGoddard/KGFloatingDrawer" target="_blank" rel="external">KGFloatingDrawer</a> <code>pod 'KGFloatingDrawer'</code></li>
+</ul>
+<h2>版本新特性</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/CharlinFeng/CoreNewFeatureVC" target="_blank" rel="external">CoreNewFeatureVC</a></li>
+</ul>
+<h2>获取坐标或当前地址</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/smallqiang/MMLocationManager" target="_blank" rel="external">MMLocationManager</a></li>
+</ul>
+<h2>图表</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/chasseurmic/TWRCharts" target="_blank" rel="external">TWRCharts</a> <code>pod 'TWRCharts'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/danielgindi/Charts" target="_blank" rel="external">Charts</a> <code>pod 'Charts'</code> or <code>pod 'Charts/Realm'</code>以支持 Realm</li>
+</ul>
+<h2>表头图片进行放大的效果</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/ws00801526/CExpandHeaderViewExample" target="_blank" rel="external">CExpandHeaderViewExample</a></li>
+</ul>
+<h2>日期处理库</h2>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/malcommac/SwiftDate" target="_blank" rel="external">SwiftDate</a> <code>pod 'SwiftDate'</code></li>
+</ul>
+<h2>压缩和解压缩</h2>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/mattconnolly/ZipArchive" target="_blank" rel="external">ZipArchive</a> <code>pod 'ZipArchive'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/ZipArchive/ZipArchive" target="_blank" rel="external">SSZipArchive</a> <code>pod 'SSZipArchive'</code></li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/20/使用-Moya-RxSwift-进行网络请求/" rel="next" title="使用 Moya/RxSwift 进行网络请求">
+                <i class="fa fa-chevron-left"></i> 使用 Moya/RxSwift 进行网络请求
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Zhuyooong" />
+          <p class="site-author-name" itemprop="name">Zhuyooong</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ZhuYooong" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">网络请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">Socket</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">网络图片加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">自动布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Json 解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">XML 解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">上拉刷新，下拉加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">提示框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">弹出视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">HexColor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">数据库处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">空白页或出错页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">UINavigationController 手势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">13.</span> <span class="nav-text">响应式编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">14.</span> <span class="nav-text">图片浏览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">15.</span> <span class="nav-text">UIImagePickerController 图片多选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">16.</span> <span class="nav-text">即时通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">17.</span> <span class="nav-text">UICollectionViewFlowLayout 拖动排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">18.</span> <span class="nav-text">UIButton 单选自定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">19.</span> <span class="nav-text">抽屉式导航栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">20.</span> <span class="nav-text">版本新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">21.</span> <span class="nav-text">获取坐标或当前地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">22.</span> <span class="nav-text">图表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">23.</span> <span class="nav-text">表头图片进行放大的效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">24.</span> <span class="nav-text">日期处理库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">25.</span> <span class="nav-text">压缩和解压缩</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhuyooong</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
