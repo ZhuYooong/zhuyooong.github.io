@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-07T11:56:12.000Z</updated>
+  <updated>2016-08-13T08:02:17.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2016/07/03/iOS-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%A4%87%E5%BF%98/"/>
     <id>http://yoursite.com/2016/07/03/iOS-第三方库备忘/</id>
     <published>2016-07-03T11:30:56.000Z</published>
-    <updated>2016-08-07T11:56:12.000Z</updated>
+    <updated>2016-08-13T08:02:17.000Z</updated>
     <content type="html"><![CDATA[<h2>&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;</h2>
 <h3>HTTP</h3>
 <p>Objective-C&#xFF1A;</p>
@@ -29,7 +29,8 @@
 <p>Swift&#xFF1A;</p>
 <ul>
 <li><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> <code>pod &apos;Alamofire&apos;</code></li>
-<li><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> <code>pod &apos;Moya/RxSwift&apos;</code></li>
+<li><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> <code>pod &apos;Moya/RxSwift&apos;</code>
+&lt;!--more--&gt;</li>
 </ul>
 <h3>Socket</h3>
 <p>Objective-C&#xFF1A;</p>
@@ -243,11 +244,12 @@
     <link href="http://yoursite.com/2016/06/20/%E4%BD%BF%E7%94%A8-Moya-RxSwift-%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
     <id>http://yoursite.com/2016/06/20/使用-Moya-RxSwift-进行网络请求/</id>
     <published>2016-06-20T11:30:40.000Z</published>
-    <updated>2016-08-07T11:56:39.000Z</updated>
+    <updated>2016-08-13T08:00:52.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> &#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5BF9; <a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> &#x7684;&#x66F4;&#x9AD8;&#x5C42;&#x7684;&#x5C01;&#x88C5;&#x3002;</p>
 <p>Alamofire &#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF1A;
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">func</span> <span class="selector-tag">GETRequest</span>(<span class="attribute">URLString</span>: URLStringConvertible, <span class="attribute">NetData</span>: (<span class="attribute">data</span>: NSData?)-&gt;Void) {</span><br><span class="line">    <span class="selector-tag">Alamofire</span><span class="selector-class">.request</span>(.GET, URLString)<span class="selector-class">.responseJSON</span> {</span><br><span class="line">        <span class="selector-tag">response</span> <span class="selector-tag">in</span></span><br><span class="line">        <span class="selector-tag">switch</span> <span class="selector-tag">response</span><span class="selector-class">.result</span> {</span><br><span class="line">        case <span class="selector-class">.Success</span>:</span><br><span class="line">            <span class="selector-tag">NetData</span>(<span class="attribute">data</span>: response.data)</span><br><span class="line">        <span class="selector-tag">case</span> <span class="selector-class">.Failure</span>( _):</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<p>Moya &#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF1A;
+<p>&lt;!--more--&gt;
+Moya &#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF1A;
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">requestDataWithTarget</span>&lt;T: Decodable&gt;<span class="params">(target: ArtsyAPI, type: T.<span class="keyword">Type</span>, successClosure: [T] -&gt; Void, failClosure: ORMError -&gt; Void)</span></span> {</span><br><span class="line">    <span class="type">RxMoyaProvider</span>&lt;<span class="type">ArtsyAPI</span>&gt;().request(target).mapSuccessfulHTTPToObject(<span class="type">T</span>).subscribe(</span><br><span class="line">        onNext: { item <span class="keyword">in</span></span><br><span class="line">            successClosure(item)</span><br><span class="line">        },</span><br><span class="line">        onError: { error <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> error = error <span class="keyword">as</span>? <span class="type">ORMError</span> {</span><br><span class="line">                failClosure(error)</span><br><span class="line">            }</span><br><span class="line">        }).addDisposableTo(<span class="type">DisposeBag</span>())</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
 <p>&#x53EF;&#x89C1; Moya &#x5C06;<code>url</code>&#x3001;<code>method</code>&#x3001;<code>parameters</code>&#x3001;<code>json&#x89E3;&#x6790;</code>&#x7B49;&#x90FD;&#x9690;&#x85CF;&#x8D77;&#x6765;&#xFF0C;&#x5C01;&#x88C5;&#x5230;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x4E86;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x9009;&#x62E9; Moya &#x6700;&#x4E3B;&#x8981;&#x7684;&#x7406;&#x7531;&#x5176;&#x5B9E;&#x662F; Moya &#x672C;&#x8EAB;&#x63D0;&#x4F9B;&#x4E86; RxSwift &#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x4EE5;&#x65E0;&#x7F1D;&#x8854;&#x63A5; RxSwift &#x548C; ReactiveCocoa&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x501F;&#x9274;&#x4E86; <a href="https://github.com/artsy/Emergence" target="_blank" rel="external">Emergence</a> &#x5728;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x65B9;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x54CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;&#x548C; MVVM &#x67B6;&#x6784;&#x7684;&#x5B66;&#x4E60;&#x8FD8;&#x662F;&#x8FD8;&#x662F;&#x5F88;&#x6709;&#x5E2E;&#x52A9;&#x7684;&#x3002;</p>
 <p>&#x4F7F;&#x7528; Moya &#x7684;&#x7B2C;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; Target&#xFF0C;Target &#x672C;&#x8EAB;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7B26;&#x5408; TargetType protocol &#x7684;&#x96C6;&#x5408;&#x3002;
@@ -271,7 +273,7 @@
     <link href="http://yoursite.com/2016/05/12/CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2016/05/12/CocoaPods-的安装和使用/</id>
     <published>2016-05-12T11:29:56.000Z</published>
-    <updated>2016-08-07T12:31:51.000Z</updated>
+    <updated>2016-08-13T08:02:32.000Z</updated>
     <content type="html"><![CDATA[<h1>&#x4E00;&#x3001;&#x73AF;&#x5883;&#x642D;&#x5EFA;(&#x6700;&#x597D;&#x53EF;&#x4EE5;&#x5728;&#x4EE3;&#x7406;&#x73AF;&#x5883;&#x4E0B;&#x8FDB;&#x884C;&#xFF0C;&#x8981;&#x4E0D;&#x7136;&#x4F1A;&#x5F88;&#x6162;&#x6216;&#x8005; Time Out)</h1>
 <h2>1&#x3001;<a href="https://ruby-china.org/wiki/install_ruby_guide" target="_blank" rel="external">&#x5B89;&#x88C5; Ruby &#x73AF;&#x5883;</a></h2>
 <h3>1.1 &#x5B89;&#x88C5;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x7684;&#x5305;</h3>
@@ -281,6 +283,7 @@
 <p>&#x5B89;&#x88C5; Rails &#x5FC5;&#x8981;&#x7684;&#x4E00;&#x4E9B;&#x4E09;&#x65B9;&#x5E93;</p>
 <pre><code>brew install libxml2 libxslt libiconv
 </code></pre>
+<p>&lt;!--more--&gt;</p>
 <h3>1.2 &#x5B89;&#x88C5; <a href="https://ruby-china.org/wiki/rvm-guide" target="_blank" rel="external">RVM</a></h3>
 <p>RVM &#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4FBF;&#x6377;&#x7684;&#x591A;&#x7248;&#x672C; Ruby &#x73AF;&#x5883;&#x7684;&#x7BA1;&#x7406;&#x548C;&#x5207;&#x6362;&#x3002;</p>
 <pre><code>gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -403,7 +406,7 @@ pod update --verbose --no-repo-update
     <link href="http://yoursite.com/2016/04/15/%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2016/04/15/在-Mac-上搭建-Hexo-博客/</id>
     <published>2016-04-15T11:29:33.000Z</published>
-    <updated>2016-08-07T12:30:17.000Z</updated>
+    <updated>2016-08-13T08:02:07.000Z</updated>
     <content type="html"><![CDATA[<h1>&#x4E00;&#x3001;&#x8F6F;&#x4EF6;&#x73AF;&#x5883;&#x51C6;&#x5907;</h1>
 <ul>
 <li>&#x5982;&#x679C;&#x901A;&#x8FC7;&#x7EC8;&#x7AEF;&#x5B89;&#x88C5;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x5728;&#x6307;&#x4EE4;&#x524D;&#x52A0;&#x5165;<code>sudo</code>&#x83B7;&#x5F97; root &#x6743;&#x9650;</li>
@@ -414,7 +417,8 @@ pod update --verbose --no-repo-update
 <h2>2&#x3001;&#x5B89;&#x88C5; Git</h2>
 <p><code>brew install git</code>&#x6216;&#x8005;&#x5728; <a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="external">Git &#x5B98;&#x7F51;</a>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</p>
 <ul>
-<li>&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x8FC7; Xcode&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>xcode-select --install</code>&#x5B89;&#x88C5; Command Line Tools&#x3002;Command Line Tools &#x662F; Xcode &#x4E2D;&#x7684;&#x4E00;&#x6B3E;&#x5DE5;&#x5177;&#xFF0C;&#x81EA;&#x5E26; Git</li>
+<li>&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x8FC7; Xcode&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>xcode-select --install</code>&#x5B89;&#x88C5; Command Line Tools&#x3002;Command Line Tools &#x662F; Xcode &#x4E2D;&#x7684;&#x4E00;&#x6B3E;&#x5DE5;&#x5177;&#xFF0C;&#x81EA;&#x5E26; Git
+&lt;!--more--&gt;</li>
 </ul>
 <h2>3&#x3001;&#x5B89;&#x88C5; node.js</h2>
 <p><code>brew install node</code>&#x6216;&#x8005;&#x5728; <a href="https://nodejs.org/en/" target="_blank" rel="external">node.js &#x5B98;&#x7F51;</a>&#x76F4;&#x63A5;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</p>
@@ -466,18 +470,128 @@ pod update --verbose --no-repo-update
   </entry>
   
   <entry>
+    <title><![CDATA[WatchOS 总结]]></title>
+    <link href="http://yoursite.com/2016/03/02/WatchOS-%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/03/02/WatchOS-总结/</id>
+    <published>2016-03-02T08:03:39.000Z</published>
+    <updated>2016-08-13T08:06:24.000Z</updated>
+    <content type="html"><![CDATA[<h2>&#x4E00;&#x3001;&#x5EFA;&#x7ACB; WatchOS &#x9879;&#x76EE;</h2>
+<ul>
+<li>&#x521B;&#x5EFA;&#x65B0;&#x7684; iOS App &#x548C; WatchKit App:
+&#x9009;&#x62E9; File\New\Project&#x2026;,&#x5728;&#x51FA;&#x73B0;&#x7684;&#x5BF9;&#x8BDD;&#x6846;&#x4E2D;&#x9009;&#x62E9; watchOS\Application\iOS App with WatchKit App &#x7136;&#x540E;&#x70B9;&#x51FB; Next</li>
+</ul>
+<p><img src="/2016/03/02/WatchOS-&#x603B;&#x7ED3;/WatchOS1.png" alt=""></p>
+<p>&lt;!--more--&gt;</p>
+<ul>
+<li>&#x4E3A;&#x5DF2;&#x6709;&#x7684; iOS App &#x6DFB;&#x52A0; WatchKit App:
+&#x9009;&#x62E9; File\New\Target&#x2026;,&#x5728;&#x51FA;&#x73B0;&#x7684;&#x5BF9;&#x8BDD;&#x6846;&#x4E2D;&#x9009;&#x62E9; watchOS\Application\WatchKit App &#x7136;&#x540E;&#x70B9;&#x51FB; Next</li>
+</ul>
+<p><img src="/2016/03/02/WatchOS-&#x603B;&#x7ED3;/WatchOS2.png" alt=""></p>
+<p>&#x4EE5;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x521B;&#x5EFA;&#x4E86; WatchKit App &#x548C; WatchKit Extension &#x4E24;&#x4E2A; Target&#x3002;&#x5176;&#x4E2D; View &#x5728; WatchKit App &#x91CC;&#xFF0C;&#x800C; Controller &#x548C; Model &#x5728; WatchKit Extension &#x91CC;&#x3002;</p>
+<p><img src="/2016/03/02/WatchOS-&#x603B;&#x7ED3;/WatchOS3.png" alt=""></p>
+<h2>&#x4E8C;&#x3001;&#x7528;&#x6237;&#x4EA4;&#x4E92;&#x65B9;&#x5F0F;</h2>
+<h3>1&#x3001;WKInterfaceController</h3>
+<h4>&#x751F;&#x547D;&#x5468;&#x671F;</h4>
+<p><code>public func awakeWithContext(context: AnyObject?)</code>&#x662F;&#x5F00;&#x59CB;&#x521D;&#x59CB;&#x5316; Storyboard &#x4E2D;&#x7684; UI &#x65F6;&#x52A0;&#x8F7D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x6216;&#x8005;&#x66F4;&#x65B0;&#x5728; StoryBoard &#x4E2D;&#x5F53;&#x524D; Controller &#x6DFB;&#x52A0;&#x7684; interface objects&#x3002;</p>
+<p><code>public func willActivate()</code>&#x662F;&#x663E;&#x793A;&#x5F53;&#x524D;&#x52A0;&#x8F7D;&#x7684;UI&#x65F6;&#x52A0;&#x8F7D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x66F4;&#x65B0; interface objects &#x6216;&#x8005;&#x5904;&#x7406;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;&#x3002;</p>
+<p><code>public func didDeactivate()</code>&#x662F;&#x5207;&#x6362;&#x9875;&#x9762;&#x6216;&#x8005;&#x505C;&#x6B62;&#x4F7F;&#x7528;&#x65F6;&#x52A0;&#x8F7D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x6E05;&#x7406; task &#x6216;&#x8005;&#x6570;&#x636E;&#x3002;</p>
+<h4>&#x9875;&#x9762;&#x8DF3;&#x8F6C;</h4>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">pushControllerWithName</span><span class="params">(name: String, context: AnyObject?)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">popController</span><span class="params">()</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">popToRootController</span><span class="params">()</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">presentControllerWithName</span><span class="params">(name: String, context: AnyObject?)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">presentControllerWithNames</span><span class="params">(names: [String], contexts: [AnyObject]?)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">dismissController</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>Push&#x3001;Pop&#x3001;Present&#x3001;Dismiss &#x7684;&#x884C;&#x4E3A;&#x548C; UIViewController &#x4E2D;&#x7C7B;&#x4F3C;&#xFF0C;&#x5728; Storyboard &#x4E2D;&#x4E3A; Push&#x3001;Modal &#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#x3002;presentControllerWithNames &#x6211;&#x4EEC;&#x53EF;&#x4EE5; present &#x4E00;&#x7EC4; Controller, &#x8FD9;&#x4E00;&#x7EC4; Controller &#x5C06;&#x4EE5; page control &#x7684;&#x5F62;&#x5F0F;&#x5C55;&#x793A;&#x3002;</p>
+<p><code>public func becomeCurrentPage()</code>&#x662F;&#x5F53;&#x9875;&#x9762;&#x4EE5; page control &#x7684;&#x5F62;&#x5F0F;&#x5C55;&#x73B0;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6539;&#x53D8;&#x5F53;&#x524D;&#x7684; page &#x6765;&#x8DF3;&#x8F6C;&#x9875;&#x9762;&#x3002;&#x5728; Storyboard &#x4E2D;&#x662F;&#x4EE5; next page &#x5B9E;&#x73B0;&#x9875;&#x9762;&#x8DF3;&#x8F6C;&#x3002;</p>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">contextForSegueWithIdentifier</span><span class="params">(segueIdentifier: String)</span></span> -&gt; <span class="type">AnyObject</span>?</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">contextsForSegueWithIdentifier</span><span class="params">(segueIdentifier: String)</span></span> -&gt; [<span class="type">AnyObject</span>]?</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">contextForSegueWithIdentifier</span><span class="params">(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int)</span></span> -&gt; <span class="type">AnyObject</span>?</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">contextsForSegueWithIdentifier</span><span class="params">(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int)</span></span> -&gt; [<span class="type">AnyObject</span>]?</span><br></pre></td></tr></table></figure></p>
+<p>&#x5982;&#x679C;&#x76F4;&#x63A5;&#x5728; Storyboard &#x4E2D;&#x901A;&#x8FC7; Segue &#x5B9E;&#x73B0;&#x4E86;&#x9875;&#x9762;&#x8DF3;&#x8F6C;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0A;&#x8FB9;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;&#x3002;&#x5728;&#x76EE;&#x7684;&#x9875;&#x9762;<code>public func awakeWithContext(context: AnyObject?)</code>&#x65B9;&#x6CD5;&#x4E2D;&#x63A5;&#x6536;&#x4F20;&#x503C;&#xFF0C;&#x5176;&#x4E2D;<code>context</code>&#x5C31;&#x662F;&#x4F20;&#x9012;&#x8FC7;&#x53BB;&#x7684;&#x503C;&#x3002;</p>
+<h3>2&#x3001;Glance &#x754C;&#x9762;</h3>
+<p>&#x5C06;&#x91CD;&#x8981;&#x4FE1;&#x606F;&#x5C55;&#x793A;&#x5728;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x91CC;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x80FD;&#x5728;&#x4E00;&#x77A5;&#x4E4B;&#x95F4;&#x5FEB;&#x901F;&#x83B7;&#x53D6;&#xFF0C;&#x662F;&#x7528;&#x6237;&#x6D4F;&#x89C8; Watch app &#x4E2D;&#x7684;&#x91CD;&#x8981;&#x4FE1;&#x606F;&#x7684;&#x8865;&#x5145;&#x65B9;&#x5F0F;&#xFF0C;&#x5BF9;&#x4E8E; Watch app &#x5E76;&#x4E0D;&#x662F;&#x5FC5;&#x9700;&#x7684;&#x3002;&#x5F53;&#x6DFB;&#x52A0; Watch app target &#x5230;&#x4F60;&#x7684; iOS App &#x4E2D;&#x65F6;&#xFF0C;&#x4F60;&#x80FD;&#x6307;&#x5B9A;&#x662F;&#x5426;&#x9700;&#x8981;&#x4E00;&#x4E2A; Glance &#x754C;&#x9762;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5728;&#x4E00;&#x5F00;&#x59CB;&#x5FD8;&#x4E86;&#x6DFB;&#x52A0;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7A0D;&#x540E;&#x6DFB;&#x52A0;&#x3002;&#x4E00;&#x4E2A; Watch app &#x53EA;&#x5141;&#x8BB8;&#x6709;&#x4E00;&#x4E2A; Glance &#x754C;&#x9762;&#x63A7;&#x5236;&#x5668;</p>
+<p><img src="/2016/03/02/WatchOS-&#x603B;&#x7ED3;/WatchOS4.png" alt=""></p>
+<p>&#x7531;&#x4E8E; Glance &#x7684;&#x754C;&#x9762;&#x662F;&#x7531;&#x81EA;&#x5B9A;&#x4E49;&#x7684; WKInterfaceController &#x5B50;&#x7C7B;&#x9A71;&#x52A8;&#x7684;&#xFF0C;&#x6240;&#x4EE5; Glance &#x754C;&#x9762;&#x63A7;&#x5236;&#x5668;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C;&#x5176;&#x4ED6; WatchKit &#x754C;&#x9762;&#x63A7;&#x5236;&#x5668;&#x4E00;&#x6837;&#x3002;&#x4F46;&#x662F; Glance &#x4E0D;&#x652F;&#x6301;&#x4E92;&#x52A8;&#x64CD;&#x4F5C;&#xFF0C;&#x89E6;&#x6478; Glance &#x5C06;&#x542F;&#x52A8;&#x5BF9;&#x5E94;&#x7684; Watch app&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x76F4;&#x63A5;&#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x9700;&#x8981;&#x5728; Glance &#x754C;&#x9762;&#x7684; willActivate &#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;<code>public func updateUserActivity(type: String, userInfo: [NSObject : AnyObject]?, webpageURL: NSURL?)</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; userInfo &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4F20;&#x8F93;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E3B;&#x63A7;&#x5236;&#x5668; InterfaceController &#x5B9E;&#x73B0;<code>public func handleActionWithIdentifier(identifier: String?, forRemoteNotification remoteNotification: [NSObject : AnyObject])</code>&#x6216;&#x8005;<code>public func handleActionWithIdentifier(identifier: String?, forLocalNotification localNotification: UILocalNotification)</code>&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x63D0;&#x4F9B;&#x7684; userInfo &#x5B57;&#x5178;&#x5B9A;&#x4E49; UI&#x3002;</p>
+<h3>3&#x3001;Notification &#x754C;&#x9762;</h3>
+<p>Apple Watch &#x4E2D;&#x7684;&#x901A;&#x77E5;&#x5206;&#x4E3A;&#x9759;&#x6001;&#x901A;&#x77E5;&#x548C;&#x52A8;&#x6001;&#x901A;&#x77E5;&#x3002;&#x9759;&#x6001;&#x901A;&#x77E5;&#x53EA;&#x663E;&#x793A;&#x5E94;&#x7528;&#x56FE;&#x6807;&#x548C;&#x7B80;&#x5355;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x3002;&#x5F53;&#x4F60;&#x62AC;&#x8D77;&#x624B;&#x8155;&#x6216;&#x8005;&#x70B9;&#x51FB;&#x5C4F;&#x5E55;&#x65F6;&#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x52A8;&#x6001;&#x901A;&#x77E5;&#x754C;&#x9762;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8BE5;&#x901A;&#x77E5;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p><img src="/2016/03/02/WatchOS-&#x603B;&#x7ED3;/WatchOS5.png" alt=""></p>
+<p>WKUserNotificationInterfaceController &#x7EE7;&#x627F;&#x4E8E; WKInterfaceController&#xFF0C;&#x4EAB;&#x6709;&#x548C; WKInterfaceController &#x540C;&#x6837;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E4B;&#x524D; Glance &#x754C;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x8DF3;&#x8F6C;&#x6307;&#x5B9A;&#x754C;&#x9762;&#x3002;</p>
+<p>&#x66F4;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>public func didReceiveRemoteNotification(remoteNotification: [NSObject : AnyObject], withCompletion completionHandler: (WKUserNotificationInterfaceType) -&gt; Void)</code>&#x6216;&#x8005;<code>public func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: (WKUserNotificationInterfaceType) -&gt; Void)</code>&#x83B7;&#x5F97;&#x901A;&#x77E5;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5904;&#x7406;&#x5B8C;&#x6210;&#x7684;&#x56DE;&#x8C03;Block&#x3002;</p>
+<h3>3&#x3001;Complications &#x754C;&#x9762;</h3>
+<h2>&#x4E09;&#x3001;&#x754C;&#x9762;&#x5143;&#x7D20;</h2>
+<h3>1&#x3001;&#x57FA;&#x672C;&#x7684;&#x5143;&#x7D20;</h3>
+<p>WKInterfaceObject &#x5728; WatchKit &#x4E2D;&#x8D1F;&#x8D23;&#x754C;&#x9762;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4F46;&#x548C; UIView &#x6216;&#x8005; UIView &#x7684;&#x5B50;&#x7C7B;&#x76F8;&#x6BD4;&#xFF0C;&#x529F;&#x80FD;&#x5C11;&#x4E86;&#x5F88;&#x591A;&#xFF0C;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E; Hidden&#x3001;Alpha&#x3001;Width&#x3001;Height &#x7B49;&#xFF0C;&#x5177;&#x4F53;&#x7684; UI &#x8BBE;&#x7F6E;&#x53EA;&#x80FD;&#x5728; Storyboard &#x4E2D;&#x8FDB;&#x884C;&#x3002;</p>
+<p>WKInterfaceButton&#x3001;WKInterfaceImage&#x3001;WKInterfaceLabel&#x3001;WKInterfaceSeparator&#x3001;WKInterfaceSlider&#x3001;WKInterfaceSwitch &#x548C; UIKit &#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x7684;&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x76F4;&#x63A5;&#x7528;&#x5C31;&#x884C;&#x4E86;&#x3002;</p>
+<p>WKInterfaceDate&#x3001;WKInterfaceTimer &#x7528;&#x4E8E;&#x663E;&#x793A;&#x65F6;&#x95F4;&#xFF0C;&#x6BD5;&#x7ADF;&#x662F;&#x4F5C;&#x7528;&#x4E8E;&#x624B;&#x8868;&#x4E0A;&#x3002;WKInterfaceDate &#x76F8;&#x5F53;&#x4E8E; UILabel &#xFF0B; NSDateFormatter&#xFF0C;&#x7528;&#x6765;&#x5C55;&#x793A;&#x76EE;&#x524D;&#x7684;&#x65E5;&#x671F;&#x6216;&#x65F6;&#x95F4;&#x3002;WKInterfaceTimer &#x76F8;&#x5F53;&#x4E8E; UILabel &#xFF0B; NSDateFormatter &#xFF0B; NSTimer&#xFF0C;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8BA1;&#x65F6;&#x5668;&#x3002;</p>
+<p>WKInterfaceMap&#x3001;WKInterfaceMovie &#x5730;&#x56FE;&#x548C;&#x97F3;&#x89C6;&#x9891;&#xFF0C;&#x4E00;&#x76EE;&#x4E86;&#x7136;&#x3002;&#x5176;&#x4E2D; WKInterfaceMovie &#x672C;&#x5730;&#x548C;&#x7F51;&#x7EDC;&#x662F;&#x90FD;&#x652F;&#x6301;&#x7684;&#x3002;</p>
+<h3>2&#x3001;WKInterfacePicker</h3>
+<p>&#x662F;&#x4E00;&#x4E2A;&#x901A;&#x8FC7;&#x8868;&#x51A0;&#x6765;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x7684;&#x6EDA;&#x52A8;&#x5217;&#x8868;&#x3002;&#x5176;&#x4E2D;&#x7531; WKPickerItem &#x7EC4;&#x6210;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x6587;&#x672C;&#x3001;&#x56FE;&#x50CF;&#x3001;&#x6216;&#x662F;&#x56FE;&#x6587;&#x6DF7;&#x5408;&#x3002;&#x901A;&#x8FC7;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x98CE;&#x683C;&#x6765;&#x5C55;&#x793A;&#xFF1A;</p>
+<ul>
+<li>List:&#x5782;&#x76F4;&#x6392;&#x5217;&#x663E;&#x793A;&#x7684;&#x5217;&#x8868;</li>
+<li>Stacked:&#x8F6C;&#x4E3A;&#x4E00;&#x53E0;&#x5361;&#x7247;&#x901A;&#x8FC7;&#x6EDA;&#x52A8;&#x8868;&#x51A0;&#x6765;&#x4E00;&#x5F20;&#x5F20;&#x663E;&#x793A;</li>
+<li>ImageSequence:&#x4ECE;&#x56FE;&#x50CF;&#x5E8F;&#x5217;&#x4E2D;&#x62BD;&#x51FA;&#x5355;&#x4E2A;&#x5C55;&#x793A;</li>
+</ul>
+<h3>3&#x3001;WKInterfaceDevice</h3>
+<p>&#x76F8;&#x5F53;&#x4E8E; UIDevice&#x3002;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x5F53;&#x524D; Apple Watch &#x7684; screenBounds&#x3001;screenScale&#x3001;systemVersion&#x3001;preferredContentSizeCategory &#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<h3>4&#x3001;WKInterfaceTable</h3>
+<p>&#x6CA1;&#x6709; sections&#x3001;header&#x3001;footer&#x3001;data sources &#x6216;&#x8005; delegate &#x4EC0;&#x4E48;&#x7684;&#x3002;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A; cell &#x662F;&#x76F4;&#x63A5;&#x7EE7;&#x627F;&#x4E8E; NSObject&#xFF0C;&#x901A;&#x8FC7; identifier &#x6765;&#x533A;&#x5206;&#x3002;</p>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">setRowTypes</span><span class="params">(rowTypes: [String])</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">setNumberOfRows</span><span class="params">(numberOfRows: Int, withRowType rowType: String)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">var</span> numberOfRows: <span class="type">Int</span> { <span class="keyword">get</span> }</span><br></pre></td></tr></table></figure></p>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8BBE;&#x7F6E; Table &#x7684;&#x884C;&#x6570;&#x548C;&#x6837;&#x5F0F;&#x3002;&#x5E76;&#x901A;&#x8FC7;<code>public func rowControllerAtIndex(index: Int) -&gt; AnyObject?</code>&#x6765;&#x83B7;&#x53D6;&#x5177;&#x4F53;&#x7684; cell &#x5E76;&#x8D4B;&#x503C;&#x3002;</p>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">insertRowsAtIndexes</span><span class="params">(rows: NSIndexSet, withRowType rowType: String)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">removeRowsAtIndexes</span><span class="params">(rows: NSIndexSet)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664; cell&#x3002;</p>
+<h3>5&#x3001;WKInterfaceMenu&#x3001;WKInterfaceMenuItem</h3>
+<p>&#x957F;&#x6309;&#x624B;&#x8868;&#x5C4F;&#x5E55;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x524D; WKInterfaceController &#x4E2D;&#x5B58;&#x5728;&#x4E0A;&#x4E0B;&#x6587;&#x83DC;&#x5355;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4F1A;&#x5C1D;&#x8BD5;&#x547C;&#x51FA;&#x627E;&#x8FD9;&#x4E2A;&#x754C;&#x9762;&#x5BF9;&#x5E94;&#x7684; Context Menu&#x3002;&#x8FD9;&#x4E2A;&#x83DC;&#x5355;&#x6700;&#x591A;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x56DB;&#x4E2A;&#x6309;&#x94AE;&#xFF0C;&#x7528;&#x6765;&#x9488;&#x5BF9;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x5411;&#x7528;&#x6237;&#x5F81;&#x8BE2;&#x64CD;&#x4F5C;&#x3002;&#x53EF;&#x4EE5;&#x5728; StoryBoard &#x91CC;&#x6DFB;&#x52A0;&#xFF0C;&#x6216;&#x8005;&#x5728; WKInterfaceController &#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x6216;&#x8005;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">addMenuItemWithImage</span><span class="params">(image: UIImage, title: String, action: Selector)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">addMenuItemWithImageNamed</span><span class="params">(imageName: String, title: String, action: Selector)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">addMenuItemWithItemIcon</span><span class="params">(itemIcon: WKMenuItemIcon, title: String, action: Selector)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">clearAllMenuItems</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x9664;&#x4E86;&#x7528; StoryBoard &#x8BBE;&#x7F6E;&#x548C;&#x4EE5;&#x4E0A;&#x65B9;&#x6CD5;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x5728; WatchKit &#x83B7;&#x53D6; WKInterfaceMenu &#x548C; WKInterfaceMenuItem &#x7684;&#x5B9E;&#x4F8B;&#x6216;&#x8005;&#x4EE3;&#x7406;&#x3002;</p>
+<h3>6&#x3001;WKAlertAction</h3>
+<p>&#x5728; WKInterfaceController &#x4E2D;&#x53EF;&#x4EE5;&#x8C03;&#x7528;<code>public func presentAlertControllerWithTitle(title: String?, message: String?, preferredStyle: WKAlertControllerStyle, actions: [WKAlertAction])</code>&#x65B9;&#x6CD5;&#x5728;&#x5F53;&#x524D;&#x754C;&#x9762;&#x5F39;&#x51FA;&#x4E00;&#x4E2A; alert view&#x3002;&#x6839;&#x636E;&#x4F60;&#x8BBE;&#x5B9A;&#x7684; preferredStyle &#x53C2;&#x6570;&#x6765;&#x663E;&#x793A;&#x51FA;&#x4E0D;&#x540C;&#x7684;&#x6837;&#x5F0F;&#x3002;&#x5176;&#x4E2D;&#x7684; actions &#x53C2;&#x6570;&#x662F;&#x5305;&#x542B; WKAlertAction &#x5B9E;&#x4F8B;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x901A;&#x8FC7;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x76F8;&#x5E94;&#x7684; button &#x6765;&#x6267;&#x884C;&#x5B83;&#x81EA;&#x8EAB;&#x63D0;&#x4F9B;&#x7684; block&#x3002;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4F60;&#x9700;&#x8981; dismiss &#x8FD9;&#x4E9B; alert view&#x3002;</p>
+<h3>7&#x3001;WKInterfaceGroup</h3>
+<p>Watch App &#x7684;&#x89C6;&#x56FE;&#x5F00;&#x53D1;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x4EE3;&#x7801;&#xFF0C;&#x5FC5;&#x987B; StoryBoard&#x3002;&#x91C7;&#x53D6;&#x7684;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;&#x548C; iOS App &#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x3002;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; autoLayout &#x6216;&#x8005;&#x5750;&#x6807;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x3002;&#x9ED8;&#x8BA4;&#x662F;&#x4EE5;&#x884C;&#x4E3A;&#x5355;&#x4F4D;&#x5782;&#x76F4;&#x5E03;&#x5C40;&#x3002;&#x5982;&#x679C;&#x8981;&#x6C34;&#x5E73;&#x5E03;&#x5C40;&#x5C31;&#x9700;&#x8981;&#x4EE5; WKInterfaceObject &#x91CD;&#x53E0;&#x5E03;&#x5C40;&#x3002;&#x76F8;&#x5F53;&#x4E8E; Android &#x7684; layout &#x5E03;&#x5C40;&#x63A7;&#x4EF6;&#x3002;</p>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x80CC;&#x666F;&#x3001;CornerRadius&#x3001;ContentInset &#x5C5E;&#x6027;&#x3002;</p>
+<h2>&#x56DB;&#x3001;&#x6570;&#x636E;&#x901A;&#x4FE1;</h2>
+<h3>1&#x3001;target membership</h3>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x4F7F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5728;&#x591A;&#x4E2A; target &#x5B9E;&#x73B0;&#x91CD;&#x7528;&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x4E8E; Model &#x4E2D;&#x3002;</p>
+<p><img src="/2016/03/02/WatchOS-&#x603B;&#x7ED3;/WatchOS6.png" alt=""></p>
+<h3>2&#x3001;WatchConnectivity</h3>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528; WCSession &#x7684;<code>public class func isSupported() -&gt; Bool</code>&#x65B9;&#x6CD5;&#x68C0;&#x67E5;&#x8BBE;&#x5907;&#x4E0A;&#x662F;&#x5426;&#x652F;&#x6301; WatchConnectivity &#xFF0C;iPad &#x662F;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x3002;</p>
+<h2>&#x4E94;&#x3001;&#x5176;&#x5B83;</h2>
+<h3>1&#x3001;&#x52A8;&#x753B;</h3>
+<h4>&#x5E27;&#x52A8;&#x753B;</h4>
+<p>&#x901A;&#x8FC7;&#x4E3A; WKInterfaceImage &#x8BBE;&#x7F6E;&#x5305;&#x542B;&#x591A;&#x4E2A; image &#x7684;&#x56FE;&#x50CF;&#xFF0C;&#x901A;&#x8FC7;&#x56FE;&#x7247;&#x540D;&#x79F0;&#x5E8F;&#x5217;&#x53F7;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x901A;&#x8FC7;&#x8BA1;&#x65F6;&#x5668;&#x5B9A;&#x65F6;&#x66FF;&#x6362;&#x56FE;&#x50CF;&#x53EF;&#x5B9E;&#x73B0;&#x5E27;&#x52A8;&#x753B;&#x6548;&#x679C;&#x3002;</p>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">startAnimating</span><span class="params">()</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">startAnimatingWithImagesInRange</span><span class="params">(imageRange: NSRange, duration: NSTimeInterval, repeatCount: Int)</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">stopAnimating</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<h4>&#x57FA;&#x672C;&#x52A8;&#x753B;</h4>
+<p>&#x5728; WKInterfaceController &#x4E2D;&#x8C03;&#x7528;<code>public func animateWithDuration(duration: NSTimeInterval, animations: () -&gt; Void)</code>&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#xFF0C;&#x7528;&#x6CD5;&#x548C;<code>public class func animateWithDuration(duration: NSTimeInterval, animations: () -&gt; Void)</code>&#x4E00;&#x6837;&#x3002;</p>
+<h3>2&#x3001;&#x591A;&#x5A92;&#x4F53;</h3>
+<h4>&#x89C6;&#x9891;&#x64AD;&#x653E;</h4>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">presentMediaPlayerControllerWithURL</span><span class="params">(URL: NSURL, options: [NSObject : AnyObject]?, completion: <span class="params">(Bool, NSTimeInterval, NSError?)</span></span></span> -&gt; <span class="type">Void</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">dismissMediaPlayerController</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;&#x65B9;&#x6CD5;&#x548C; WKInterfaceMovie &#x5176;&#x5B9E;&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x90FD;&#x662F;&#x8DF3;&#x8F6C;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684; WKInterfaceController &#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<h4>&#x97F3;&#x9891;&#x5F55;&#x5236;</h4>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">presentAudioRecorderControllerWithOutputURL</span><span class="params">(URL: NSURL, preset: WKAudioRecorderPreset, options: [NSObject : AnyObject]?, completion: <span class="params">(Bool, NSError?)</span></span></span> -&gt; <span class="type">Void</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">dismissAudioRecorderController</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x53EA;&#x652F;&#x6301;&#x53EA;&#x652F;&#x6301; .wav&#x3001; .mp4&#x3001; .m4a &#x4E09;&#x79CD;&#x683C;&#x5F0F;&#x3002;</p>
+<h4>&#x97F3;&#x9891;&#x64AD;&#x653E;</h4>
+<p>Watch App &#x9700;&#x8981;&#x501F;&#x52A9;&#x84DD;&#x7259;&#x8BBE;&#x5907;&#x624D;&#x80FD;&#x63A7;&#x5236;&#x64AD;&#x653E;&#x97F3;&#x4E50;</p>
+<h4>&#x8BED;&#x97F3;&#x8F93;&#x5165;</h4>
+<p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">presentTextInputControllerWithSuggestions</span><span class="params">(suggestions: [String]?, allowedInputMode inputMode: WKTextInputMode, completion: <span class="params">([AnyObject]?)</span></span></span> -&gt; <span class="type">Void</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">presentTextInputControllerWithSuggestionsForLanguage</span><span class="params">(suggestionsHandler: <span class="params">(<span class="params">(String)</span></span></span></span> -&gt; [<span class="type">AnyObject</span>]?)?, allowedInputMode inputMode: <span class="type">WKTextInputMode</span>, completion: ([<span class="type">AnyObject</span>]?) -&gt; <span class="type">Void</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">dismissTextInputController</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<h3>3&#x3001;openSystemURL</h3>
+<p>&#x901A;&#x8FC7; WKExtension &#x7684;<code>public func openSystemURL(url: NSURL)</code>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x53D1;&#x77ED;&#x4FE1;&#x6253;&#x7535;&#x8BDD;&#x529F;&#x80FD;&#x3002;</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2>&#x4E00;&#x3001;&#x5EFA;&#x7ACB; WatchOS &#x9879;&#x76EE;</h2>
+<ul>
+<li>&#x521B;&#x5EFA;&#x65B0;&#x7684; iOS App &#x548C; WatchKit App:
+]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[iOS集成极光推送遇到的几个问题]]></title>
     <link href="http://yoursite.com/2016/02/02/iOS%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81%E9%81%87%E5%88%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2016/02/02/iOS集成极光推送遇到的几个问题/</id>
     <published>2016-02-02T12:42:51.000Z</published>
-    <updated>2016-08-07T12:32:45.000Z</updated>
+    <updated>2016-08-13T08:02:08.000Z</updated>
     <content type="html"><![CDATA[<p>&#x5176;&#x5B9E;&#x5B98;&#x65B9;&#x7684; <a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK &#x96C6;&#x6210;&#x6307;&#x5357;</a>&#x548C; <a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK &#x6559;&#x7A0B;</a>&#x4E24;&#x4E2A;&#x6587;&#x6863;&#x5173;&#x4E8E;&#x96C6;&#x6210;&#x65F6;&#x7684;&#x5927;&#x90E8;&#x5206;&#x95EE;&#x9898;&#x90FD;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x8BA8;&#x8BBA;&#x6211;&#x9047;&#x89C1;&#x7684;&#x6587;&#x6863;&#x91CC;&#x8868;&#x8FF0;&#x4E0D;&#x660E;&#x767D;&#x7684;&#x90A3;&#x51E0;&#x4E2A;&#x5751;&#xFF08;<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0&#x7248;&#x672C;&#x7684;</a>&#xFF09;&#x3002;</p>
 <h1>1&#x3001;APNs &#x8BC1;&#x4E66;&#x548C;&#x4E3B;&#x8BC1;&#x4E66;&#x7684;&#x533A;&#x522B;</h1>
 <p><img src="/2016/02/02/iOS&#x96C6;&#x6210;&#x6781;&#x5149;&#x63A8;&#x9001;&#x9047;&#x5230;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;/Jpush1.png" alt=""></p>
 <p>&#x6211;&#x521A;&#x5F00;&#x59CB;&#x505A;&#x63A8;&#x9001;&#x7684;&#x65F6;&#x5019;&#x672C;&#x6765;&#x4EE5;&#x4E3A; APNs &#x8BC1;&#x4E66;&#x5C31;&#x662F;&#x4E3B;&#x8BC1;&#x4E66;&#x91CC;&#x52A0;&#x4E86;&#x4E2A;&#x5141;&#x8BB8;&#x63A8;&#x9001;&#x800C;&#x5DF2;&#xFF0C;&#x4E8B;&#x5B9E;&#x8BC1;&#x660E;&#x6211;&#x8FD8;&#x662F;&#x592A;&#x5929;&#x771F;&#x4E86;&#x3002;</p>
 <p><img src="/2016/02/02/iOS&#x96C6;&#x6210;&#x6781;&#x5149;&#x63A8;&#x9001;&#x9047;&#x5230;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;/Jpush2.png" alt=""></p>
 <p>&#x9996;&#x5148;&#x662F;&#x521B;&#x5EFA;Provisioning Profile&#x6587;&#x4EF6;&#x65F6;&#x9009;&#x62E9;&#x8BC1;&#x4E66;&#x5217;&#x8868;&#x65F6;&#x662F;&#x4E0D;&#x80FD;&#x9009;&#x62E9;APNs&#x8BC1;&#x4E66;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x5728;XCode&#x91CC;Code Signing&#x4E5F;&#x662F;&#x4E0D;&#x80FD;&#x9009;&#x62E9;&#x7684;&#x3002;
-APNs &#x8BC1;&#x4E66;&#x5176;&#x5B9E;&#x662F;&#x53EA;&#x8868;&#x793A;&#x4E86;&#x6709;&#x63A8;&#x9001;&#x529F;&#x80FD;&#xFF0C;&#x4E3B;&#x8BC1;&#x4E66;&#x8FD8;&#x662F;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x53EA;&#x662F;&#x53C8;&#x6DFB;&#x52A0;&#x4E86;&#x4E24;&#x4E2A;&#x8BC1;&#x4E66;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x662F;&#x4E0D;&#x7528;&#x53D8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x5C31;&#x6709;4&#x4E2A;&#x8BC1;&#x4E66;&#x4E86;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6709;&#x8F7B;&#x5FAE;&#x5F3A;&#x8FEB;&#x75C7;&#x7684;&#x4EBA;&#xFF0C;&#x521B;&#x5EFA;&#x5B8C; APNs &#x8BC1;&#x4E66;&#x5C31;&#x987A;&#x624B;&#x628A;&#x4E3B;&#x8BC1;&#x4E66;&#x5220;&#x4E86;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x8BA9;&#x6211;&#x6298;&#x817E;&#x4E86;&#x597D;&#x4E45;&#x3002;</p>
+APNs &#x8BC1;&#x4E66;&#x5176;&#x5B9E;&#x662F;&#x53EA;&#x8868;&#x793A;&#x4E86;&#x6709;&#x63A8;&#x9001;&#x529F;&#x80FD;&#xFF0C;&#x4E3B;&#x8BC1;&#x4E66;&#x8FD8;&#x662F;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x53EA;&#x662F;&#x53C8;&#x6DFB;&#x52A0;&#x4E86;&#x4E24;&#x4E2A;&#x8BC1;&#x4E66;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x662F;&#x4E0D;&#x7528;&#x53D8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x5C31;&#x6709;4&#x4E2A;&#x8BC1;&#x4E66;&#x4E86;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6709;&#x8F7B;&#x5FAE;&#x5F3A;&#x8FEB;&#x75C7;&#x7684;&#x4EBA;&#xFF0C;&#x521B;&#x5EFA;&#x5B8C; APNs &#x8BC1;&#x4E66;&#x5C31;&#x987A;&#x624B;&#x628A;&#x4E3B;&#x8BC1;&#x4E66;&#x5220;&#x4E86;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x8BA9;&#x6211;&#x6298;&#x817E;&#x4E86;&#x597D;&#x4E45;&#x3002;
+&lt;!--more--&gt;</p>
 <h1>2&#x3001;&#x542F;&#x52A8; SDK &#x9700;&#x8981;&#x4F20;&#x7684;&#x53C2;&#x6570;</h1>
 <p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)<span class="string">setupWithOption:</span>(NSDictionary *)launchingOption</span><br><span class="line"><span class="string">appKey:</span>(NSString *)appKey</span><br><span class="line"><span class="string">channel:</span>(NSString *)channel</span><br><span class="line"><span class="string">apsForProduction:</span>(BOOL)isProduction;</span><br></pre></td></tr></table></figure></p>
 <p>&#x524D;&#x4E24;&#x4E2A;&#x5C31;&#x4E0D;&#x5FC5;&#x8BF4;&#x4E86;&#x3002;
@@ -516,7 +630,7 @@ isProduction &#x662F;&#x5426;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x3002;&#x770B;&#x
     <link href="http://yoursite.com/2016/01/04/Markdown%E8%AF%AD%E8%A8%80%E5%AF%B9%E7%85%A7/"/>
     <id>http://yoursite.com/2016/01/04/Markdown语言对照/</id>
     <published>2016-01-04T07:11:28.000Z</published>
-    <updated>2016-08-07T12:31:02.000Z</updated>
+    <updated>2016-08-13T08:00:34.000Z</updated>
     <content type="html"><![CDATA[<h1>&#x6807;&#x9898;</h1>
 <ul>
 <li>H1 :</li>
@@ -542,6 +656,7 @@ isProduction &#x662F;&#x5426;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x3002;&#x770B;&#x
 <li>H6 :</li>
 </ul>
 <h6>Header 6 <code>###### Header 6</code></h6>
+<p>&lt;!--more--&gt;</p>
 <h1>&#x5217;&#x8868;</h1>
 <ul>
 <li>&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF08;&#x4F7F;&#x7528;&#x661F;&#x53F7;&#x3001;&#x52A0;&#x53F7;&#x6216;&#x51CF;&#x53F7;&#xFF09;
@@ -561,39 +676,22 @@ isProduction &#x662F;&#x5426;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x3002;&#x770B;&#x
 </ul>
 <h1>&#x6587;&#x672C;&#x6837;&#x5F0F;</h1>
 <ul>
-<li>
-<p>&#x52A0;&#x7C97;:<strong>Bold</strong> <code>**Bold**</code> or <code>__Bold__</code></p>
-</li>
-<li>
-<p>&#x659C;&#x4F53;&#x5B57;:<em>Italics</em> <code>*Italics*</code> or <code>_Italics_</code></p>
-</li>
-<li>
-<p>&#x659C;&#x7C97;&#x4F53;:<strong><em>text</em></strong> <code>***text***</code> or <code>___text___</code>
-&#xFF08;&#x5982;&#x679C;&#x8981;&#x5728;&#x6587;&#x5B57;&#x524D;&#x540E;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x666E;&#x901A;&#x7684;&#x661F;&#x53F7;&#x6216;&#x5E95;&#x7EBF;&#xFF0C;&#x7528;&#x53CD;&#x659C;&#x7EBF;&#xFF08;&#x8F6C;&#x4E49;&#x7B26;&#xFF09;&#xFF1A;*this text is surrounded by literal asterisks* <code>\*this text is surrounded by literal asterisks\*</code>&#xFF09;</p>
-</li>
-<li>
-<p>&#x5C0F;&#x578B;&#x6587;&#x672C;&#xFF1A;&lt;small&gt;&#x6587;&#x672C;&#x5185;&#x5BB9;&lt;/small&gt; <code>&lt;small&gt;&#x6587;&#x672C;&#x5185;&#x5BB9;&lt;/small&gt;</code></p>
-</li>
-<li>
-<p>&#x5220;&#x9664;&#x7EBF;:<s>text</s> &#x4E24;&#x8FB9;&#x52A0;~~</p>
-</li>
-<li>
-<p>&#x5FEB;&#x6377;&#x952E;&#xFF1A;&lt;kbd&gt;Ctrl+[&lt;/kbd&gt; <code>&lt;kbd&gt;Ctrl+[&lt;/kbd&gt;</code></p>
-</li>
-<li>
-<p>&#x5185;&#x5D4C;&#x4EE3;&#x7801;/&#x9AD8;&#x4EAE; :<code>alert(&apos;Hello World&apos;);</code> <code>`alert(&apos;Hello World&apos;);`</code> &#xFF08;&#x5982;&#x679C;&#x9AD8;&#x4EAE;&#x7684;&#x5185;&#x5BB9;&#x5305;&#x542B; ` &#x53F7;&#xFF0C;&#x53EF;&#x4EE5;&#x7528; `` &#x5305;&#x88F9;&#x8D77;&#x6765;&#xFF09;</p>
-</li>
-<li>
-<p>&#x4EE3;&#x7801;&#x5757;:&#xFF08;&#x7528; <figure class="highlight plain"><figcaption><span>~~~ &#x5305;&#x88F9;&#x6216;&#x8005;&#x6BCF;&#x884C;&#x7F29;&#x8FDB;4&#x4E2A;&#x7A7A;&#x683C;&#x6216;2&#x4E2A;&#x5236;&#x8868;&#x7B26;)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">lazy var formatter: NSDateFormatter = {</span><br><span class="line">let dateFormatter = NSDateFormatter()</span><br><span class="line">dateFormatter.formatterBehavior = .Behavior10_4</span><br><span class="line">dateFormatter.dateFormat = &quot;HH:mm:ss.SSS&quot;</span><br><span class="line">return dateFormatter</span><br><span class="line">}()</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>&#x5206;&#x5272;&#x7EBF; :<code>___</code> or <code>***</code></p>
-</li>
+<li>&#x52A0;&#x7C97;:<strong>Bold</strong> <code>**Bold**</code> or <code>__Bold__</code></li>
+<li>&#x659C;&#x4F53;&#x5B57;:<em>Italics</em> <code>*Italics*</code> or <code>_Italics_</code></li>
+<li>&#x659C;&#x7C97;&#x4F53;:<strong><em>text</em></strong> <code>***text***</code> or <code>___text___</code>
+&#xFF08;&#x5982;&#x679C;&#x8981;&#x5728;&#x6587;&#x5B57;&#x524D;&#x540E;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x666E;&#x901A;&#x7684;&#x661F;&#x53F7;&#x6216;&#x5E95;&#x7EBF;&#xFF0C;&#x7528;&#x53CD;&#x659C;&#x7EBF;&#xFF08;&#x8F6C;&#x4E49;&#x7B26;&#xFF09;&#xFF1A;*this text is surrounded by literal asterisks* <code>\*this text is surrounded by literal asterisks\*</code>&#xFF09;</li>
+<li>&#x5C0F;&#x578B;&#x6587;&#x672C;&#xFF1A;&lt;small&gt;&#x6587;&#x672C;&#x5185;&#x5BB9;&lt;/small&gt; <code>&lt;small&gt;&#x6587;&#x672C;&#x5185;&#x5BB9;&lt;/small&gt;</code></li>
+<li>&#x5220;&#x9664;&#x7EBF;:<s>text</s> &#x4E24;&#x8FB9;&#x52A0;~~</li>
+<li>&#x5FEB;&#x6377;&#x952E;&#xFF1A;&lt;kbd&gt;Ctrl+[&lt;/kbd&gt; <code>&lt;kbd&gt;Ctrl+[&lt;/kbd&gt;</code></li>
+<li>&#x5185;&#x5D4C;&#x4EE3;&#x7801;/&#x9AD8;&#x4EAE; :<code>alert(&apos;Hello World&apos;);</code> <code>`alert(&apos;Hello World&apos;);`</code> &#xFF08;&#x5982;&#x679C;&#x9AD8;&#x4EAE;&#x7684;&#x5185;&#x5BB9;&#x5305;&#x542B; ` &#x53F7;&#xFF0C;&#x53EF;&#x4EE5;&#x7528; `` &#x5305;&#x88F9;&#x8D77;&#x6765;&#xFF09;</li>
+<li>&#x4EE3;&#x7801;&#x5757;:&#xFF08;&#x7528; <figure class="highlight plain"><figcaption><span>~~~ &#x5305;&#x88F9;&#x6216;&#x8005;&#x6BCF;&#x884C;&#x7F29;&#x8FDB;4&#x4E2A;&#x7A7A;&#x683C;&#x6216;2&#x4E2A;&#x5236;&#x8868;&#x7B26;)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
-<hr>
-<ul>
-<li>&#x8868;&#x683C;&#xFF1A;&#x5DE6;&#x5BF9;&#x9F50;&#x662F;:---   &#x5C45;&#x4E2D;&#x5BF9;&#x9F50;&#x662F;:---:   &#x53F3;&#x5BF9;&#x9F50;&#x662F;---:</li>
-</ul>
+<p>lazy var formatter: NSDateFormatter = {
+let dateFormatter = NSDateFormatter()
+dateFormatter.formatterBehavior = .Behavior10_4
+dateFormatter.dateFormat = &quot;HH:mm:ss.SSS&quot;
+return dateFormatter
+}()<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* &#x5206;&#x5272;&#x7EBF; <span class="symbol">:<span class="string">`___`</span></span> <span class="keyword">or</span> <span class="string">`***`</span></span><br><span class="line">__<span class="number">_</span></span><br><span class="line">* &#x8868;&#x683C;&#xFF1A;&#x5DE6;&#x5BF9;&#x9F50;&#x662F;<span class="symbol">:---</span>   &#x5C45;&#x4E2D;&#x5BF9;&#x9F50;&#x662F;<span class="symbol">:---</span>:   &#x53F3;&#x5BF9;&#x9F50;&#x662F;---:</span><br><span class="line"></span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line"><span class="symbol">:-----|</span><span class="symbol">:-----</span><span class="symbol">:|</span> ----:</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br></pre></td></tr></table></figure></p>
 <table>
 <thead>
 <tr>
@@ -616,58 +714,24 @@ isProduction &#x662F;&#x5426;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x3002;&#x770B;&#x
 <tr>
 <td style="text-align:left">Woow</td>
 <td style="text-align:center">Woow</td>
-<td style="text-align:right">Woow</td>
+<td style="text-align:right">Woow<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="section"># &#x5F15;&#x7528;</span></span><br><span class="line"><span class="quote">&gt; &#x5927;&#x695A;&#x5174;&#xFF0C;&#x9648;&#x80DC;&#x738B;&#xFF01;</span></span><br><span class="line"></span><br><span class="line"><span class="code">`&gt; &#x5927;&#x695A;&#x5174;&#xFF0C;&#x9648;&#x80DC;&#x738B;&#xFF01;`</span>(&#x548C;&#x4E0B;&#x6587;&#x8981;&#x9694;&#x4E00;&#x884C;)</span><br><span class="line"></span><br><span class="line"><span class="section">##### &#x533A;&#x5757;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;</span></span><br><span class="line"><span class="quote">&gt; This is the first level of quoting.</span></span><br><span class="line"><span class="quote">&gt; &gt; This is nested block quote.</span></span><br><span class="line"><span class="quote">&gt;</span><br><span class="line">&gt; Back to the first level.</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**&#x5F15;&#x7528;&#x7684;&#x533A;&#x5757;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684; Markdown &#x8BED;&#x6CD5;**</span></span><br><span class="line"><span class="quote">&gt; ## &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x3002;</span></span><br><span class="line"><span class="quote">&gt;</span><br><span class="line">&gt; 1.   &#x8FD9;&#x662F;&#x7B2C;&#x4E00;&#x884C;&#x5217;&#x8868;&#x9879;&#x3002;</span></span><br><span class="line"><span class="quote">&gt; 2.   &#x8FD9;&#x662F;&#x7B2C;&#x4E8C;&#x884C;&#x5217;&#x8868;&#x9879;&#x3002;</span></span><br><span class="line"><span class="quote">&gt;</span><br><span class="line">&gt; &#x7ED9;&#x51FA;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#xFF1A;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></td>
 </tr>
 </tbody>
 </table>
-<p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line"><span class="symbol">:-----|</span><span class="symbol">:-----</span><span class="symbol">:|</span> ----:</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br><span class="line">Woow <span class="params">| Woow |</span> Woow</span><br></pre></td></tr></table></figure></p>
-<h1>&#x5F15;&#x7528;</h1>
 <blockquote>
-<p>&#x5927;&#x695A;&#x5174;&#xFF0C;&#x9648;&#x80DC;&#x738B;&#xFF01;</p>
+<p>return shell_exec(&quot;echo $input | $markdown_script&quot;);<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="section"># &#x94FE;&#x63A5;</span></span><br><span class="line"><span class="bullet">* </span>&#x7F51;&#x7EDC;&#x94FE;&#x63A5; :[<span class="string">Baidu</span>](<span class="link">https://www.baidu.com</span>) <span class="code">`[Baidu](https://www.baidu.com)`</span> or</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<p><code>&gt; &#x5927;&#x695A;&#x5174;&#xFF0C;&#x9648;&#x80DC;&#x738B;&#xFF01;</code>(&#x548C;&#x4E0B;&#x6587;&#x8981;&#x9694;&#x4E00;&#x884C;)</p>
-<h5>&#x533A;&#x5757;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;</h5>
-<blockquote>
-<p>This is the first level of quoting.</p>
-<blockquote>
-<p>This is nested block quote.</p>
-</blockquote>
-<p>Back to the first level.</p>
-</blockquote>
-<p><strong>&#x5F15;&#x7528;&#x7684;&#x533A;&#x5757;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684; Markdown &#x8BED;&#x6CD5;</strong></p>
-<blockquote>
-<h2>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x3002;</h2>
-<ol>
-<li>&#x8FD9;&#x662F;&#x7B2C;&#x4E00;&#x884C;&#x5217;&#x8868;&#x9879;&#x3002;</li>
-<li>&#x8FD9;&#x662F;&#x7B2C;&#x4E8C;&#x884C;&#x5217;&#x8868;&#x9879;&#x3002;</li>
-</ol>
-<p>&#x7ED9;&#x51FA;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#xFF1A;
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">return</span> shell_<span class="built_in">exec</span>(<span class="string">&quot;echo <span class="variable">$input</span> | <span class="variable">$markdown_script</span>&quot;</span>);</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h1>&#x94FE;&#x63A5;</h1>
+<p>[Baidu][id]
+[id]:https://www.baidu.com ```</p>
 <ul>
-<li>
-<p>&#x7F51;&#x7EDC;&#x94FE;&#x63A5; :<a href="https://www.baidu.com" target="_blank" rel="external">Baidu</a> <code>[Baidu](https://www.baidu.com)</code> or
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">Baidu</span>][<span class="symbol">id</span>]</span><br><span class="line">[<span class="symbol">id</span><span class="link">]:https://www.baidu.com</span></span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>&#x672C;&#x5730;&#x94FE;&#x63A5; :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) <code>[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)</code></p>
-</li>
-<li>
-<p>&#x7F51;&#x7EDC;&#x56FE;&#x7247; :<code>![&#x767E;&#x5EA6;](https://www.baidu.com/img/bd_logo1.png)</code>
-<img src="https://www.baidu.com/img/bd_logo1.png" alt="&#x767E;&#x5EA6;"></p>
-</li>
-<li>
-<p>&#x672C;&#x5730;&#x56FE;&#x7247; :<code>![&#x65B0;&#x6D6A;](/Markdown2.png)</code>
-<img src="/2016/01/04/Markdown&#x8BED;&#x8A00;&#x5BF9;&#x7167;/Markdown2.png" alt="&#x65B0;&#x6D6A;"></p>
-</li>
-<li>
-<p>&#x56FE;&#x7247;&#x94FE;&#x63A5;&#xFF1A;<code>[![](/Markdown3.jpg)](https://www.zhihu.com)</code>
-<a href="https://www.zhihu.com" target="_blank" rel="external"><img src="/2016/01/04/Markdown&#x8BED;&#x8A00;&#x5BF9;&#x7167;/Markdown3.jpg" alt=""></a></p>
-</li>
-<li>
-<p>&#x5185;&#x90E8;&#x8DF3;&#x8F6C;&#xFF1A; [&#x6807;&#x9898;](# &#x6807;&#x9898;)   <code>[&#x6807;&#x9898;](# &#x6807;&#x9898;)</code></p>
-</li>
+<li>&#x672C;&#x5730;&#x94FE;&#x63A5; :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) <code>[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)</code></li>
+<li>&#x7F51;&#x7EDC;&#x56FE;&#x7247; :<code>![&#x767E;&#x5EA6;](https://www.baidu.com/img/bd_logo1.png)</code>
+<img src="https://www.baidu.com/img/bd_logo1.png" alt="&#x767E;&#x5EA6;"></li>
+<li>&#x672C;&#x5730;&#x56FE;&#x7247; :<code>![&#x65B0;&#x6D6A;](/Markdown2.png)</code>
+<img src="/2016/01/04/Markdown&#x8BED;&#x8A00;&#x5BF9;&#x7167;/Markdown2.png" alt="&#x65B0;&#x6D6A;"></li>
+<li>&#x56FE;&#x7247;&#x94FE;&#x63A5;&#xFF1A;<code>[![](/Markdown3.jpg)](https://www.zhihu.com)</code>
+<a href="https://www.zhihu.com" target="_blank" rel="external"><img src="/2016/01/04/Markdown&#x8BED;&#x8A00;&#x5BF9;&#x7167;/Markdown3.jpg" alt=""></a></li>
+<li>&#x5185;&#x90E8;&#x8DF3;&#x8F6C;&#xFF1A; [&#x6807;&#x9898;](# &#x6807;&#x9898;)   <code>[&#x6807;&#x9898;](# &#x6807;&#x9898;)</code></li>
 </ul>
 <h1>&#x5176;&#x5B83;</h1>
 <ul>
