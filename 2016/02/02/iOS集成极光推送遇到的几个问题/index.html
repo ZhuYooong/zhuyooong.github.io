@@ -19,7 +19,7 @@
 <meta property="og:description" content="&amp;#x5176;&amp;#x5B9E;&amp;#x5B98;&amp;#x65B9;&amp;#x7684; iOS SDK &amp;#x96C6;&amp;#x6210;&amp;#x6307;&amp;#x5357;&amp;#x548C; iOS SDK &amp;#x6559;&amp;#x7A0B;&amp;#x4E24;&amp;#x4E2A;&amp;#x6587;&amp;#x6863;&amp;#x5173;&amp;#x4E8E;&amp;#x96C6;&amp;#x6210;&amp;#x65F6;&amp;#x7684;&amp;#x592">
 <meta property="og:image" content="http://yoursite.com/2016/02/02/iOS集成极光推送遇到的几个问题/Jpush1.png">
 <meta property="og:image" content="http://yoursite.com/2016/02/02/iOS集成极光推送遇到的几个问题/Jpush2.png">
-<meta property="og:updated_time" content="2016-08-13T08:02:08.000Z">
+<meta property="og:updated_time" content="2016-08-13T09:56:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS集成极光推送遇到的几个问题">
 <meta name="twitter:description" content="&amp;#x5176;&amp;#x5B9E;&amp;#x5B98;&amp;#x65B9;&amp;#x7684; iOS SDK &amp;#x96C6;&amp;#x6210;&amp;#x6307;&amp;#x5357;&amp;#x548C; iOS SDK &amp;#x6559;&amp;#x7A0B;&amp;#x4E24;&amp;#x4E2A;&amp;#x6587;&amp;#x6863;&amp;#x5173;&amp;#x4E8E;&amp;#x96C6;&amp;#x6210;&amp;#x65F6;&amp;#x7684;&amp;#x592">
@@ -110,7 +110,7 @@
 <p><img src="/2016/02/02/iOS&#x96C6;&#x6210;&#x6781;&#x5149;&#x63A8;&#x9001;&#x9047;&#x5230;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;/Jpush2.png" alt=""></p>
 <p>&#x9996;&#x5148;&#x662F;&#x521B;&#x5EFA;Provisioning Profile&#x6587;&#x4EF6;&#x65F6;&#x9009;&#x62E9;&#x8BC1;&#x4E66;&#x5217;&#x8868;&#x65F6;&#x662F;&#x4E0D;&#x80FD;&#x9009;&#x62E9;APNs&#x8BC1;&#x4E66;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x5728;XCode&#x91CC;Code Signing&#x4E5F;&#x662F;&#x4E0D;&#x80FD;&#x9009;&#x62E9;&#x7684;&#x3002;
 APNs &#x8BC1;&#x4E66;&#x5176;&#x5B9E;&#x662F;&#x53EA;&#x8868;&#x793A;&#x4E86;&#x6709;&#x63A8;&#x9001;&#x529F;&#x80FD;&#xFF0C;&#x4E3B;&#x8BC1;&#x4E66;&#x8FD8;&#x662F;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x53EA;&#x662F;&#x53C8;&#x6DFB;&#x52A0;&#x4E86;&#x4E24;&#x4E2A;&#x8BC1;&#x4E66;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x662F;&#x4E0D;&#x7528;&#x53D8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x5C31;&#x6709;4&#x4E2A;&#x8BC1;&#x4E66;&#x4E86;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6709;&#x8F7B;&#x5FAE;&#x5F3A;&#x8FEB;&#x75C7;&#x7684;&#x4EBA;&#xFF0C;&#x521B;&#x5EFA;&#x5B8C; APNs &#x8BC1;&#x4E66;&#x5C31;&#x987A;&#x624B;&#x628A;&#x4E3B;&#x8BC1;&#x4E66;&#x5220;&#x4E86;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x8BA9;&#x6211;&#x6298;&#x817E;&#x4E86;&#x597D;&#x4E45;&#x3002;
-&lt;!--more--&gt;</p>
+&lt;!-- more --&gt;</p>
 <h1>2&#x3001;&#x542F;&#x52A8; SDK &#x9700;&#x8981;&#x4F20;&#x7684;&#x53C2;&#x6570;</h1>
 <p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)<span class="string">setupWithOption:</span>(NSDictionary *)launchingOption</span><br><span class="line"><span class="string">appKey:</span>(NSString *)appKey</span><br><span class="line"><span class="string">channel:</span>(NSString *)channel</span><br><span class="line"><span class="string">apsForProduction:</span>(BOOL)isProduction;</span><br></pre></td></tr></table></figure></p>
 <p>&#x524D;&#x4E24;&#x4E2A;&#x5C31;&#x4E0D;&#x5FC5;&#x8BF4;&#x4E86;&#x3002;
