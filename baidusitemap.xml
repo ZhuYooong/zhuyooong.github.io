@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/02/02/iOS%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81%E9%81%87%E5%88%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-08-13T10:00:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS集成极光推送遇到的几个问题</title>
+        <pubTime>2016-02-02T12:42:51.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/04/15/%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2016-08-13T09:56:28.000Z</lastmod>
     <data>
@@ -40,21 +55,6 @@
         <display>
         <title>Markdown语言对照</title>
         <pubTime>2016-01-04T07:11:28.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/02/02/iOS%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81%E9%81%87%E5%88%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2016-08-13T09:56:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS集成极光推送遇到的几个问题</title>
-        <pubTime>2016-02-02T12:42:51.000Z</pubTime>
         
          
            
