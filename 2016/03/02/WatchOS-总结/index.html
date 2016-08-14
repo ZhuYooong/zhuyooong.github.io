@@ -1,0 +1,664 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>WatchOS 总结 | Zhuyooong’ Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Zhuyooong">
+    
+
+    
+    <meta name="description" content="建立 WatchOS 项目
+
+创建新的 iOS App 和 WatchKit App:
+选择 File\New\Project…,在出现的对话框中选择 watchOS\Application\iOS App with WatchKit App 然后点击 Next
+
+
+
+为已有的 iOS App 添加 WatchKit App:
+选择 File\New\Target…,在出现的对话框中选择 watc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WatchOS 总结">
+<meta property="og:url" content="http://yoursite.com/2016/03/02/WatchOS-总结/index.html">
+<meta property="og:site_name" content="Zhuyooong’ Blog">
+<meta property="og:description" content="建立 WatchOS 项目
+
+创建新的 iOS App 和 WatchKit App:
+选择 File\New\Project…,在出现的对话框中选择 watchOS\Application\iOS App with WatchKit App 然后点击 Next
+
+
+
+为已有的 iOS App 添加 WatchKit App:
+选择 File\New\Target…,在出现的对话框中选择 watc">
+<meta property="og:image" content="http://yoursite.com/WatchOS1.png">
+<meta property="og:image" content="http://yoursite.com/WatchOS2.png">
+<meta property="og:image" content="http://yoursite.com/WatchOS3.png">
+<meta property="og:image" content="http://yoursite.com/WatchOS4.png">
+<meta property="og:image" content="http://yoursite.com/WatchOS5.png">
+<meta property="og:image" content="http://yoursite.com/WatchOS6.png">
+<meta property="og:image" content="http://yoursite.com/WatchOS7.png">
+<meta property="og:updated_time" content="2016-08-14T07:48:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WatchOS 总结">
+<meta name="twitter:description" content="建立 WatchOS 项目
+
+创建新的 iOS App 和 WatchKit App:
+选择 File\New\Project…,在出现的对话框中选择 watchOS\Application\iOS App with WatchKit App 然后点击 Next
+
+
+
+为已有的 iOS App 添加 WatchKit App:
+选择 File\New\Target…,在出现的对话框中选择 watc">
+<meta name="twitter:image" content="http://yoursite.com/WatchOS1.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Zhuyooong’ Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/pandaicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/sleep.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/sleep.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/panda.png" alt="Zhuyooong’ Blog" title="Zhuyooong’ Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Zhuyooong’ Blog">Zhuyooong’ Blog</a></h1>
+				<h2 class="blog-motto">hello world</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+						<li><a href="/about">相关</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+	            <label>Search</label>
+	            <input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+	          </form>
+					
+					</li>
+				</ul>
+			</nav>
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/02/WatchOS-总结/" title="WatchOS 总结" itemprop="url">WatchOS 总结</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zhuyooong" target="_blank" itemprop="author">Zhuyooong</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-02T08:03:39.000Z" itemprop="datePublished"> 发表于 2016-03-02</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">建立 WatchOS 项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">用户交互方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">WKInterfaceController</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.2.</span> <span class="toc-text">页面跳转</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">Glance 界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">Notification 界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">Complications 界面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">界面元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">基本的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">WKInterfacePicker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">WKInterfaceDevice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.4.</span> <span class="toc-text">WKInterfaceTable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.5.</span> <span class="toc-text">WKInterfaceMenu、WKInterfaceMenuItem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.6.</span> <span class="toc-text">WKAlertAction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.7.</span> <span class="toc-text">WKInterfaceGroup</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">数据通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">target membership</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.</span> <span class="toc-text">WatchConnectivity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">其它</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.</span> <span class="toc-text">动画</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.1.</span> <span class="toc-text">帧动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.2.</span> <span class="toc-text">基本动画</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.</span> <span class="toc-text">多媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.1.</span> <span class="toc-text">视频播放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.2.</span> <span class="toc-text">音频录制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.3.</span> <span class="toc-text">音频播放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.4.</span> <span class="toc-text">语音输入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.3.</span> <span class="toc-text">openSystemURL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.4.</span> <span class="toc-text">Demo</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2>建立 WatchOS 项目</h2>
+<ul>
+<li>创建新的 iOS App 和 WatchKit App:
+选择 File\New\Project…,在出现的对话框中选择 watchOS\Application\iOS App with WatchKit App 然后点击 Next</li>
+</ul>
+<p><img src="/WatchOS1.png" alt=""></p>
+<ul>
+<li>为已有的 iOS App 添加 WatchKit App:
+选择 File\New\Target…,在出现的对话框中选择 watchOS\Application\WatchKit App 然后点击 Next</li>
+</ul>
+<p><img src="/WatchOS2.png" alt=""></p>
+<p>以上的操作创建了 WatchKit App 和 WatchKit Extension 两个 Target。其中 View 在 WatchKit App 里，而 Controller 和 Model 在 WatchKit Extension 里。</p>
+<p><img src="/WatchOS3.png" alt=""></p>
+<h2>用户交互方式</h2>
+<h3>WKInterfaceController</h3>
+<h4>生命周期</h4>
+<p><code>public func awakeWithContext(context: AnyObject?)</code>是开始初始化 Storyboard 中的 UI 时加载的方法，可以在这里加载数据或者更新在 StoryBoard 中当前 Controller 添加的 interface objects。</p>
+<p><code>public func willActivate()</code>是显示当前加载的UI时加载的方法，可以在这里更新 interface objects 或者处理其他事件。</p>
+<p><code>public func didDeactivate()</code>是切换页面或者停止使用时加载的方法，可以在这里清理 task 或者数据。</p>
+<h4>页面跳转</h4>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public func pushControllerWithName(name: String, context: AnyObject?)</span><br><span class="line">public func popController()</span><br><span class="line">public func popToRootController()</span><br><span class="line">public func presentControllerWithName(name: String, context: AnyObject?)</span><br><span class="line">public func presentControllerWithNames(names: [String], contexts: [AnyObject]?)</span><br><span class="line">public func dismissController()</span><br></pre></td></tr></table></figure></p>
+<p>Push、Pop、Present、Dismiss 的行为和 UIViewController 中类似，在 Storyboard 中为 Push、Modal 两种形式。presentControllerWithNames 我们可以 present 一组 Controller, 这一组 Controller 将以 page control 的形式展示。</p>
+<p><code>public func becomeCurrentPage()</code>是当页面以 page control 的形式展现时，可以调用这个方法改变当前的 page 来跳转页面。在 Storyboard 中是以 next page 实现页面跳转。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public func contextForSegueWithIdentifier(segueIdentifier: String) -&gt; AnyObject?</span><br><span class="line">public func contextsForSegueWithIdentifier(segueIdentifier: String) -&gt; [AnyObject]?</span><br><span class="line">public func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -&gt; AnyObject?</span><br><span class="line">public func contextsForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -&gt; [AnyObject]?</span><br></pre></td></tr></table></figure></p>
+<p>如果直接在 Storyboard 中通过 Segue 实现了页面跳转，可以通过上边这些方法进行数据传递。在目的页面<code>public func awakeWithContext(context: AnyObject?)</code>方法中接收传值，其中<code>context</code>就是传递过去的值。</p>
+<h3>Glance 界面</h3>
+<p>将重要信息展示在一个视图里，让用户能在一瞥之间快速获取，是用户浏览 Watch app 中的重要信息的补充方式，对于 Watch app 并不是必需的。当添加 Watch app target 到你的 iOS App 中时，你能指定是否需要一个 Glance 界面。如果你在一开始忘了添加，也可以稍后添加。一个 Watch app 只允许有一个 Glance 界面控制器</p>
+<p><img src="/WatchOS4.png" alt=""></p>
+<p>由于 Glance 的界面是由自定义的 WKInterfaceController 子类驱动的，所以 Glance 界面控制器的生命周期和其他 WatchKit 界面控制器一样。但是 Glance 不支持互动操作，触摸 Glance 将启动对应的 Watch app。</p>
+<p>如果你想直接跳转到指定的页面，需要在 Glance 界面的 willActivate 方法中调用<code>public func updateUserActivity(type: String, userInfo: [NSObject : AnyObject]?, webpageURL: NSURL?)</code>方法，并通过 userInfo 参数指定传输的信息，然后在主控制器 InterfaceController 实现<code>public func handleActionWithIdentifier(identifier: String?, forRemoteNotification remoteNotification: [NSObject : AnyObject])</code>或者<code>public func handleActionWithIdentifier(identifier: String?, forLocalNotification localNotification: UILocalNotification)</code>方法，使用提供的 userInfo 字典定义 UI。</p>
+<h3>Notification 界面</h3>
+<p>Apple Watch 中的通知分为静态通知和动态通知。静态通知只显示应用图标和简单的文本信息。当你抬起手腕或者点击屏幕时就会进入动态通知界面，你就可以看到该通知更多详细的信息。</p>
+<p><img src="/WatchOS5.png" alt=""></p>
+<p>WKUserNotificationInterfaceController 继承于 WKInterfaceController，享有和 WKInterfaceController 同样的生命周期。也可以通过之前 Glance 界面的方法跳转指定界面。</p>
+<p>更可以通过<code>public func didReceiveRemoteNotification(remoteNotification: [NSObject : AnyObject], withCompletion completionHandler: (WKUserNotificationInterfaceType) -&gt; Void)</code>或者<code>public func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: (WKUserNotificationInterfaceType) -&gt; Void)</code>获得通知内容，并设置处理完成的回调Block。</p>
+<h3>Complications 界面</h3>
+<p>Complications 是是表盘上除了时间以外的一些功能性的小部件。分为五种：</p>
+<p><img src="/WatchOS6.png" alt=""></p>
+<p>创建项目时候勾选 Include Complication 就行了。在 Extension 中的<code>ComplicationController.swift</code>就是具体的配置文件，而且这并不是我们一直使用的 WatchKit 框架，而是一个新的 ClockKit 框架。</p>
+<p>通过以下两个方法设定我们所能提供 complication 的日期区间，在这区间之前或之后的数据将不会显示：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">optional public func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -&gt; Void)</span><br><span class="line">optional public func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -&gt; Void)</span><br></pre></td></tr></table></figure></p>
+<p>通过以下三个方法取得当前的内容：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimelineEntry?) -&gt; Void)</span><br><span class="line">optional public func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: ([CLKComplicationTimelineEntry]?) -&gt; Void)</span><br><span class="line">optional public func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: ([CLKComplicationTimelineEntry]?) -&gt; Void)</span><br></pre></td></tr></table></figure></p>
+<p>其中第一个方法很明显，是取得当前的时间。后两个方法是取得之前\之后的时间轴。</p>
+<p>而如果要手动刷新数据的话可以用以下方法：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static func reloadComplications() &#123;</span><br><span class="line">    let server = CLKComplicationServer.sharedInstance()</span><br><span class="line">    for complication in server.activeComplications &#123;</span><br><span class="line">        server.reloadTimelineForComplication(complication)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>界面元素</h2>
+<h3>基本的元素</h3>
+<p>WKInterfaceObject 在 WatchKit 中负责界面的元素，但和 UIView 或者 UIView 的子类相比，功能少了很多，只能设置 Hidden、Alpha、Width、Height 等，具体的 UI 设置只能在 Storyboard 中进行。</p>
+<p>WKInterfaceButton、WKInterfaceImage、WKInterfaceLabel、WKInterfaceSeparator、WKInterfaceSlider、WKInterfaceSwitch 和 UIKit 中对应的的差不多，直接用就行了。</p>
+<p>WKInterfaceDate、WKInterfaceTimer 用于显示时间，毕竟是作用于手表上。WKInterfaceDate 相当于 UILabel ＋ NSDateFormatter，用来展示目前的日期或时间。WKInterfaceTimer 相当于 UILabel ＋ NSDateFormatter ＋ NSTimer，可以作为计时器。</p>
+<p>WKInterfaceMap、WKInterfaceMovie 地图和音视频，一目了然。其中 WKInterfaceMovie 本地和网络是都支持的。</p>
+<h3>WKInterfacePicker</h3>
+<p>是一个通过表冠来进行交互的滚动列表。其中由 WKPickerItem 组成，可以是文本、图像、或是图文混合。通过三种不同风格来展示：</p>
+<ul>
+<li>List:垂直排列显示的列表</li>
+<li>Stacked:转为一叠卡片通过滚动表冠来一张张显示</li>
+<li>ImageSequence:从图像序列中抽出单个展示</li>
+</ul>
+<h3>WKInterfaceDevice</h3>
+<p>相当于 UIDevice。是一个单例类，可以获得当前 Apple Watch 的 screenBounds、screenScale、systemVersion、preferredContentSizeCategory 等信息。</p>
+<h3>WKInterfaceTable</h3>
+<p>没有 sections、header、footer、data sources 或者 delegate 什么的。其中每一个 cell 是直接继承于 NSObject，通过 identifier 来区分。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public func setRowTypes(rowTypes: [String])</span><br><span class="line">public func setNumberOfRows(numberOfRows: Int, withRowType rowType: String)</span><br><span class="line">public var numberOfRows: Int &#123; get &#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过以上的方法来设置 Table 的行数和样式。并通过<code>public func rowControllerAtIndex(index: Int) -&gt; AnyObject?</code>来获取具体的 cell 并赋值。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public func insertRowsAtIndexes(rows: NSIndexSet, withRowType rowType: String)</span><br><span class="line">public func removeRowsAtIndexes(rows: NSIndexSet)</span><br></pre></td></tr></table></figure></p>
+<p>通过以上的方法进行添加、删除 cell。</p>
+<h3>WKInterfaceMenu、WKInterfaceMenuItem</h3>
+<p>长按手表屏幕，如果当前 WKInterfaceController 中存在上下文菜单的话，就会尝试呼出找这个界面对应的 Context Menu。这个菜单最多可以提供四个按钮，用来针对当前环境向用户征询操作。可以在 StoryBoard 里添加，或者在 WKInterfaceController 通过以下方法添加或者操作：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public func addMenuItemWithImage(image: UIImage, title: String, action: Selector)</span><br><span class="line">public func addMenuItemWithImageNamed(imageName: String, title: String, action: Selector)</span><br><span class="line">public func addMenuItemWithItemIcon(itemIcon: WKMenuItemIcon, title: String, action: Selector)</span><br><span class="line">public func clearAllMenuItems()</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，除了用 StoryBoard 设置和以上方法外，我们无法在 WatchKit 获取 WKInterfaceMenu 和 WKInterfaceMenuItem 的实例或者代理。</p>
+<h3>WKAlertAction</h3>
+<p>在 WKInterfaceController 中可以调用<code>public func presentAlertControllerWithTitle(title: String?, message: String?, preferredStyle: WKAlertControllerStyle, actions: [WKAlertAction])</code>方法在当前界面弹出一个 alert view。根据你设定的 preferredStyle 参数来显示出不同的样式。其中的 actions 参数是包含 WKAlertAction 实例的数组，通过用户点击相应的 button 来执行它自身提供的 block。要注意的是，你需要 dismiss 这些 alert view。</p>
+<h3>WKInterfaceGroup</h3>
+<p>Watch App 的视图开发不能使用代码，必须 StoryBoard。采取的布局方式和 iOS App 完全不同。不能使用 autoLayout 或者坐标，只能使用相对布局。默认是以行为单位垂直布局。如果要水平布局就需要以 WKInterfaceObject 重叠布局。相当于 Android 的 layout 布局控件。</p>
+<p>还可以设置背景、CornerRadius、ContentInset 属性。</p>
+<h2>数据通信</h2>
+<h3>target membership</h3>
+<p>这个方法用于使一个文件在多个 target 实现重用，一般用于 Model 中。</p>
+<p><img src="/WatchOS7.png" alt=""></p>
+<h3>WatchConnectivity</h3>
+<p>WatchConnectivity 的主体是 WCSession，它是个单例类，直接使用<code>public class func defaultSession() -&gt; WCSession</code>单例对象就可以了。首先我们需要用 WCSession 的<code>public class func isSupported() -&gt; Bool</code>方法检查设备上是否支持 WatchConnectivity ，iPad 是不支持的。 要使用 WCSession，先要激活它。指定一个对象遵从 WCSessionDelegate，然后调用<code>public func activateSession()</code>方法激活。</p>
+<p>数据发送分为后台发送和即时消息两类。当 iOS app 和 watch app 都在前台的时候，我们可以通过以下方法来在两者之间发送消息：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public func sendMessage(message: [String : AnyObject], replyHandler: (([String : AnyObject]) -&gt; Void)?, errorHandler: ((NSError) -&gt; Void)?)</span><br><span class="line">public func sendMessageData(data: NSData, replyHandler: ((NSData) -&gt; Void)?, errorHandler: ((NSError) -&gt; Void)?)</span><br></pre></td></tr></table></figure></p>
+<p>其中 message 或者 data 为传递过去的数据，replyHandler 中的为返回回来的数据。对应的 app 通过 WCSessionDelegate 的以下方法来接收数据：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">optional public func session(session: WCSession, didReceiveMessage message: [String : AnyObject])</span><br><span class="line">optional public func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -&gt; Void)</span><br><span class="line">optional public func session(session: WCSession, didReceiveMessageData messageData: NSData)</span><br><span class="line">optional public func session(session: WCSession, didReceiveMessageData messageData: NSData, replyHandler: (NSData) -&gt; Void)</span><br></pre></td></tr></table></figure></p>
+<p>后台通讯有三种方式：</p>
+<ul>
+<li>通过 Application Context：<code>public func updateApplicationContext(applicationContext: [String : AnyObject]) throws</code>以字典数据来传输到对应的 app。不会即刻发送，但会在对应的 app 唤醒的时候发送。新传递的数据会覆盖原来的内容。使用 WCSessionDelegate 的<code>optional public func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject])</code>方法来接收数据。</li>
+<li>通过 User Info：<code>public func transferUserInfo(userInfo: [String : AnyObject]) -&gt; WCSessionUserInfoTransfer</code>同样是传递一个字典，但与 Application Context 不同的是可以使多次内容形成队列进行传送。使用 WCSessionDelegate 的<code>optional public func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject])</code>方法来接收数据。</li>
+<li>传送文件：<code>public func transferFile(file: NSURL, metadata: [String : AnyObject]?) -&gt; WCSessionFileTransfer</code>用于传输文件，比如通过后台来传送图片。使用 WCSessionDelegate 的<code>optional public func session(session: WCSession, didReceiveFile file: WCSessionFile)</code>方法来接收数据。</li>
+</ul>
+<h2>其它</h2>
+<h3>动画</h3>
+<h4>帧动画</h4>
+<p>通过为 WKInterfaceImage 设置包含多个 image 的图像，通过图片名称序列号实现动画，或者是通过计时器定时替换图像可实现帧动画效果。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public func startAnimating()</span><br><span class="line">public func startAnimatingWithImagesInRange(imageRange: NSRange, duration: NSTimeInterval, repeatCount: Int)</span><br><span class="line">public func stopAnimating()</span><br></pre></td></tr></table></figure></p>
+<h4>基本动画</h4>
+<p>在 WKInterfaceController 中调用<code>public func animateWithDuration(duration: NSTimeInterval, animations: () -&gt; Void)</code>方法实现，用法和<code>public class func animateWithDuration(duration: NSTimeInterval, animations: () -&gt; Void)</code>一样。</p>
+<h3>多媒体</h3>
+<h4>视频播放</h4>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public func presentMediaPlayerControllerWithURL(URL: NSURL, options: [NSObject : AnyObject]?, completion: (Bool, NSTimeInterval, NSError?) -&gt; Void)</span><br><span class="line">public func dismissMediaPlayerController()</span><br></pre></td></tr></table></figure></p>
+<p>通过以上方法和 WKInterfaceMovie 其实差不多，都是跳转到一个新的 WKInterfaceController 实现的。</p>
+<h4>音频录制</h4>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public func presentAudioRecorderControllerWithOutputURL(URL: NSURL, preset: WKAudioRecorderPreset, options: [NSObject : AnyObject]?, completion: (Bool, NSError?) -&gt; Void)</span><br><span class="line">public func dismissAudioRecorderController()</span><br></pre></td></tr></table></figure></p>
+<p>通过以上方法实现，但只支持只支持 .wav、 .mp4、 .m4a 三种格式。</p>
+<h4>音频播放</h4>
+<p>Watch App 需要借助蓝牙设备才能控制播放音乐</p>
+<h4>语音输入</h4>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public func presentTextInputControllerWithSuggestions(suggestions: [String]?, allowedInputMode inputMode: WKTextInputMode, completion: ([AnyObject]?) -&gt; Void)</span><br><span class="line">public func presentTextInputControllerWithSuggestionsForLanguage(suggestionsHandler: ((String) -&gt; [AnyObject]?)?, allowedInputMode inputMode: WKTextInputMode, completion: ([AnyObject]?) -&gt; Void)</span><br><span class="line">public func dismissTextInputController()</span><br></pre></td></tr></table></figure></p>
+<h3>openSystemURL</h3>
+<p>通过 WKExtension 的<code>public func openSystemURL(url: NSURL)</code>方法可以实现发短信打电话功能。</p>
+<h3><a href="https://github.com/ZhuYooong/Aggregate" target="_blank" rel="external">Demo</a></h3>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/WatchOS/">WatchOS</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/03/02/WatchOS-总结/" data-title="WatchOS 总结 | Zhuyooong’ Blog" data-tsina="1305539521" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/04/15/在-Mac-上搭建-Hexo-博客/" title="在 Mac 上搭建 Hexo 博客">
+  <strong>上一篇：</strong><br/>
+  <span>
+  在 Mac 上搭建 Hexo 博客</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/02/02/iOS集成极光推送遇到的几个问题/"  title="iOS集成极光推送遇到的几个问题">
+ <strong>下一篇：</strong><br/> 
+ <span>iOS集成极光推送遇到的几个问题
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/03/02/WatchOS-总结/" data-title="WatchOS 总结" data-url="http://yoursite.com/2016/03/02/WatchOS-总结/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">建立 WatchOS 项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">用户交互方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">WKInterfaceController</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.2.</span> <span class="toc-text">页面跳转</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">Glance 界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">Notification 界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">Complications 界面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">界面元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">基本的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">WKInterfacePicker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">WKInterfaceDevice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.4.</span> <span class="toc-text">WKInterfaceTable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.5.</span> <span class="toc-text">WKInterfaceMenu、WKInterfaceMenuItem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.6.</span> <span class="toc-text">WKAlertAction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.7.</span> <span class="toc-text">WKInterfaceGroup</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">数据通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">target membership</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.</span> <span class="toc-text">WatchConnectivity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">其它</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.</span> <span class="toc-text">动画</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.1.</span> <span class="toc-text">帧动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.1.2.</span> <span class="toc-text">基本动画</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.</span> <span class="toc-text">多媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.1.</span> <span class="toc-text">视频播放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.2.</span> <span class="toc-text">音频录制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.3.</span> <span class="toc-text">音频播放</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">5.2.4.</span> <span class="toc-text">语音输入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.3.</span> <span class="toc-text">openSystemURL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.4.</span> <span class="toc-text">Demo</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="https://github.com/ZhuYooong" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/CocoaPods/" title="CocoaPods">CocoaPods<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/WatchOS/" title="WatchOS">WatchOS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/第三方库/" title="第三方库">第三方库<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/极光推送/" title="极光推送">极光推送<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网络请求/" title="网络请求">网络请求<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+  
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/https://www.douban.com/people/138690111//?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1305539521&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> ^-^ <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/1305539521" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/https://github.com/ZhuYooong" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		<a href="https://www.douban.com/people/https://www.douban.com/people/138690111/" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/https://www.zhihu.com/people/zhu-yong-94-25" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:zhuyong5111@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016
+		
+		<a href="/about" target="_blank" title="Zhuyooong">Zhuyooong</a>
+		
+		
+		</p>
+		<script type="text/javascript">
+  		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  		_st('install','7BW9bHdXJjQprSNK14BV','2.0.0');
+		</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"zhuyooong"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
