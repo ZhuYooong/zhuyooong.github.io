@@ -64,7 +64,7 @@ APNs 证书和主证书的区别
 			
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="Zhuyooong’ Blog">Zhuyooong’ Blog</a></h1>
-				<h2 class="blog-motto">hello world</h2>
+				<h2 class="blog-motto">(●°u°●)​ 」</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -79,8 +79,6 @@ APNs 证书和主证书的区别
 						<li><a href="/tags">标签</a></li>
 					
 						<li><a href="/categories">分类</a></li>
-					
-						<li><a href="/about">相关</a></li>
 					
 					<li>
  					
@@ -242,7 +240,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/CocoaPods/" title="CocoaPods">CocoaPods<sup>1</sup></a></li>
+				<li><a href="/tags/第三方库/" title="第三方库">第三方库<sup>2</sup></a></li>
 			
 		
 			
@@ -254,15 +252,11 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 			
 		
 			
-				<li><a href="/tags/第三方库/" title="第三方库">第三方库<sup>1</sup></a></li>
+				<li><a href="/tags/CocoaPods/" title="CocoaPods">CocoaPods<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/极光推送/" title="极光推送">极光推送<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/网络请求/" title="网络请求">网络请求<sup>1</sup></a></li>
 			
 		
 			
@@ -364,7 +358,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
 <script src="/js/jquery.qrcode-0.12.0.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function(){ 
+$(document).ready(function(){
   $('.navbar').click(function(){
     $('header nav').toggleClass('shownav');
   });
@@ -377,25 +371,38 @@ $(document).ready(function(){
     };
   };
   var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
+    a = $('#asidepart'), //侧边栏
+    c = $('.closeaside'),//隐藏侧边栏
+    o = $('.openaside'); //显示侧边栏
+c.click(function(){
+  a.addClass('fadeOut').css('display', 'none');
+  o.css('display', 'block').addClass('fadeIn');
+   var m = $('#main'),
+    a = $('#asidepart'), //侧边栏
+    c = $('.closeaside'),//隐藏侧边栏
+    o = $('.openaside'); //显示侧边栏
+c.click(function(){
+  a.addClass('fadeOut').css('display', 'none');
+  o.css('display', 'block').addClass('fadeIn');
+  $('#toc.toc-aside').css('display', 'block').addClass('fadeIn'); //这个是我新加的，修改点
+  m.addClass('moveMain');
+});
   o.click(function(){
     o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
     m.removeClass('moveMain');
   });
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
   
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
   $(window).resize(function(){
-    getSize(); 
+    getSize();
     if (myWidth >= 1024) {
       $('header nav').removeClass('shownav');
     }else{
@@ -404,14 +411,14 @@ $(document).ready(function(){
       o.css('display', 'none');
       
       $('#toc.toc-aside').css('display', 'none');
-        
+      
     }
   });
 });
 </script>
 
 <script type="text/javascript">
-$(document).ready(function(){ 
+$(document).ready(function(){
   var ai = $('.article-content>iframe'),
       ae = $('.article-content>embed'),
       t  = $('#toc'),
@@ -438,7 +445,7 @@ $(document).ready(function(){
 
 
 <script type="text/javascript">
-$(document).ready(function(){ 
+$(document).ready(function(){
   var $this = $('.share'),
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
@@ -483,7 +490,7 @@ $(document).ready(function(){
   $('.article-share-qrcode').hover(function(){}, function(){
       $('.hoverqrcode').hide();
   });
-});   
+});
 </script>
 
 
@@ -495,10 +502,10 @@ $(document).ready(function(){
     ds.type = 'text/javascript';ds.async = true;
     ds.src = '//static.duoshuo.com/embed.js';
     ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
+    (document.getElementsByTagName('head')[0]
     || document.getElementsByTagName('body')[0]).appendChild(ds);
   })();
-</script> 
+</script>
 
 
 
@@ -509,7 +516,7 @@ $(document).ready(function(){
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){ 
+$(document).ready(function(){
   $('.article-content').each(function(i){
     $(this).find('img').each(function(){
       if ($(this).parent().hasClass('fancybox')) return;
@@ -524,7 +531,7 @@ $(document).ready(function(){
   if($.fancybox){
     $('.fancybox').fancybox();
   }
-}); 
+});
 </script>
 
 

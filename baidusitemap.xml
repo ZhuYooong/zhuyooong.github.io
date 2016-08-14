@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/06/20/%E4%BD%BF%E7%94%A8-Moya-RxSwift-%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/</loc>
+    <lastmod>2016-08-14T09:04:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Moya/RxSwift 进行网络请求</title>
+        <pubTime>2016-06-20T11:30:40.000Z</pubTime>
+        
+        <tag>第三方库</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/05/12/CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2016-08-14T07:49:09.000Z</lastmod>
     <data>
@@ -80,23 +97,6 @@
         <pubTime>2016-03-02T08:03:39.000Z</pubTime>
         
         <tag>WatchOS</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/06/20/%E4%BD%BF%E7%94%A8-Moya-RxSwift-%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/</loc>
-    <lastmod>2016-08-14T07:48:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用 Moya/RxSwift 进行网络请求</title>
-        <pubTime>2016-06-20T11:30:40.000Z</pubTime>
-        
-        <tag>网络请求</tag>
          
          
            
