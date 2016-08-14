@@ -4,7 +4,7 @@
   <subtitle><![CDATA[hello world]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-14T07:08:36.000Z</updated>
+  <updated>2016-08-14T07:49:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2016/07/03/iOS-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%A4%87%E5%BF%98/"/>
     <id>http://yoursite.com/2016/07/03/iOS-第三方库备忘/</id>
     <published>2016-07-03T11:30:56.000Z</published>
-    <updated>2016-08-14T07:08:36.000Z</updated>
+    <updated>2016-08-14T07:49:04.000Z</updated>
     <content type="html"><![CDATA[<h2>网络请求</h2>
 <h3>HTTP</h3>
 <p>Objective-C：</p>
@@ -236,6 +236,8 @@
 <li><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="externa]]>
     </summary>
     
+      <category term="第三方库" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
+    
   </entry>
   
   <entry>
@@ -243,7 +245,7 @@
     <link href="http://yoursite.com/2016/06/20/%E4%BD%BF%E7%94%A8-Moya-RxSwift-%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
     <id>http://yoursite.com/2016/06/20/使用-Moya-RxSwift-进行网络请求/</id>
     <published>2016-06-20T11:30:40.000Z</published>
-    <updated>2016-08-14T07:07:51.000Z</updated>
+    <updated>2016-08-14T07:48:31.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> 其实就是一个对 <a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> 的更高层的封装。</p>
 <p>Alamofire 进行网络请求：
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">func GETRequest(URLString: URLStringConvertible, NetData: (data: NSData?)-&gt;Void) &#123;</span><br><span class="line">    Alamofire.request(.GET, URLString).responseJSON &#123;</span><br><span class="line">        response in</span><br><span class="line">        switch response.result &#123;</span><br><span class="line">        case .Success:</span><br><span class="line">            NetData(data: response.data)</span><br><span class="line">        case .Failure( _):</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -264,6 +266,8 @@
     <![CDATA[<p><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> 其实就是一个对 <a href="https://github.com/Alamofire/Alamofire" t]]>
     </summary>
     
+      <category term="网络请求" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
+    
   </entry>
   
   <entry>
@@ -271,7 +275,7 @@
     <link href="http://yoursite.com/2016/05/12/CocoaPods-%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2016/05/12/CocoaPods-的安装和使用/</id>
     <published>2016-05-12T11:29:56.000Z</published>
-    <updated>2016-08-14T07:09:39.000Z</updated>
+    <updated>2016-08-14T07:49:09.000Z</updated>
     <content type="html"><![CDATA[<h1>环境搭建(最好可以在代理环境下进行，要不然会很慢或者 Time Out)</h1>
 <h2><a href="https://ruby-china.org/wiki/install_ruby_guide" target="_blank" rel="external">安装 Ruby 环境</a></h2>
 <h3>安装系统需要的包</h3>
@@ -397,6 +401,8 @@ pod update --verbose --no-repo-update
 <h2><a href="https://ruby-china.org/wiki/install_ruby_guide" target="_blank" rel="external">安装]]>
     </summary>
     
+      <category term="CocoaPods" scheme="http://yoursite.com/tags/CocoaPods/"/>
+    
   </entry>
   
   <entry>
@@ -404,7 +410,7 @@ pod update --verbose --no-repo-update
     <link href="http://yoursite.com/2016/04/15/%E5%9C%A8-Mac-%E4%B8%8A%E6%90%AD%E5%BB%BA-Hexo-%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2016/04/15/在-Mac-上搭建-Hexo-博客/</id>
     <published>2016-04-15T11:29:33.000Z</published>
-    <updated>2016-08-14T07:06:04.000Z</updated>
+    <updated>2016-08-14T07:48:10.000Z</updated>
     <content type="html"><![CDATA[<h1>软件环境准备</h1>
 <ul>
 <li>如果通过终端安装出现问题，可以尝试在指令前加入<code>sudo</code>获得 root 权限</li>
@@ -466,6 +472,8 @@ pod update --verbose --no-repo-update
 <h2>安装 <a href="http://brew.sh/index_zh-cn.html" targ]]>
     </summary>
     
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
   </entry>
   
   <entry>
@@ -473,7 +481,7 @@ pod update --verbose --no-repo-update
     <link href="http://yoursite.com/2016/03/02/WatchOS-%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/03/02/WatchOS-总结/</id>
     <published>2016-03-02T08:03:39.000Z</published>
-    <updated>2016-08-14T07:17:58.000Z</updated>
+    <updated>2016-08-14T07:48:38.000Z</updated>
     <content type="html"><![CDATA[<h2>建立 WatchOS 项目</h2>
 <ul>
 <li>创建新的 iOS App 和 WatchKit App:
@@ -595,6 +603,8 @@ pod update --verbose --no-repo-update
 选择 File\New\Project…,在出现的对话框中选择 watchOS\Application\iOS App with WatchKit App 然]]>
     </summary>
     
+      <category term="WatchOS" scheme="http://yoursite.com/tags/WatchOS/"/>
+    
   </entry>
   
   <entry>
@@ -602,7 +612,7 @@ pod update --verbose --no-repo-update
     <link href="http://yoursite.com/2016/02/02/iOS%E9%9B%86%E6%88%90%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81%E9%81%87%E5%88%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2016/02/02/iOS集成极光推送遇到的几个问题/</id>
     <published>2016-02-02T12:42:51.000Z</published>
-    <updated>2016-08-14T07:08:29.000Z</updated>
+    <updated>2016-08-14T07:48:53.000Z</updated>
     <content type="html"><![CDATA[<p>其实官方的 <a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和 <a href="http://docs.jpush.io/client/ios_tutorials" target="_blank" rel="external">iOS SDK 教程</a>两个文档关于集成时的大部分问题都可以解决，所以我这里只是讨论我遇见的文档里表述不明白的那几个坑（<a href="http://docs.jpush.io/resources/" target="_blank" rel="external">2.1.0版本的</a>）。</p>
 <h1>APNs 证书和主证书的区别</h1>
 <p><img src="/Jpush1.png" alt=""></p>
@@ -641,6 +651,8 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
     <![CDATA[<p>其实官方的 <a href="http://docs.jpush.io/guideline/ios_guide" target="_blank" rel="external">iOS SDK 集成指南</a>和 <a href="http://docs.jpush.io/c]]>
     </summary>
     
+      <category term="极光推送" scheme="http://yoursite.com/tags/%E6%9E%81%E5%85%89%E6%8E%A8%E9%80%81/"/>
+    
   </entry>
   
   <entry>
@@ -648,7 +660,7 @@ isProduction 是否生产环境。看起来很有用的一个参数，但实际�
     <link href="http://yoursite.com/2016/01/04/Markdown%E8%AF%AD%E8%A8%80%E5%AF%B9%E7%85%A7/"/>
     <id>http://yoursite.com/2016/01/04/Markdown语言对照/</id>
     <published>2016-01-04T07:11:28.000Z</published>
-    <updated>2016-08-14T07:08:08.000Z</updated>
+    <updated>2016-08-14T07:48:45.000Z</updated>
     <content type="html"><![CDATA[<h1>标题</h1>
 <ul>
 <li>H1 :</li>
@@ -767,6 +779,8 @@ return dateFormatter
 </ul>
 <h2>Header 2 <code>#]]>
     </summary>
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
     
   </entry>
   
