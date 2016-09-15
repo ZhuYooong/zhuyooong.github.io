@@ -11,52 +11,49 @@
     
 
     
-    <meta name="description" content="&amp;#x7F51;&amp;#x7EDC;&amp;#x8BF7;&amp;#x6C42;
+    <meta name="description" content="基础功能框架
+网络请求
 HTTP
-Objective-C&amp;#xFF1A;
+Objective-C：
 
-AFNetworking pod &amp;apos;AFNetworking&amp;apos;
+AFNetworking pod &apos;AFNetworking&apos;
+YTKNetwork (基于 AFN 封装) pod &apos;YTKNetwork&apos;
+PPNetworkHelper (对 AFNetworking 与 YYCache 的二次封装) pod &apos;PPNetworkHelper&apos;
 
-Swift&amp;#xFF1A;
+Swift：
 
-Alamofire pod &amp;apos;Alamofire&amp;apos;
-Moya pod &amp;apos;Moya/RxSwift&amp;apos;
-
-Socket
-Objec">
+Alamofire pod &apos;Al">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 第三方库备忘">
 <meta property="og:url" content="http://yoursite.com/2016/07/03/iOS-第三方库备忘/index.html">
 <meta property="og:site_name" content="Zhuyooong’ Blog">
-<meta property="og:description" content="&amp;#x7F51;&amp;#x7EDC;&amp;#x8BF7;&amp;#x6C42;
+<meta property="og:description" content="基础功能框架
+网络请求
 HTTP
-Objective-C&amp;#xFF1A;
+Objective-C：
 
-AFNetworking pod &amp;apos;AFNetworking&amp;apos;
+AFNetworking pod &apos;AFNetworking&apos;
+YTKNetwork (基于 AFN 封装) pod &apos;YTKNetwork&apos;
+PPNetworkHelper (对 AFNetworking 与 YYCache 的二次封装) pod &apos;PPNetworkHelper&apos;
 
-Swift&amp;#xFF1A;
+Swift：
 
-Alamofire pod &amp;apos;Alamofire&amp;apos;
-Moya pod &amp;apos;Moya/RxSwift&amp;apos;
-
-Socket
-Objec">
-<meta property="og:updated_time" content="2016-08-14T07:49:04.000Z">
+Alamofire pod &apos;Al">
+<meta property="og:updated_time" content="2016-09-15T13:19:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 第三方库备忘">
-<meta name="twitter:description" content="&amp;#x7F51;&amp;#x7EDC;&amp;#x8BF7;&amp;#x6C42;
+<meta name="twitter:description" content="基础功能框架
+网络请求
 HTTP
-Objective-C&amp;#xFF1A;
+Objective-C：
 
-AFNetworking pod &amp;apos;AFNetworking&amp;apos;
+AFNetworking pod &apos;AFNetworking&apos;
+YTKNetwork (基于 AFN 封装) pod &apos;YTKNetwork&apos;
+PPNetworkHelper (对 AFNetworking 与 YYCache 的二次封装) pod &apos;PPNetworkHelper&apos;
 
-Swift&amp;#xFF1A;
+Swift：
 
-Alamofire pod &amp;apos;Alamofire&amp;apos;
-Moya pod &amp;apos;Moya/RxSwift&amp;apos;
-
-Socket
-Objec">
+Alamofire pod &apos;Al">
 
     
     <link rel="alternative" href="/atom.xml" title="Zhuyooong’ Blog" type="application/atom+xml">
@@ -134,221 +131,472 @@ Objec">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">网络请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">Socket</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">网络图片加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">自动布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">Json 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">XML 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">上拉刷新，下拉加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">提示框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">弹出视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">HexColor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">10.</span> <span class="toc-text">数据库处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">11.</span> <span class="toc-text">空白页或出错页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">12.</span> <span class="toc-text">UINavigationController 手势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">13.</span> <span class="toc-text">响应式编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">14.</span> <span class="toc-text">图片浏览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">15.</span> <span class="toc-text">UIImagePickerController 图片多选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">16.</span> <span class="toc-text">即时通讯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">17.</span> <span class="toc-text">UICollectionViewFlowLayout 拖动排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">18.</span> <span class="toc-text">UIButton 单选自定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">19.</span> <span class="toc-text">抽屉式导航栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">20.</span> <span class="toc-text">版本新特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">21.</span> <span class="toc-text">获取坐标或当前地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">22.</span> <span class="toc-text">图表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">23.</span> <span class="toc-text">表头图片进行放大的效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">24.</span> <span class="toc-text">日期处理库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">25.</span> <span class="toc-text">压缩和解压缩</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">基础功能框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">网络请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.1.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.2.</span> <span class="toc-text">Socket</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text">网络测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">网络图片加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">Json 解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">XML 解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.</span> <span class="toc-text">自动布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.6.</span> <span class="toc-text">上拉刷新，下拉加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.7.</span> <span class="toc-text">数据库处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.8.</span> <span class="toc-text">HexColor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.9.</span> <span class="toc-text">响应式编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.10.</span> <span class="toc-text">日期处理库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.11.</span> <span class="toc-text">压缩和解压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.12.</span> <span class="toc-text">获取坐标或当前地址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">控件框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">提示框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">弹出视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">页面跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">富文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.</span> <span class="toc-text">输入框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.6.</span> <span class="toc-text">UITableView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.7.</span> <span class="toc-text">UICollectionView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.8.</span> <span class="toc-text">模糊效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.9.</span> <span class="toc-text">动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.10.</span> <span class="toc-text">图片、文字轮播器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.11.</span> <span class="toc-text">图片浏览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.12.</span> <span class="toc-text">UIImagePickerController 图片多选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.13.</span> <span class="toc-text">即时通讯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.14.</span> <span class="toc-text">UIButton 单选自定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.15.</span> <span class="toc-text">抽屉式导航栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.16.</span> <span class="toc-text">版本新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.17.</span> <span class="toc-text">图表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.18.</span> <span class="toc-text">表头图片进行放大的效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.19.</span> <span class="toc-text">日历视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.20.</span> <span class="toc-text">状态栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.21.</span> <span class="toc-text">主题管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.22.</span> <span class="toc-text">进度条</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.23.</span> <span class="toc-text">Material Design</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2>&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;</h2>
-<h3>HTTP</h3>
-<p>Objective-C&#xFF1A;</p>
+		<h2>基础功能框架</h2>
+<h3>网络请求</h3>
+<h4>HTTP</h4>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a> <code>pod &apos;AFNetworking&apos;</code></li>
+<li><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a> <code>pod 'AFNetworking'</code></li>
+<li><a href="https://github.com/yuantiku/YTKNetwork" target="_blank" rel="external">YTKNetwork</a> (基于 AFN 封装) <code>pod 'YTKNetwork'</code></li>
+<li><a href="https://github.com/jkpang/PPNetworkHelper" target="_blank" rel="external">PPNetworkHelper</a> (对 AFNetworking 与 YYCache 的二次封装) <code>pod 'PPNetworkHelper'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> <code>pod &apos;Alamofire&apos;</code></li>
-<li><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> <code>pod &apos;Moya/RxSwift&apos;</code></li>
+<li><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> <code>pod 'Alamofire'</code></li>
+<li><a href="https://github.com/Moya/Moya" target="_blank" rel="external">Moya</a> <code>pod 'Moya/RxSwift'</code></li>
 </ul>
-<h3>Socket</h3>
-<p>Objective-C&#xFF1A;</p>
+<h4>Socket</h4>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/robbiehanson/CocoaAsyncSocket" target="_blank" rel="external">CocoaAsyncSocket</a> <code>pod &apos;CocoaAsyncSocket&apos;</code></li>
+<li><a href="https://github.com/robbiehanson/CocoaAsyncSocket" target="_blank" rel="external">CocoaAsyncSocket</a> <code>pod 'CocoaAsyncSocket'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/AlwaysRightInstitute/SwiftSockets" target="_blank" rel="external">SwiftSockets</a> <code>pod &apos;SwiftSockets&apos;</code></li>
+<li><a href="https://github.com/AlwaysRightInstitute/SwiftSockets" target="_blank" rel="external">SwiftSockets</a> <code>pod 'SwiftSockets'</code></li>
 </ul>
-<h2>&#x7F51;&#x7EDC;&#x56FE;&#x7247;&#x52A0;&#x8F7D;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h4>网络测试</h4>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">SDWebImage</a> <code>pod &apos;SDWebImage&apos;</code></li>
+<li><a href="https://github.com/tonymillion/Reachability" target="_blank" rel="external">Reachability</a> <code>pod 'Reachability'</code></li>
+<li><a href="https://github.com/dustturtle/RealReachability" target="_blank" rel="external">RealReachability</a> <code>pod 'RealReachability'</code></li>
+<li><a href="https://github.com/coderyi/NetworkEye" target="_blank" rel="external">NetworkEye</a> (网络请求详细信息) <code>pod 'NetworkEye'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<h3>网络图片加载</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/onevcat/Kingfisher" target="_blank" rel="external">Kingfisher</a> <code>pod &apos;Kingfisher&apos;</code></li>
-<li><a href="https://github.com/kiavashfaisali/KFSwiftImageLoader" target="_blank" rel="external">KFSwiftImageLoader</a> <code>pod &apos;KFSwiftImageLoader&apos;</code></li>
-<li><a href="https://github.com/hirohisa/ImageLoaderSwift" target="_blank" rel="external">ImageLoaderSwift</a> <code>pod &apos;ImageLoader&apos;</code></li>
+<li><a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">SDWebImage</a> <code>pod 'SDWebImage'</code></li>
+<li><a href="https://github.com/JJSaccolo/UIActivityIndicator-for-SDWebImage" target="_blank" rel="external">UIActivityIndicator-for-SDWebImage</a> (为 SDWebImage 显示加载效果) <code>pod 'UIActivityIndicator-for-SDWebImage'</code></li>
+<li><a href="https://github.com/path/FastImageCache" target="_blank" rel="external">FastImageCache</a> <code>pod 'FastImageCache'</code></li>
+<li><a href="https://github.com/enormego/EGOCache" target="_blank" rel="external">EGOCache</a> (缓存各种对象)</li>
+<li><a href="https://github.com/ibireme/YYWebImage/" target="_blank" rel="external">YYWebImage</a> <code>pod 'YYWebImage'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/onevcat/Kingfisher" target="_blank" rel="external">Kingfisher</a> <code>pod 'Kingfisher'</code></li>
+<li><a href="https://github.com/kiavashfaisali/KFSwiftImageLoader" target="_blank" rel="external">KFSwiftImageLoader</a> <code>pod 'KFSwiftImageLoader'</code></li>
+<li><a href="https://github.com/hirohisa/ImageLoaderSwift" target="_blank" rel="external">ImageLoaderSwift</a> <code>pod 'ImageLoader'</code></li>
 <li><a href="https://github.com/natelyman/SwiftImageLoader" target="_blank" rel="external">SwiftImageLoader</a></li>
 </ul>
-<h2>&#x81EA;&#x52A8;&#x5E03;&#x5C40;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>Json 解析</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a> <code>pod &apos;Masonry&apos;</code></li>
+<li><a href="https://github.com/open-source-parsers/jsoncpp" target="_blank" rel="external">jsoncpp</a> (C++ 的，比OC好用)</li>
+<li><a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="external">MJExtension</a> <code>pod 'MJExtension'</code></li>
+<li><a href="https://github.com/ibireme/YYModel" target="_blank" rel="external">YYModel</a> <code>pod 'YYModel'</code></li>
+<li><a href="https://github.com/johnezang/JSONKit" target="_blank" rel="external">JSONKit</a></li>
+<li><a href="https://github.com/jsonmodel/jsonmodel" target="_blank" rel="external">JSONModel</a> <code>pod 'JSONModel'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external">SnapKit</a> <code>pod &apos;SnapKit&apos;</code></li>
+<li><a href="https://github.com/SwiftyJSON/SwiftyJSON" target="_blank" rel="external">SwiftyJSON</a> <code>pod 'SwiftyJSON'</code></li>
+<li><a href="https://github.com/freshOS/Arrow" target="_blank" rel="external">Arrow</a> <code>pod 'Arrow'</code></li>
+<li><a href="https://github.com/hkellaway/Gloss" target="_blank" rel="external">Gloss</a> <code>pod 'Gloss'</code></li>
+<li><a href="https://github.com/ikesyo/Himotoki" target="_blank" rel="external">Himotoki</a> <code>pod 'Himotoki'</code></li>
+<li><a href="https://github.com/Mantle/Mantle" target="_blank" rel="external">Mantle</a> <code>pod 'Mantle'</code></li>
 </ul>
-<h2>Json &#x89E3;&#x6790;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>XML 解析</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/open-source-parsers/jsoncpp" target="_blank" rel="external">jsoncpp</a> (C++ &#x7684;&#xFF0C;&#x6BD4;OC&#x597D;&#x7528;)</li>
+<li><a href="https://github.com/graetzer/GDataXML-HTML" target="_blank" rel="external">GDataXML-HTML</a> <code>pod 'GDataXML-HTML'</code></li>
+<li><a href="https://github.com/mattt/Ono" target="_blank" rel="external">Ono</a> <code>pod 'Ono'</code></li>
+<li><a href="https://github.com/topfunky/hpple" target="_blank" rel="external">hpple</a> (解析html) <code>pod 'hpple'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/hkellaway/Gloss" target="_blank" rel="external">Gloss</a> <code>pod &apos;Gloss&apos;</code></li>
-<li><a href="https://github.com/SwiftyJSON/SwiftyJSON" target="_blank" rel="external">SwiftyJSON</a> <code>pod &apos;SwiftyJSON&apos;</code></li>
-<li><a href="https://github.com/ikesyo/Himotoki" target="_blank" rel="external">Himotoki</a> <code>pod &apos;Himotoki&apos;</code></li>
-<li><a href="https://github.com/Mantle/Mantle" target="_blank" rel="external">Mantle</a> <code>pod &apos;Mantle&apos;</code></li>
+<li><a href="https://github.com/tadija/AEXML" target="_blank" rel="external">AEXML</a> <code>pod 'AEXML'</code></li>
+<li><a href="https://github.com/honghaoz/Ji" target="_blank" rel="external">Ji</a> <code>pod 'Ji'</code></li>
 </ul>
-<h2>XML &#x89E3;&#x6790;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>自动布局</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/graetzer/GDataXML-HTML" target="_blank" rel="external">GDataXML-HTML</a> <code>pod &apos;GDataXML-HTML&apos;</code></li>
+<li><a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">Masonry</a> <code>pod 'Masonry'</code></li>
+<li><a href="https://github.com/ClassyKit/Classy" target="_blank" rel="external">Classy</a> <code>pod 'Classy'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/tadija/AEXML" target="_blank" rel="external">AEXML</a> <code>pod &apos;AEXML&apos;</code></li>
+<li><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external">SnapKit</a> <code>pod 'SnapKit'</code></li>
 </ul>
-<h2>&#x4E0A;&#x62C9;&#x5237;&#x65B0;&#xFF0C;&#x4E0B;&#x62C9;&#x52A0;&#x8F7D;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>上拉刷新，下拉加载</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">MJRefresh</a> <code>pod &apos;MJRefresh&apos;</code></li>
+<li><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">MJRefresh</a> <code>pod 'MJRefresh'</code></li>
+<li><a href="https://github.com/xhzengAIB/XHRefreshControl" target="_blank" rel="external">XHRefreshControl</a> <code>pod 'XHRefreshControl'</code></li>
+<li><a href="https://github.com/KittenYang/KYJellyPullToRefresh" target="_blank" rel="external">KYJellyPullToRefresh</a> (弹性物理效果的下拉刷新) <code>pod 'KYJellyPullToRefresh'</code></li>
+<li><a href="https://github.com/Yalantis/PullToMakeSoup" target="_blank" rel="external">PullToMakeSoup</a> (自定义下拉刷新的动画效果) <code>pod 'PullToMakeSoup'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/boyXiong/XWSwiftRefresh" target="_blank" rel="external">XWSwiftRefresh</a> <code>pod &apos;XWSwiftRefresh&apos;</code></li>
-<li><a href="https://github.com/gontovnik/DGElasticPullToRefresh" target="_blank" rel="external">DGElasticPullToRefresh</a> (&#x4E0B;&#x62C9;&#x52A0;&#x8F7D;) <code>pod &apos;DGElasticPullToRefresh&apos;</code></li>
+<li><a href="https://github.com/boyXiong/XWSwiftRefresh" target="_blank" rel="external">XWSwiftRefresh</a> <code>pod 'XWSwiftRefresh'</code></li>
+<li><a href="https://github.com/gontovnik/DGElasticPullToRefresh" target="_blank" rel="external">DGElasticPullToRefresh</a> (下拉加载) <code>pod 'DGElasticPullToRefresh'</code></li>
 </ul>
-<h2>&#x63D0;&#x793A;&#x6846;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>数据库处理</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="external">MBProgressHUD</a> <code>pod &apos;MBProgressHUD&apos;</code></li>
+<li><a href="https://github.com/ccgus/fmdb" target="_blank" rel="external">FMDB</a> <code>pod 'FMDB'</code></li>
+<li><a href="https://github.com/realm/realm-cocoa" target="_blank" rel="external">Realm</a> <code>pod 'Realm/Headers'</code>(OC版) or <code>pod 'RealmSwift'</code>(Swift版)</li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/pkluz/PKHUD" target="_blank" rel="external">PKHUD</a> <code>pod &apos;PKHUD&apos;</code></li>
-<li><a href="https://github.com/Jinxiansen/JHUD" target="_blank" rel="external">JHUD</a> (&#x4E0E;&#x7A7A;&#x767D;&#x9875;&#x6216;&#x51FA;&#x9519;&#x9875;&#x76F8;&#x7ED3;&#x5408;) <code>pod &apos;JHUD&apos;</code></li>
+<li><a href="https://github.com/magicalpanda/MagicalRecord" target="_blank" rel="external">MagicalRecord</a> <code>pod 'MagicalRecord'</code></li>
 </ul>
-<h2>&#x5F39;&#x51FA;&#x89C6;&#x56FE;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>HexColor</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/pljhonglu/LewPopupViewController" target="_blank" rel="external">LewPopupViewController</a></li>
-<li><a href="https://github.com/runway20/PopoverView" target="_blank" rel="external">PopoverView</a> (&#x5E26;&#x5C0F;&#x7BAD;&#x5934;)</li>
+<li><a href="https://github.com/mRs-/HexColors" target="_blank" rel="external">HexColors</a> <code>pod 'HexColors'</code></li>
+<li><a href="https://github.com/bennyguitar/Colours" target="_blank" rel="external">Colours</a> (包含100种预定义的颜色) <code>pod 'Colours'</code>(OC版) or <code>pod 'Colours/Swift'</code>(Swift版)</li>
+<li><a href="https://github.com/Draveness/DKNightVersion" target="_blank" rel="external">DKNightVersion</a> <code>pod 'DKNightVersion'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/sag333ar/SRKControls" target="_blank" rel="external">SRKControls</a> (&#x65E5;&#x671F;&#x9009;&#x62E9;) <code>pod &apos;SRKControls&apos;</code></li>
-<li><a href="https://github.com/corin8823/Popover" target="_blank" rel="external">Popover</a> (&#x5E26;&#x5C0F;&#x7BAD;&#x5934;) <code>pod &apos;Popover&apos;</code></li>
+<li><a href="https://github.com/artman/HexColor" target="_blank" rel="external">HexColor</a> <code>pod 'HxColor'</code></li>
+<li><a href="https://github.com/NorthernRealities/Rainbow" target="_blank" rel="external">Rainbow</a></li>
+<li><a href="https://github.com/zhxnlai/UIColor-ChineseTraditionalColors" target="_blank" rel="external">UIColor-ChineseTraditionalColors</a> (中国传统颜色) <code>pod 'UIColor-ChineseTraditionalColors'</code></li>
 </ul>
-<h2>HexColor</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>响应式编程</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/mRs-/HexColors" target="_blank" rel="external">HexColors</a> <code>pod &apos;HexColors&apos;</code></li>
+<li><a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="external">ReactiveCocoa</a> <code>pod 'ReactiveCocoa'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/artman/HexColor" target="_blank" rel="external">HexColor</a> <code>pod &apos;HxColor&apos;</code></li>
+<li><a href="https://github.com/ReactiveX/RxSwift" target="_blank" rel="external">RxSwift</a> <code>pod 'RxSwift'</code></li>
 </ul>
-<h2>&#x6570;&#x636E;&#x5E93;&#x5904;&#x7406;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>日期处理库</h3>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/ccgus/fmdb" target="_blank" rel="external">FMDB</a> <code>pod &apos;FMDB&apos;</code></li>
-<li><a href="https://github.com/realm/realm-cocoa" target="_blank" rel="external">Realm</a> <code>pod &apos;Realm/Headers&apos;</code>(OC&#x7248;) or <code>pod &apos;RealmSwift&apos;</code>(Swift&#x7248;)</li>
+<li><a href="https://github.com/malcommac/SwiftDate" target="_blank" rel="external">SwiftDate</a> <code>pod 'SwiftDate'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<h3>压缩和解压缩</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/magicalpanda/MagicalRecord" target="_blank" rel="external">MagicalRecord</a> <code>pod &apos;MagicalRecord&apos;</code></li>
+<li><a href="https://github.com/mattconnolly/ZipArchive" target="_blank" rel="external">ZipArchive</a> <code>pod 'ZipArchive'</code></li>
 </ul>
-<h2>&#x7A7A;&#x767D;&#x9875;&#x6216;&#x51FA;&#x9519;&#x9875;</h2>
-<p>Objective-C&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="external">DZNEmptyDataSet</a> <code>pod &apos;DZNEmptyDataSet&apos;</code></li>
+<li><a href="https://github.com/ZipArchive/ZipArchive" target="_blank" rel="external">SSZipArchive</a> <code>pod 'SSZipArchive'</code></li>
 </ul>
-<h2>UINavigationController &#x624B;&#x52BF;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/forkingdog/FDFullscreenPopGesture" target="_blank" rel="external">FDFullscreenPopGesture</a> <code>pod &apos;FDFullscreenPopGesture&apos;</code></li>
-</ul>
-<h2>&#x54CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="external">ReactiveCocoa</a> <code>pod &apos;ReactiveCocoa&apos;</code></li>
-</ul>
-<p>Swift&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/ReactiveX/RxSwift" target="_blank" rel="external">RxSwift</a> <code>pod &apos;RxSwift&apos;</code></li>
-</ul>
-<h2>&#x56FE;&#x7247;&#x6D4F;&#x89C8;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/vitoziv/VIPhotoView" target="_blank" rel="external">VIPhotoView</a> <code>pod &apos;VIPhotoView&apos;</code></li>
-</ul>
-<p>Swift&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/suzuki-0000/SKPhotoBrowser" target="_blank" rel="external">SKPhotoBrowser</a> <code>pod &apos;SKPhotoBrowser&apos;</code></li>
-</ul>
-<h2>UIImagePickerController &#x56FE;&#x7247;&#x591A;&#x9009;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/B-Sides/ELCImagePickerController" target="_blank" rel="external">ELCImagePickerController</a> <code>pod &apos;ELCImagePickerController&apos;</code></li>
-</ul>
-<h2>&#x5373;&#x65F6;&#x901A;&#x8BAF;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/jmesnil/MQTTKit" target="_blank" rel="external">MQTTKit</a> <code>pod &apos;MQTTKit&apos;</code></li>
-</ul>
-<h2>UICollectionViewFlowLayout &#x62D6;&#x52A8;&#x6392;&#x5E8F;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/lxcid/LXReorderableCollectionViewFlowLayout" target="_blank" rel="external">LXReorderableCollectionViewFlowLayout</a> <code>pod &apos;LXReorderableCollectionViewFlowLayout&apos;</code></li>
-</ul>
-<h2>UIButton &#x5355;&#x9009;&#x81EA;&#x5B9A;&#x4E49;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/DavydLiu/DLRadioButton" target="_blank" rel="external">DLRadioButton</a> <code>pod &apos;DLRadioButton&apos;</code></li>
-</ul>
-<h2>&#x62BD;&#x5C49;&#x5F0F;&#x5BFC;&#x822A;&#x680F;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/JVillella/JVFloatingDrawer" target="_blank" rel="external">JVFloatingDrawer</a> <code>pod &apos;JVFloatingDrawer&apos;</code></li>
-</ul>
-<p>Swift&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/KyleGoddard/KGFloatingDrawer" target="_blank" rel="external">KGFloatingDrawer</a> <code>pod &apos;KGFloatingDrawer&apos;</code></li>
-</ul>
-<h2>&#x7248;&#x672C;&#x65B0;&#x7279;&#x6027;</h2>
-<p>Objective-C&#xFF1A;</p>
-<ul>
-<li><a href="https://github.com/CharlinFeng/CoreNewFeatureVC" target="_blank" rel="external">CoreNewFeatureVC</a></li>
-</ul>
-<h2>&#x83B7;&#x53D6;&#x5750;&#x6807;&#x6216;&#x5F53;&#x524D;&#x5730;&#x5740;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>获取坐标或当前地址</h3>
+<p>Objective-C：</p>
 <ul>
 <li><a href="https://github.com/smallqiang/MMLocationManager" target="_blank" rel="external">MMLocationManager</a></li>
 </ul>
-<h2>&#x56FE;&#x8868;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h2>控件框架</h2>
+<h3>提示框</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/chasseurmic/TWRCharts" target="_blank" rel="external">TWRCharts</a> <code>pod &apos;TWRCharts&apos;</code></li>
+<li><a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="external">MBProgressHUD</a> <code>pod 'MBProgressHUD'</code></li>
+<li><a href="https://github.com/TaimurAyaz/TAOverlay" target="_blank" rel="external">TAOverlay</a> <code>pod 'TAOverlay'</code></li>
+<li><a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank" rel="external">SVProgressHUD</a> (定制化更好用) <code>pod 'SVProgressHUD'</code></li>
+<li><a href="https://github.com/mtonio91/AMSmoothAlert" target="_blank" rel="external">AMSmoothAlert</a> (带点击按钮) <code>pod 'AMSmoothAlert'</code></li>
+<li><a href="https://github.com/cwRichardKim/RKNotificationHub" target="_blank" rel="external">RKNotificationHub</a> (UIView 添加通知图标) <code>pod 'RKNotificationHub'</code></li>
+<li><a href="https://github.com/weng1250/WZLBadge" target="_blank" rel="external">WZLBadge</a> (tabView Badge 设置) <code>pod 'WZLBadge'</code></li>
+<li><a href="https://github.com/KittenYang/KYCuteView" target="_blank" rel="external">KYCuteView</a> (Badge 拖拽消失效果) <code>pod 'KYCuteView'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/danielgindi/Charts" target="_blank" rel="external">Charts</a> <code>pod &apos;Charts&apos;</code> or <code>pod &apos;Charts/Realm&apos;</code>&#x4EE5;&#x652F;&#x6301; Realm</li>
+<li><a href="https://github.com/pkluz/PKHUD" target="_blank" rel="external">PKHUD</a> <code>pod 'PKHUD'</code></li>
+<li><a href="https://github.com/codestergit/SweetAlert-iOS" target="_blank" rel="external">Sweet Alert iOS</a> (带点击按钮)</li>
+<li><a href="https://github.com/Jinxiansen/JHUD" target="_blank" rel="external">JHUD</a> (与空白页或出错页相结合) <code>pod 'JHUD'</code></li>
+<li><a href="https://github.com/poolqf/FillableLoaders" target="_blank" rel="external">FillableLoaders</a> (自定义加载进度) <code>pod 'FillableLoaders'</code></li>
+<li><a href="https://github.com/ninjaprox/NVActivityIndicatorView" target="_blank" rel="external">NVActivityIndicatorView</a> (各种加载动画) <code>pod 'NVActivityIndicatorView'</code></li>
+<li><a href="https://github.com/entotsu/TKSubmitTransition" target="_blank" rel="external">TKSubmitTransition</a> (加载动画按钮) <code>pod 'TKSubmitTransition'</code></li>
 </ul>
-<h2>&#x8868;&#x5934;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x653E;&#x5927;&#x7684;&#x6548;&#x679C;</h2>
-<p>Objective-C&#xFF1A;</p>
+<h3>弹出视图</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/pljhonglu/LewPopupViewController" target="_blank" rel="external">LewPopupViewController</a></li>
+<li><a href="https://github.com/runway20/PopoverView" target="_blank" rel="external">PopoverView</a> (带小箭头)</li>
+<li><a href="https://github.com/kolyvan/kxmenu" target="_blank" rel="external">KxMenu</a> (带小箭头气泡视图)</li>
+<li><a href="https://github.com/xiekw2010/DXPopover" target="_blank" rel="external">DXPopover</a> (带小箭头各种视图) <code>pod 'DXPopover'</code></li>
+<li><a href="https://github.com/questbeat/QBPopupMenu" target="_blank" rel="external">QBPopupMenu</a> (弹出排列多个按钮) <code>pod 'QBPopupMenu'</code></li>
+<li><a href="https://github.com/wimagguc/ios-custom-alertview" target="_blank" rel="external">Custom iOS AlertView</a> (自定义视图 AlertView) <code>pod 'CustomIOSAlertView'</code></li>
+<li><a href="https://github.com/Wzxhaha/WZXPopAnimation" target="_blank" rel="external">WZXJianShuPopDemo</a> (下方弹出 View)</li>
+<li><a href="https://github.com/adad184/MMPopupView" target="_blank" rel="external">MMPopupView</a> (各种功能 AlertView) <code>pod 'MMPopupView'</code></li>
+<li><a href="https://github.com/kevin0571/STPopup" target="_blank" rel="external">STPopup</a> (弹出复杂界面) <code>pod 'STPopup'</code></li>
+<li><a href="http://code.cocoachina.com/view/125750" target="_blank" rel="external">ActionSheetPicker-3.0</a> (各种功能 ActionSheet)</li>
+<li><a href="https://github.com/Yalantis/Context-Menu.iOS" target="_blank" rel="external">Context-Menu.iOS</a> (侧面竖列点击菜单按钮) <code>pod 'ContextMenu.iOS'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/sag333ar/SRKControls" target="_blank" rel="external">SRKControls</a> (日期选择) <code>pod 'SRKControls'</code></li>
+<li><a href="https://github.com/corin8823/Popover" target="_blank" rel="external">Popover</a> (带小箭头) <code>pod 'Popover'</code></li>
+<li><a href="https://github.com/teodorpatras/EasyTipView" target="_blank" rel="external">EasyTipView</a> (文字说明弹出视图) <code>pod 'EasyTipView'</code></li>
+<li><a href="https://github.com/Ramotion/circle-menu" target="_blank" rel="external">CircleMenu</a> (环形点击菜单按钮) <code>pod 'CircleMenu'</code></li>
+<li><a href="https://github.com/yoavlt/LiquidFloatingActionButton" target="_blank" rel="external">LiquidFloatingActionButton</a> (侧面竖列点击菜单按钮) <code>pod 'LiquidFloatingActionButton'</code></li>
+</ul>
+<h3>页面跳转</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/forkingdog/FDFullscreenPopGesture" target="_blank" rel="external">FDFullscreenPopGesture</a> (UINavigationController 手势) <code>pod 'FDFullscreenPopGesture'</code></li>
+<li><a href="https://github.com/fastred/SloppySwiper" target="_blank" rel="external">SloppySwiper</a> (UINavigationController 全屏手势) <code>pod 'SloppySwiper'</code></li>
+<li><a href="https://github.com/zhengwenming/ScreenShotBack" target="_blank" rel="external">ScreenShotBack</a> (全屏手势，加动画效果)</li>
+<li><a href="http://code.cocoachina.com/view/126664" target="_blank" rel="external">UIWebView 翻页返回效果</a> (UIWebView 返回效果)</li>
+<li><a href="https://github.com/JazysYu/JZNavigationExtension" target="_blank" rel="external">JZNavigationExtension</a> (多功能导航控制器) <code>pod 'JZNavigationExtension'</code></li>
+<li><a href="https://github.com/ltebean/LTNavigationBar" target="_blank" rel="external">LTNavigationBar</a> (导航栏动态着色) <code>pod 'LTNavigationBar'</code></li>
+<li><a href="https://github.com/andreamazz/AMScrollingNavbar" target="_blank" rel="external">AMScrollingNavbar</a> (可以上拉隐藏和下拉显示导航栏) <code>pod 'AMScrollingNavbar'</code></li>
+<li><a href="https://github.com/pixyzehn/MediumScrollFullScreen" target="_blank" rel="external">MediumScrollFullScreen</a> (上下滚动自然消隐上下菜单) <code>pod 'MediumScrollFullScreen'</code></li>
+<li><a href="https://github.com/bryankeller/BLKFlexibleHeightBar" target="_blank" rel="external">BLKFlexibleHeightBar</a> (导航栏高度动态变化) <code>pod 'BLKFlexibleHeightBar'</code></li>
+<li><a href="https://github.com/TomThorpe/UIScrollSlidingPages" target="_blank" rel="external">UIScrollSlidingPages</a> (横向滚动多个 tableView) <code>pod 'UIScrollSlidingPages'</code></li>
+<li><a href="https://github.com/pozi119/VOVCManager" target="_blank" rel="external">VOVCManager</a> (页面管理器) <code>pod 'VOVCManager'</code></li>
+<li><a href="https://github.com/wangmchn/WMPageController" target="_blank" rel="external">WMPageController</a> (自定义 pageContrller 控件) <code>pod 'WMPageController'</code></li>
+<li><a href="https://github.com/Moblox/MBXPageViewController" target="_blank" rel="external">MBXPageViewController</a> (带有按钮控件的 UIPageController) <code>pod 'MBXPageViewController'</code></li>
+<li><a href="https://github.com/HAHAKea/HACursor" target="_blank" rel="external">HACursor</a> (排序、删除功能 ScrollView 切换页面)</li>
+<li><a href="https://github.com/KittenYang/GooeyTabbar" target="_blank" rel="external">GooeyTabbar</a> (皮筋式弹性缩放) <code>pod 'GooeyTabbar'</code></li>
+<li><a href="https://github.com/leichunfeng/WXTabBarController" target="_blank" rel="external">WXTabBarController</a> (多个 tab 滑动切换) <code>pod 'WXTabBarController'</code></li>
+<li><a href="https://github.com/ChenYilong/CYLTabBarController" target="_blank" rel="external">CYLTabBarController</a> (多功能 TabBarController) <code>pod 'CYLTabBarController'</code></li>
+<li><a href="https://github.com/agdsdl/DLSlideView" target="_blank" rel="external">DLSlideView</a> (基于 ViewController 的 container 特性管理各个子页面)</li>
+<li><a href="https://github.com/Yalantis/FoldingTabBar.iOS" target="_blank" rel="external">FoldingTabBar.iOS</a> (可折叠 Tab Bar) <code>pod 'FoldingTabBar'</code></li>
+<li><a href="http://code.cocoachina.com/view/126050" target="_blank" rel="external">tabbar图标动画</a> (tab 动画)</li>
+<li><a href="https://github.com/LeoNatan/LNPopupController" target="_blank" rel="external">LNPopupController</a> (AppleMusic 式弹出页面，可上下拉动)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/xmartlabs/XLPagerTabStrip" target="_blank" rel="external">XLPagerTabStrip</a> (多个 tab 切换) <code>pod 'XLPagerTabStrip'</code></li>
+<li><a href="https://github.com/DianQK/TrelloNavigation" target="_blank" rel="external">TrelloNavigation</a> (多个 tableView 切换) <code>pod 'TrelloNavigation'</code></li>
+<li><a href="https://github.com/Ramotion/animated-tab-bar" target="_blank" rel="external">animated-tab-bar</a> (tab 动画) <code>pod 'RAMAnimatedTabBarController'</code></li>
+<li><a href="https://github.com/andreamazz/BubbleTransition" target="_blank" rel="external">BubbleTransition</a> (按钮点击跳转) <code>pod 'BubbleTransition'</code></li>
+<li><a href="https://github.com/gontovnik/DGRunkeeperSwitch/" target="_blank" rel="external">DGRunkeeperSwitch</a> (自定义 Switch) <code>pod 'DGRunkeeperSwitch'</code></li>
+<li><a href="https://github.com/KittenYang/DynamicMaskSegmentSwitch" target="_blank" rel="external">DynamicMaskSegmentSwitch</a> (自定义 Switch)</li>
+</ul>
+<h3>富文本</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/facebook/Shimmer" target="_blank" rel="external">Shimmer</a> (闪光效果) <code>pod 'Shimmer'</code></li>
+<li><a href="https://github.com/liusen001/LSPaomaView" target="_blank" rel="external">LSPaomaView</a> (跑马灯效果)</li>
+<li><a href="https://github.com/12207480/TYAttributedLabel" target="_blank" rel="external">TYAttributedLabel</a> <code>pod 'TYAttributedLabel'</code></li>
+<li><a href="https://github.com/TTTAttributedLabel/TTTAttributedLabel" target="_blank" rel="external">TTTAttributedLabel</a> <code>pod 'TTTAttributedLabel'</code></li>
+<li><a href="https://github.com/ibireme/YYText" target="_blank" rel="external">YYText</a> <code>pod 'YYText'</code></li>
+<li><a href="https://github.com/nicklockwood/FXLabel" target="_blank" rel="external">FXLabel</a> (增加了阴影、内阴影和渐变色等) <code>pod 'FXLabel'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/liufan321/FFLabel" target="_blank" rel="external">FFLabel</a> (自动检测 URLs, @username, #topic# 等关链词) <code>pod 'FFLabel'</code></li>
+</ul>
+<h3>输入框</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/wordpress-mobile/WordPress-Editor-iOS" target="_blank" rel="external">WordPress-Editor-iOS</a> (文本编辑器) <code>pod 'WordPress-iOS-Editor'</code></li>
+<li><a href="http://code.cocoachina.com/view/129099" target="_blank" rel="external">placeholder_TextView</a> (带有提示信息的textview)</li>
+<li><a href="https://github.com/nnhubbard/ZSSRichTextEditor" target="_blank" rel="external">ZSSRichTextEditor</a> (富文本WYSIWYG编辑器) <code>pod 'ZSSRichTextEditor'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/filipstefansson/AutocompleteField" target="_blank" rel="external">AutocompleteField</a> (文字输入框自动补全) <code>pod 'AutocompleteField'</code></li>
+<li><a href="https://github.com/gmertk/ParkedTextField" target="_blank" rel="external">ParkedTextField</a> (带固定文本) <code>pod 'ParkedTextField'</code></li>
+</ul>
+<h3>UITableView</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="external">DZNEmptyDataSet</a> (空白页或出错页) <code>pod 'DZNEmptyDataSet'</code></li>
+<li><a href="https://github.com/LvJianfeng/LLNoDataView" target="_blank" rel="external">LLNoDataView</a> (空白页或出错页) <code>pod 'LLNoDataView'</code></li>
+<li><a href="https://github.com/romaonthego/RETableViewManager" target="_blank" rel="external">RETableViewManager</a> (使用数据驱动) <code>pod 'RETableViewManager'</code></li>
+<li><a href="https://github.com/forkingdog/UITableView-FDTemplateLayoutCell" target="_blank" rel="external">UITableView-FDTemplateLayoutCell</a> (缓存 UITableViewCell 的高度) <code>pod 'UITableView+FDTemplateLayoutCell'</code></li>
+<li><a href="https://github.com/alikaragoz/MCSwipeTableViewCell" target="_blank" rel="external">MCSwipeTableViewCell</a> (带很多手势的表单元格) <code>pod 'MCSwipeTableViewCell'</code></li>
+<li><a href="https://github.com/MortimerGoro/MGSwipeTableCell" target="_blank" rel="external">MGSwipeTableCell</a> (带很多手势的表单元格) <code>pod 'MGSwipeTableCell'</code></li>
+<li><a href="https://github.com/1000Memories/TMQuiltView" target="_blank" rel="external">TMQuiltView</a> (瀑布流) <code>pod 'TMQuiltView'</code></li>
+<li><a href="http://code.cocoachina.com/view/130265" target="_blank" rel="external">FriendSearch</a> (搜索列表)</li>
+<li><a href="https://github.com/jessesquires/JSQMessagesViewController" target="_blank" rel="external">JSQMessagesViewController</a> (即时聊天) <code>pod 'JSQMessagesViewController'</code></li>
+<li><a href="https://github.com/ZhipingYang/UUChatTableView" target="_blank" rel="external">UUChatTableView</a> (即时聊天) <code>pod 'UUChatTableView'</code></li>
+<li><a href="https://github.com/layerhq/Atlas-iOS" target="_blank" rel="external">Atlas-iOS</a> (即时聊天，封装更多功能) <code>pod 'Atlas'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/Ramotion/folding-cell" target="_blank" rel="external">folding-cell</a> (酷炫的cell折叠动画) <code>pod 'FoldingCell'</code></li>
+<li><a href="https://github.com/xmartlabs/XLForm" target="_blank" rel="external">XLForm</a> (多功能 tableView) <code>pod 'XLForm'</code></li>
+<li><a href="https://github.com/gmertk/ParkedTextField" target="_blank" rel="external">ParkedTextField</a> (带固定文本) <code>pod 'ParkedTextField'</code></li>
+<li><a href="https://github.com/CharlinFeng/CFCityPickerVC" target="_blank" rel="external">CFCityPickerVC</a> (城市选择 tableView)</li>
+</ul>
+<h3>UICollectionView</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/chiahsien/CHTCollectionViewWaterfallLayout" target="_blank" rel="external">CHTCollectionViewWaterfallLayout</a> (瀑布流) <code>pod 'CHTCollectionViewWaterfallLayout'</code></li>
+<li><a href="https://github.com/lxcid/LXReorderableCollectionViewFlowLayout" target="_blank" rel="external">LXReorderableCollectionViewFlowLayout</a> (拖动排序) <code>pod 'LXReorderableCollectionViewFlowLayout'</code></li>
+<li><a href="https://github.com/ra1028/RACollectionViewReorderableTripletLayout" target="_blank" rel="external">RACollectionViewReorderableTripletLayout</a> (拖动排序) <code>pod 'RACollectionViewReorderableTripletLayout'</code></li>
+<li><a href="https://github.com/HebeTienCoder/XLPlainFlowLayout" target="_blank" rel="external">XLPlainFlowLayout</a> (header 支持悬停效果) <code>pod 'XLPlainFlowLayout'</code></li>
+<li><a href="https://github.com/ChenYilong/CollectionViewClassifyMenu" target="_blank" rel="external">CollectionViewClassifyMenu</a> (可以折叠的两级菜单) <code>pod 'CollectionViewClassifyMenu'</code></li>
+<li><a href="http://code.cocoachina.com/view/129152" target="_blank" rel="external">FJTagCollectionView</a> (按钮列表)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/lengmolehongyan/WaterfallFlowDemo" target="_blank" rel="external">WaterfallFlowDemo</a> (瀑布流) <code>pod 'WaterfallFlowDemo'</code></li>
+<li><a href="https://github.com/fdzsergio/SFFocusViewLayout" target="_blank" rel="external">SFFocusViewLayout</a> (UICollectionView 的高级使用方法) <code>pod 'SFFocusViewLayout'</code></li>
+<li><a href="https://github.com/CezaryKopacz/CKWaveCollectionViewTransition" target="_blank" rel="external">CKWaveCollectionViewTransition</a> (酷炫跳转效果) <code>pod 'CKWaveCollectionViewTransition'</code></li>
+</ul>
+<h3>模糊效果</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/nicklockwood/FXBlurView" target="_blank" rel="external">FXBlurView</a> <code>pod 'FXBlurView'</code></li>
+<li><a href="https://github.com/onevcat/VVBlurPresentation" target="_blank" rel="external">VVBlurPresentation</a> <code>pod 'VVBlurPresentation'</code></li>
+<li><a href="https://github.com/pchernovolenko/UICustomActionSheet" target="_blank" rel="external">UICustomActionSheet</a> <code>pod 'UICustomActionSheet'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/marty-suzuki/SABlurImageView" target="_blank" rel="external">SABlurImageView</a> (支持渐变动画效果) <code>pod 'SABlurImageView'</code></li>
+</ul>
+<h3>动画</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/yfme/UIImageView-PlayGIF" target="_blank" rel="external">UIImageView-PlayGIF</a> (gif 动画) <code>pod 'UIImageView-PlayGIF'</code></li>
+<li><a href="https://github.com/liyong03/YLGIFImage" target="_blank" rel="external">YLGIFImage</a> (gif 动画) <code>pod 'YLGIFImage'</code></li>
+<li><a href="https://github.com/facebook/pop" target="_blank" rel="external">pop</a> <code>pod 'pop'</code></li>
+<li><a href="https://github.com/schneiderandre/popping" target="_blank" rel="external">Popping</a></li>
+<li><a href="https://github.com/daltoniam/DCAnimationKit" target="_blank" rel="external">DCAnimationKit</a> <code>pod 'DCAnimationKit'</code></li>
+<li><a href="https://github.com/AugustRush/ARAnimation" target="_blank" rel="external">ARAnimation</a> (核心动画) <code>pod 'ARAnimation'</code></li>
+<li><a href="https://github.com/StoneLeon/STLBGVideo" target="_blank" rel="external">STLBGVideo</a> (视频背景动画)</li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/MengTo/Spring" target="_blank" rel="external">Spring</a> <code>pod 'Spring'</code></li>
+<li><a href="https://github.com/suguru/Cheetah" target="_blank" rel="external">Cheetah</a></li>
+<li><a href="https://github.com/scotteg/LayerPlayer" target="_blank" rel="external">Layer Player</a> (核心动画)</li>
+</ul>
+<h3>图片、文字轮播器</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/gsdios/SDCycleScrollView" target="_blank" rel="external">SDCycleScrollView</a> <code>pod 'SDCycleScrollView'</code></li>
+<li><a href="https://github.com/CoderJackyHuang/HYBLoopScrollView" target="_blank" rel="external">HYBLoopScrollView</a> <code>pod 'HYBLoopScrollView'</code></li>
+<li><a href="https://github.com/nicklockwood/iCarousel" target="_blank" rel="external">iCarousel</a> (3D 效果)</li>
+<li><a href="https://github.com/KittenYang/KYAnimatedPageControl" target="_blank" rel="external">KYAnimatedPageControl</a> <code>pod 'KYAnimatedPageControl'</code></li>
+</ul>
+<h3>图片浏览</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/vitoziv/VIPhotoView" target="_blank" rel="external">VIPhotoView</a> <code>pod 'VIPhotoView'</code></li>
+<li><a href="https://github.com/modocache/MDCSwipeToChoose" target="_blank" rel="external">MDCSwipeToChoose</a> (滑动手势) <code>pod 'MDCSwipeToChoose'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/suzuki-0000/SKPhotoBrowser" target="_blank" rel="external">SKPhotoBrowser</a> <code>pod 'SKPhotoBrowser'</code></li>
+</ul>
+<h3>UIImagePickerController 图片多选</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/B-Sides/ELCImagePickerController" target="_blank" rel="external">ELCImagePickerController</a> <code>pod 'ELCImagePickerController'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/mikaoj/BSImagePicker" target="_blank" rel="external">BSImagePicker</a> <code>pod 'BSImagePicker'</code></li>
+<li><a href="https://github.com/lbrndnr/ImagePickerSheetController" target="_blank" rel="external">ImagePickerSheetController</a> (ActionSheet 模式) <code>pod 'ImagePickerSheetController'</code></li>
+</ul>
+<h3>即时通讯</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/jmesnil/MQTTKit" target="_blank" rel="external">MQTTKit</a> <code>pod 'MQTTKit'</code></li>
+<li><a href="https://github.com/robbiehanson/XMPPFramework" target="_blank" rel="external">XMPPFramework</a> <code>pod 'XMPPFramework'</code></li>
+<li><a href="https://github.com/ChatSecure/ChatSecure-iOS" target="_blank" rel="external">ChatSecure-iOS</a></li>
+<li><a href="https://github.com/xhzengAIB/MessageDisplayKit" target="_blank" rel="external">MessageDisplayKit</a> (完整工程) <code>pod 'MessageDisplayKit'</code></li>
+<li><a href="https://github.com/jessesquires/JSQMessagesViewController" target="_blank" rel="external">JSQMessagesViewController</a> <code>pod 'JSQMessagesViewController'</code></li>
+<li><a href="http://code4app.com/ios/BlueTalk%E8%93%9D%E7%89%99%E8%81%8A%E5%A4%A9-%E6%89%8B%E6%9C%BA%E4%B9%8B%E9%97%B4/552b8190933bf0291e8b4748" target="_blank" rel="external">BlueTalk</a> (蓝牙聊天)</li>
+</ul>
+<h3>UIButton 单选自定义</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/DavydLiu/DLRadioButton" target="_blank" rel="external">DLRadioButton</a> <code>pod 'DLRadioButton'</code></li>
+</ul>
+<h3>抽屉式导航栏</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/JVillella/JVFloatingDrawer" target="_blank" rel="external">JVFloatingDrawer</a> <code>pod 'JVFloatingDrawer'</code></li>
+<li><a href="https://github.com/ViewDeck/ViewDeck" target="_blank" rel="external">ViewDeck</a> <code>pod 'ViewDeck'</code></li>
+<li><a href="https://github.com/gresrun/GHSidebarNav" target="_blank" rel="external">GHSideBarNav</a></li>
+<li><a href="https://github.com/aryaxt/iOS-Slide-Menu" target="_blank" rel="external">iOS-Slide-Menu</a></li>
+<li><a href="https://github.com/ECSlidingViewController/ECSlidingViewController" target="_blank" rel="external">ECSlidingViewController</a> <code>pod 'ECSlidingViewController'</code></li>
+<li><a href="https://github.com/gotosleep/JASidePanels" target="_blank" rel="external">JASidePanels</a></li>
+<li><a href="https://github.com/romaonthego/RESideMenu" target="_blank" rel="external">RESideMenu</a> <code>pod 'RESideMenu'</code></li>
+<li><a href="https://github.com/mutualmobile/MMDrawerController" target="_blank" rel="external">MMDrawerController</a> <code>pod 'MMDrawerController'</code></li>
+<li><a href="https://github.com/lilei644/LLSlideMenu" target="_blank" rel="external">LLSlideMenu</a> (弹性侧滑菜单) <code>pod 'LLSlideMenu'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/KyleGoddard/KGFloatingDrawer" target="_blank" rel="external">KGFloatingDrawer</a> <code>pod 'KGFloatingDrawer'</code></li>
+</ul>
+<h3>版本新特性</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/CharlinFeng/CoreNewFeatureVC" target="_blank" rel="external">CoreNewFeatureVC</a></li>
+<li><a href="https://github.com/AdamBCo/ABCIntroView" target="_blank" rel="external">ABCIntroView</a></li>
+<li><a href="https://github.com/MatthewYork/MYBlurIntroductionView" target="_blank" rel="external">MYBlurIntroductionView</a> <code>pod 'MYBlurIntroductionView'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/michaelbabiy/RMParallax" target="_blank" rel="external">RMParallax</a></li>
+<li><a href="https://github.com/hyperoslo/Presentation" target="_blank" rel="external">Presentation</a> (动画式的) <code>pod 'Presentation'</code></li>
+</ul>
+<h3>图表</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/chasseurmic/TWRCharts" target="_blank" rel="external">TWRCharts</a> <code>pod 'TWRCharts'</code></li>
+<li><a href="https://github.com/xhacker/TEAChart" target="_blank" rel="external">TEAChart</a> <code>pod 'TEAChart'</code></li>
+<li><a href="https://github.com/kevinzhow/PNChart" target="_blank" rel="external">PNChart</a> <code>pod 'PNChart'</code></li>
+<li><a href="https://github.com/yasuoza/YOChartImageKit" target="_blank" rel="external">YOChartImageKit</a> (支持 watchOS) <code>pod 'YOChartImageKit'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/danielgindi/Charts" target="_blank" rel="external">Charts</a> <code>pod 'Charts'</code> or <code>pod 'Charts/Realm'</code>以支持 Realm</li>
+</ul>
+<h3>表头图片进行放大的效果</h3>
+<p>Objective-C：</p>
 <ul>
 <li><a href="https://github.com/ws00801526/CExpandHeaderViewExample" target="_blank" rel="external">CExpandHeaderViewExample</a></li>
+<li><a href="https://github.com/iThinkerYZ/YZHeaderScaleImage" target="_blank" rel="external">YZHeaderScaleImage</a></li>
 </ul>
-<h2>&#x65E5;&#x671F;&#x5904;&#x7406;&#x5E93;</h2>
-<p>Swift&#xFF1A;</p>
+<h3>日历视图</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/malcommac/SwiftDate" target="_blank" rel="external">SwiftDate</a> <code>pod &apos;SwiftDate&apos;</code></li>
+<li><a href="http://code.cocoachina.com/view/125707" target="_blank" rel="external">ASDayPicker</a></li>
+<li><a href="https://github.com/jonathantribouharet/JTCalendar" target="_blank" rel="external">JTCalendar</a> <code>pod 'JTCalendar'</code></li>
+<li><a href="https://github.com/jivesoftware/PDTSimpleCalendar" target="_blank" rel="external">PDTSimpleCalendar</a> <code>pod 'PDTSimpleCalendar'</code></li>
+<li><a href="https://github.com/MSS0306/MSSCalendar" target="_blank" rel="external">MSSCalendar</a></li>
+<li><a href="https://github.com/jumartin/Calendar" target="_blank" rel="external">CalendarLib</a> <code>pod 'CalendarLib'</code></li>
 </ul>
-<h2>&#x538B;&#x7F29;&#x548C;&#x89E3;&#x538B;&#x7F29;</h2>
-<p>Objective-C&#xFF1A;</p>
+<p>Swift：</p>
 <ul>
-<li><a href="https://github.com/mattconnolly/ZipArchive" target="_blank" rel="external">ZipArchive</a> <code>pod &apos;ZipArchive&apos;</code></li>
+<li><a href="https://github.com/Mozharovsky/CVCalendar" target="_blank" rel="external">CVCalendar</a> <code>pod 'CVCalendar'</code></li>
 </ul>
-<p>Swift&#xFF1A;</p>
+<h3>状态栏</h3>
+<p>Objective-C：</p>
 <ul>
-<li><a href="https://github.com/ZipArchive/ZipArchive" target="_blank" rel="external">SSZipArchive</a> <code>pod &apos;SSZipArchive&apos;</code></li>
+<li><a href="https://github.com/myell0w/MTStatusBarOverlay" target="_blank" rel="external">MTStatusBarOverlay</a></li>
+</ul>
+<h3>主题管理</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/lixiang1994/LEETheme" target="_blank" rel="external">LEETheme</a> <code>pod 'LEETheme'</code></li>
+<li><a href="https://github.com/Draveness/DKNightVersion" target="_blank" rel="external">DKNightVersion</a> (夜间模式) <code>pod 'DKNightVersion'</code></li>
+</ul>
+<h3>进度条</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/liuzhiyi1992/PreLoader" target="_blank" rel="external">PreLoader</a> (灌水进度条) <code>pod 'PreLoader'</code></li>
+<li><a href="https://github.com/UrbanApps/UAProgressView" target="_blank" rel="external">UAProgressView</a> (圆形进度条) <code>pod 'UAProgressView'</code></li>
+<li><a href="https://github.com/dsxNiubility/SXWaveAnimate" target="_blank" rel="external">SXWaveAnimate</a> (圆形加灌水进度条) <code>pod 'SXWaveAnimate'</code></li>
+<li><a href="https://github.com/alskipp/ASProgressPopUpView" target="_blank" rel="external">ASProgressPopUpView</a> (添加指示标签条形进度条) <code>pod 'ASProgressPopUpView'</code></li>
+</ul>
+<p>Swift：</p>
+<ul>
+<li><a href="https://github.com/liuzhiyi1992/WaveLoadingView" target="_blank" rel="external">WaveLoadingView</a> (灌水进度条)</li>
+<li><a href="https://github.com/kentya6/KYCircularProgress" target="_blank" rel="external">KYCircularProgress</a> (圆形进度条) <code>pod 'KYCircularProgress'</code></li>
+</ul>
+<h3>Material Design</h3>
+<p>Objective-C：</p>
+<ul>
+<li><a href="https://github.com/fpt-software/Material-Controls-For-iOS" target="_blank" rel="external">Material Design Controls For iOS</a></li>
+<li><a href="http://code.cocoachina.com/view/126073" target="_blank" rel="external">iOS Material Design 库</a></li>
+<li><a href="https://github.com/victorBaro/VBFPopFlatButton" target="_blank" rel="external">VBFPopFlatButton</a> (按钮) <code>pod 'VBFPopFlatButton'</code></li>
 </ul>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
 
 
   <div class="article-tags">
@@ -375,6 +623,14 @@ Objec">
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/09/12/正则表达式基础语法对照表/" title="正则表达式基础语法对照表">
+  <strong>上一篇：</strong><br/>
+  <span>
+  正则表达式基础语法对照表</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2016/06/20/使用-Moya-RxSwift-进行网络请求/"  title="使用 Moya/RxSwift 进行网络请求">
@@ -398,7 +654,7 @@ Objec">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">网络请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">Socket</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">网络图片加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">自动布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">Json 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">XML 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">上拉刷新，下拉加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">7.</span> <span class="toc-text">提示框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">8.</span> <span class="toc-text">弹出视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">9.</span> <span class="toc-text">HexColor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">10.</span> <span class="toc-text">数据库处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">11.</span> <span class="toc-text">空白页或出错页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">12.</span> <span class="toc-text">UINavigationController 手势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">13.</span> <span class="toc-text">响应式编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">14.</span> <span class="toc-text">图片浏览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">15.</span> <span class="toc-text">UIImagePickerController 图片多选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">16.</span> <span class="toc-text">即时通讯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">17.</span> <span class="toc-text">UICollectionViewFlowLayout 拖动排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">18.</span> <span class="toc-text">UIButton 单选自定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">19.</span> <span class="toc-text">抽屉式导航栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">20.</span> <span class="toc-text">版本新特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">21.</span> <span class="toc-text">获取坐标或当前地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">22.</span> <span class="toc-text">图表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">23.</span> <span class="toc-text">表头图片进行放大的效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">24.</span> <span class="toc-text">日期处理库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">25.</span> <span class="toc-text">压缩和解压缩</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">基础功能框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">网络请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.1.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.2.</span> <span class="toc-text">Socket</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text">网络测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">网络图片加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">Json 解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">XML 解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.</span> <span class="toc-text">自动布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.6.</span> <span class="toc-text">上拉刷新，下拉加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.7.</span> <span class="toc-text">数据库处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.8.</span> <span class="toc-text">HexColor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.9.</span> <span class="toc-text">响应式编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.10.</span> <span class="toc-text">日期处理库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.11.</span> <span class="toc-text">压缩和解压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.12.</span> <span class="toc-text">获取坐标或当前地址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">控件框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">提示框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">弹出视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">页面跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">富文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.</span> <span class="toc-text">输入框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.6.</span> <span class="toc-text">UITableView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.7.</span> <span class="toc-text">UICollectionView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.8.</span> <span class="toc-text">模糊效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.9.</span> <span class="toc-text">动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.10.</span> <span class="toc-text">图片、文字轮播器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.11.</span> <span class="toc-text">图片浏览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.12.</span> <span class="toc-text">UIImagePickerController 图片多选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.13.</span> <span class="toc-text">即时通讯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.14.</span> <span class="toc-text">UIButton 单选自定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.15.</span> <span class="toc-text">抽屉式导航栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.16.</span> <span class="toc-text">版本新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.17.</span> <span class="toc-text">图表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.18.</span> <span class="toc-text">表头图片进行放大的效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.19.</span> <span class="toc-text">日历视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.20.</span> <span class="toc-text">状态栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.21.</span> <span class="toc-text">主题管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.22.</span> <span class="toc-text">进度条</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.23.</span> <span class="toc-text">Material Design</span></a></li></ol></li></ol>
  
   </div>
 
@@ -417,6 +673,21 @@ Objec">
 
 
   
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/编程基础/" title="编程基础">编程基础<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
 
   
 <div class="tagslist">
@@ -424,7 +695,7 @@ Objec">
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/第三方库/" title="第三方库">第三方库<sup>2</sup></a></li>
+				<li><a href="/tags/第三方库/" title="第三方库">第三方库<sup>3</sup></a></li>
 			
 		
 			
@@ -445,6 +716,10 @@ Objec">
 		
 			
 				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
 			
 		
 		</ul>
