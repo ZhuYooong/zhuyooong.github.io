@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-15T13:39:31.000Z</updated>
+  <updated>2016-09-15T13:17:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,123 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>My FastApp</title>
-    <link href="http://yoursite.com/2016/09/15/My-FastApp/"/>
-    <id>http://yoursite.com/2016/09/15/My-FastApp/</id>
-    <published>2016-09-15T13:36:01.000Z</published>
-    <updated>2016-09-15T13:39:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在项目初期搭建框架时所用到的代码和第三方库大都是相同或相似的，所以如果在一个已经准备好的基础模版上再进行开发应该可以达到提高项目开发效率和减少不必要的时间损失的目的。</p>
-<h2>第三方框架</h2>
-<h3><a href="https://github.com/Carthage/Carthage" target="_blank" rel="external">Carthage</a></h3>
-<p>相对于 CocoaPods 新建一个 workspace，Carthage 是使用 xcodebuild 来编译出二进制库，剩下的集成工作完全交给开发人员，所以更加灵活并且对现有项目没有太多的侵略性。但是相应的使用起来也更麻烦了些，而且因为更加年轻和小众，支持的框架是少于 CocoaPods 的，更痛苦的是你不能用 search 命令查找支持的框架，所以只能自己找（只支持 GitHub 和 git 源）。但是，如果你也和我一样被 CocoaPods 漫长的编译时间折磨过的话，我相信之前的问题都不算什么了。</p>
-<h4>安装 Carthage</h4>
-<p>直接下载<a href="https://github.com/Carthage/Carthage/releases" target="_blank" rel="external">安装包</a>，当然，如果没有挂上代理的话速度会相当慢～</p>
-<p>或者使用 Homebrew 进行安装：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install carthage</span><br></pre></td></tr></table></figure></p>
-<h4>Cartfile</h4>
-<p>类似于 CocoaPods 中的 Podfile 文件，语法都差不多：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">github &quot;boyXiong/XWSwiftRefresh&quot;                                                     //使用最新版本</span><br><span class="line">github &quot;onevcat/Kingfisher&quot; &gt;= 2.4.0                                                 //必须最低为 2.3.1 版本</span><br><span class="line">github &quot;SnapKit/SnapKit&quot; == 0.22.0                                                   //必须为 0.22.0 版本</span><br><span class="line">github &quot;Alamofire/Alamofire&quot; ~&gt; 3.4                                                  //大于或等于 3.4 ，小于 2.0</span><br><span class="line">git &quot;https://enterprise.local/desktop/git-error-translations.git&quot; &quot;development&quot;      //使用一个私有项目，在 &quot;development&quot; 分支</span><br></pre></td></tr></table></figure></p>
-<p>写完之后执行<code>carthage update</code>命令生成各个框架。其中 Carthage/Checkouts 目录是从 github 获取的源代码，Carthage/Build 目录是编译出来的 Framework 二进制代码库。</p>
-<h4>集成第三方库</h4>
-<p>打开项目，在项目的 Target -&gt; Build Phases -&gt; Link Library with Libraries，将 Carthage/Build 目录中希望导入的 Framework 库导进去。</p>
-<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7uln7wejqj20lq0bxgns.jpg" alt=""></p>
-<p>添加编译的额外脚本，点击 “+” -&gt; New Run Script Phase。</p>
-<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7uln97ms6j20c6069my3.jpg" alt=""></p>
-<p>添加脚本<code>/usr/local/bin/carthage copy-frameworks</code>，将各个 Framework 的路径添加到 Input Files 中。</p>
-<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7ulnb35snj20li0ejdjg.jpg" alt=""></p>
-<p>然后在项目中 import 就可以使用了。</p>
-<h3>使用的第三方框架</h3>
-<ul>
-<li>网络请求：Alamofire</li>
-<li>网络图片加载：Kingfisher</li>
-<li>自动布局：SnapKit</li>
-<li>上拉加载下拉刷新：XWSwiftRefresh</li>
-<li>颜色：HexColor</li>
-<li>数据库本地存储：realm-cocoa</li>
-<li>提示框：PKHUD</li>
-<li>JSON解析：SwiftyJSON</li>
-<li>优化界面：AsyncDisplayKit</li>
-</ul>
-<h2><a href="https://realm.io" target="_blank" rel="external">Realm</a></h2>
-<p>在数据库方面我之所以选择 Realm 主要是因为可以直接使用 Realm Browser 查看生成的数据库文件，而且相较于 Core Data 使用起来更简单一些。</p>
-<p>新增数据：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let realm = try! Realm() //获取默认的 Realm 数据库</span><br><span class="line">self.contentNewsArray = [LatestNewsInfo]()</span><br><span class="line">for subJson in storiesJson.arrayValue &#123;</span><br><span class="line">    let newsInfo = LatestNewsInfo() //创建一个 LatestNewsInfo 对象实例</span><br><span class="line">    newsInfo.id = subJson[&quot;id&quot;].stringValue</span><br><span class="line">    newsInfo.title = subJson[&quot;title&quot;].stringValue</span><br><span class="line">    newsInfo.images = subJson[&quot;images&quot;][0].stringValue</span><br><span class="line">    try! realm.write &#123;  //向 realm 中写入新的 LatestNewsInfo 对象</span><br><span class="line">        realm.add(newsInfo)</span><br><span class="line">    &#125;</span><br><span class="line">    self.contentNewsArray.append(newsInfo)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>获取数据：</p>
-<p>通过<code>public func objects&lt;T : RealmSwift.Object&gt;(type: T.Type) -&gt; RealmSwift.Results&lt;T&gt;</code>方法可以获取全部数据，或者通过 Predicate 条件查询特定数据：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let predicate = NSPredicate(format: &quot;type.name = &apos;购物&apos; AND cost &gt; 10&quot;)</span><br><span class="line">consumeItems = self.realm.objects(ConsumeItem).filter(predicate)</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>支持的断言：</p>
-</blockquote>
-<blockquote>
-<p>比较操作数(comparison operand)可以是属性名称或者某个常量，但至少有一个操作数必须是属性名称；</p>
-</blockquote>
-<blockquote>
-<p>比较操作符 ==、&lt;=、&lt;、&gt;=、&gt;、!=, 以及 BETWEEN 支持 int、long、long long、float、double 以及 NSDate 属性类型的比较，比如说 age == 45；</p>
-</blockquote>
-<blockquote>
-<p>相等比较 ==以及!=，比如说Results&lt;Employee&gt;().filter(&quot;company == %@&quot;, company)</p>
-</blockquote>
-<blockquote>
-<p>比较操作符 == and != 支持布尔属性；</p>
-</blockquote>
-<blockquote>
-<p>对于 NSString 和 NSData 属性来说，我们支持 ==、!=、BEGINSWITH、CONTAINS 以及 ENDSWITH 操作符，比如说 name CONTAINS ‘Ja’；</p>
-</blockquote>
-<blockquote>
-<p>字符串支持忽略大小写的比较方式，比如说 name CONTAINS[c] ‘Ja’ ，注意到其中字符的大小写将被忽略；</p>
-</blockquote>
-<blockquote>
-<p>Realm 支持以下复合操作符：“AND”、“OR” 以及 “NOT”。比如说 name BEGINSWITH ‘J’ AND age &gt;= 32；</p>
-</blockquote>
-<blockquote>
-<p>包含操作符 IN，比如说 name IN {‘Lisa’, ‘Spike’, ‘Hachi’}；</p>
-</blockquote>
-<blockquote>
-<p>==、!=支持与 nil 比较，比如说 Results&lt;Company&gt;().filter(&quot;ceo == nil&quot;)。注意到这只适用于有关系的对象，这里 ceo 是 Company 模型的一个属性。</p>
-</blockquote>
-<blockquote>
-<p>ANY 比较，比如说 ANY student.age &lt; 21</p>
-</blockquote>
-<blockquote>
-<p>注意，虽然我们不支持复合表达式类型(aggregate expression type)，但是我们支持对对象的值使用 BETWEEN 操作符类型。比如说，Results&lt;Person&gt;.filter(&quot;age BETWEEN %@&quot;, [42, 43]])。</p>
-</blockquote>
-<p>排序：<code>consumeItems = self.realm.objects(ConsumeItem).filter(&quot;cost &gt; 10&quot;).sorted(&quot;cost&quot;)</code></p>
-<p>删除记录：</p>
-<p>通过上边的方法获取到的数据可以通过 Realm 中的<code>ppublic func delete(object: RealmSwift.Object)</code>删除单个 Object 或<code>public func delete&lt;T : RealmSwift.Object&gt;(objects: RealmSwift.List&lt;T&gt;)</code> 删除多个 Object。当然，也可以通过<code>public func deleteAll()</code>方法删除全部。</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">realm.write &#123;</span><br><span class="line">  realm.delete(cheeseBook)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>更新记录：</p>
-<p>可以通过直接设置更新：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">realm.write &#123;</span><br><span class="line">  consumeItem.name = &quot;去北京旅行&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果在设置 Object 的时候设置了 primaryKey 就可以直接通过<code>public func add(object: RealmSwift.Object, update: Bool = default)</code>或者<code>public func create&lt;T : RealmSwift.Object&gt;(type: T.Type, value: AnyObject = default, update: Bool = default) -&gt; T</code>方法更新数据。</p>
-<p>Object 设置方法：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import RealmSwift</span><br><span class="line">class MediatorInfo: Object &#123;</span><br><span class="line">    dynamic var userId: String? = &quot;&quot;</span><br><span class="line">    dynamic var userName: String? = &quot;&quot;</span><br><span class="line">    dynamic var userjob: String? = &quot;&quot;</span><br><span class="line"></span><br><span class="line">    override static func primaryKey() -&gt; String? &#123;</span><br><span class="line">        return &quot;userId&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>其它</h2>
-<ul>
-<li>项目结构采取了最基础的 MVC 架构，之所以没用 MVVM 之类的架构，是因为对于 ReactiveCocoa 或 RxSwift 响应式编程框架掌握程度还不够。如果只是单独分出去一个 ViewModel 意义也不大。</li>
-<li>页面布局采取了以 StoryBoard 为主，以 SnapKit 进行代码自动布局为辅，在一些需要大量显示图片的复杂布局的地方用 AsyncDisplayKit 提高页面流畅度的方法。</li>
-<li>网页显示采用 WebKit 并通过 UIProgressView 实现进度条功能。</li>
-<li>数据接口采用的是<a href="https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90" target="_blank" rel="external">知乎日报</a>的接口。</li>
-<li><a href="https://github.com/ZhuYooong/ZYFastApp" target="_blank" rel="external">Demo</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在项目初期搭建框架时所用到的代码和第三方库大都是相同或相似的，所以如果在一个已经准备好的基础模版上再进行开发应该可以达到提高项目开发效率和减少不必要的时间损失的目的。&lt;/p&gt;
-&lt;h2&gt;第三方框架&lt;/h2&gt;
-&lt;h3&gt;&lt;a href=&quot;https://github.com/Ca
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
-    
-    
-      <category term="第三方库" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
-    
-  </entry>
   
   <entry>
     <title>正则表达式基础语法对照表</title>
@@ -429,6 +312,123 @@
     
     
       <category term="正则表达式" scheme="http://yoursite.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My FastApp</title>
+    <link href="http://yoursite.com/2016/08/16/My-FastApp/"/>
+    <id>http://yoursite.com/2016/08/16/My-FastApp/</id>
+    <published>2016-08-16T13:36:01.000Z</published>
+    <updated>2016-09-15T13:53:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在项目初期搭建框架时所用到的代码和第三方库大都是相同或相似的，所以如果在一个已经准备好的基础模版上再进行开发应该可以达到提高项目开发效率和减少不必要的时间损失的目的。</p>
+<h2>第三方框架</h2>
+<h3><a href="https://github.com/Carthage/Carthage" target="_blank" rel="external">Carthage</a></h3>
+<p>相对于 CocoaPods 新建一个 workspace，Carthage 是使用 xcodebuild 来编译出二进制库，剩下的集成工作完全交给开发人员，所以更加灵活并且对现有项目没有太多的侵略性。但是相应的使用起来也更麻烦了些，而且因为更加年轻和小众，支持的框架是少于 CocoaPods 的，更痛苦的是你不能用 search 命令查找支持的框架，所以只能自己找（只支持 GitHub 和 git 源）。但是，如果你也和我一样被 CocoaPods 漫长的编译时间折磨过的话，我相信之前的问题都不算什么了。</p>
+<h4>安装 Carthage</h4>
+<p>直接下载<a href="https://github.com/Carthage/Carthage/releases" target="_blank" rel="external">安装包</a>，当然，如果没有挂上代理的话速度会相当慢～</p>
+<p>或者使用 Homebrew 进行安装：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install carthage</span><br></pre></td></tr></table></figure></p>
+<h4>Cartfile</h4>
+<p>类似于 CocoaPods 中的 Podfile 文件，语法都差不多：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">github &quot;boyXiong/XWSwiftRefresh&quot;                                                     //使用最新版本</span><br><span class="line">github &quot;onevcat/Kingfisher&quot; &gt;= 2.4.0                                                 //必须最低为 2.3.1 版本</span><br><span class="line">github &quot;SnapKit/SnapKit&quot; == 0.22.0                                                   //必须为 0.22.0 版本</span><br><span class="line">github &quot;Alamofire/Alamofire&quot; ~&gt; 3.4                                                  //大于或等于 3.4 ，小于 2.0</span><br><span class="line">git &quot;https://enterprise.local/desktop/git-error-translations.git&quot; &quot;development&quot;      //使用一个私有项目，在 &quot;development&quot; 分支</span><br></pre></td></tr></table></figure></p>
+<p>写完之后执行<code>carthage update</code>命令生成各个框架。其中 Carthage/Checkouts 目录是从 github 获取的源代码，Carthage/Build 目录是编译出来的 Framework 二进制代码库。</p>
+<h4>集成第三方库</h4>
+<p>打开项目，在项目的 Target -&gt; Build Phases -&gt; Link Library with Libraries，将 Carthage/Build 目录中希望导入的 Framework 库导进去。</p>
+<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7uln7wejqj20lq0bxgns.jpg" alt=""></p>
+<p>添加编译的额外脚本，点击 “+” -&gt; New Run Script Phase。</p>
+<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7uln97ms6j20c6069my3.jpg" alt=""></p>
+<p>添加脚本<code>/usr/local/bin/carthage copy-frameworks</code>，将各个 Framework 的路径添加到 Input Files 中。</p>
+<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7ulnb35snj20li0ejdjg.jpg" alt=""></p>
+<p>然后在项目中 import 就可以使用了。</p>
+<h3>使用的第三方框架</h3>
+<ul>
+<li>网络请求：Alamofire</li>
+<li>网络图片加载：Kingfisher</li>
+<li>自动布局：SnapKit</li>
+<li>上拉加载下拉刷新：XWSwiftRefresh</li>
+<li>颜色：HexColor</li>
+<li>数据库本地存储：realm-cocoa</li>
+<li>提示框：PKHUD</li>
+<li>JSON解析：SwiftyJSON</li>
+<li>优化界面：AsyncDisplayKit</li>
+</ul>
+<h2><a href="https://realm.io" target="_blank" rel="external">Realm</a></h2>
+<p>在数据库方面我之所以选择 Realm 主要是因为可以直接使用 Realm Browser 查看生成的数据库文件，而且相较于 Core Data 使用起来更简单一些。</p>
+<p>新增数据：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let realm = try! Realm() //获取默认的 Realm 数据库</span><br><span class="line">self.contentNewsArray = [LatestNewsInfo]()</span><br><span class="line">for subJson in storiesJson.arrayValue &#123;</span><br><span class="line">    let newsInfo = LatestNewsInfo() //创建一个 LatestNewsInfo 对象实例</span><br><span class="line">    newsInfo.id = subJson[&quot;id&quot;].stringValue</span><br><span class="line">    newsInfo.title = subJson[&quot;title&quot;].stringValue</span><br><span class="line">    newsInfo.images = subJson[&quot;images&quot;][0].stringValue</span><br><span class="line">    try! realm.write &#123;  //向 realm 中写入新的 LatestNewsInfo 对象</span><br><span class="line">        realm.add(newsInfo)</span><br><span class="line">    &#125;</span><br><span class="line">    self.contentNewsArray.append(newsInfo)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>获取数据：</p>
+<p>通过<code>public func objects&lt;T : RealmSwift.Object&gt;(type: T.Type) -&gt; RealmSwift.Results&lt;T&gt;</code>方法可以获取全部数据，或者通过 Predicate 条件查询特定数据：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let predicate = NSPredicate(format: &quot;type.name = &apos;购物&apos; AND cost &gt; 10&quot;)</span><br><span class="line">consumeItems = self.realm.objects(ConsumeItem).filter(predicate)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>支持的断言：</p>
+</blockquote>
+<blockquote>
+<p>比较操作数(comparison operand)可以是属性名称或者某个常量，但至少有一个操作数必须是属性名称；</p>
+</blockquote>
+<blockquote>
+<p>比较操作符 ==、&lt;=、&lt;、&gt;=、&gt;、!=, 以及 BETWEEN 支持 int、long、long long、float、double 以及 NSDate 属性类型的比较，比如说 age == 45；</p>
+</blockquote>
+<blockquote>
+<p>相等比较 ==以及!=，比如说Results&lt;Employee&gt;().filter(&quot;company == %@&quot;, company)</p>
+</blockquote>
+<blockquote>
+<p>比较操作符 == and != 支持布尔属性；</p>
+</blockquote>
+<blockquote>
+<p>对于 NSString 和 NSData 属性来说，我们支持 ==、!=、BEGINSWITH、CONTAINS 以及 ENDSWITH 操作符，比如说 name CONTAINS ‘Ja’；</p>
+</blockquote>
+<blockquote>
+<p>字符串支持忽略大小写的比较方式，比如说 name CONTAINS[c] ‘Ja’ ，注意到其中字符的大小写将被忽略；</p>
+</blockquote>
+<blockquote>
+<p>Realm 支持以下复合操作符：“AND”、“OR” 以及 “NOT”。比如说 name BEGINSWITH ‘J’ AND age &gt;= 32；</p>
+</blockquote>
+<blockquote>
+<p>包含操作符 IN，比如说 name IN {‘Lisa’, ‘Spike’, ‘Hachi’}；</p>
+</blockquote>
+<blockquote>
+<p>==、!=支持与 nil 比较，比如说 Results&lt;Company&gt;().filter(&quot;ceo == nil&quot;)。注意到这只适用于有关系的对象，这里 ceo 是 Company 模型的一个属性。</p>
+</blockquote>
+<blockquote>
+<p>ANY 比较，比如说 ANY student.age &lt; 21</p>
+</blockquote>
+<blockquote>
+<p>注意，虽然我们不支持复合表达式类型(aggregate expression type)，但是我们支持对对象的值使用 BETWEEN 操作符类型。比如说，Results&lt;Person&gt;.filter(&quot;age BETWEEN %@&quot;, [42, 43]])。</p>
+</blockquote>
+<p>排序：<code>consumeItems = self.realm.objects(ConsumeItem).filter(&quot;cost &gt; 10&quot;).sorted(&quot;cost&quot;)</code></p>
+<p>删除记录：</p>
+<p>通过上边的方法获取到的数据可以通过 Realm 中的<code>ppublic func delete(object: RealmSwift.Object)</code>删除单个 Object 或<code>public func delete&lt;T : RealmSwift.Object&gt;(objects: RealmSwift.List&lt;T&gt;)</code> 删除多个 Object。当然，也可以通过<code>public func deleteAll()</code>方法删除全部。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">realm.write &#123;</span><br><span class="line">  realm.delete(cheeseBook)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>更新记录：</p>
+<p>可以通过直接设置更新：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">realm.write &#123;</span><br><span class="line">  consumeItem.name = &quot;去北京旅行&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果在设置 Object 的时候设置了 primaryKey 就可以直接通过<code>public func add(object: RealmSwift.Object, update: Bool = default)</code>或者<code>public func create&lt;T : RealmSwift.Object&gt;(type: T.Type, value: AnyObject = default, update: Bool = default) -&gt; T</code>方法更新数据。</p>
+<p>Object 设置方法：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import RealmSwift</span><br><span class="line">class MediatorInfo: Object &#123;</span><br><span class="line">    dynamic var userId: String? = &quot;&quot;</span><br><span class="line">    dynamic var userName: String? = &quot;&quot;</span><br><span class="line">    dynamic var userjob: String? = &quot;&quot;</span><br><span class="line"></span><br><span class="line">    override static func primaryKey() -&gt; String? &#123;</span><br><span class="line">        return &quot;userId&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>其它</h2>
+<ul>
+<li>项目结构采取了最基础的 MVC 架构，之所以没用 MVVM 之类的架构，是因为对于 ReactiveCocoa 或 RxSwift 响应式编程框架掌握程度还不够。如果只是单独分出去一个 ViewModel 意义也不大。</li>
+<li>页面布局采取了以 StoryBoard 为主，以 SnapKit 进行代码自动布局为辅，在一些需要大量显示图片的复杂布局的地方用 AsyncDisplayKit 提高页面流畅度的方法。</li>
+<li>网页显示采用 WebKit 并通过 UIProgressView 实现进度条功能。</li>
+<li>数据接口采用的是<a href="https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90" target="_blank" rel="external">知乎日报</a>的接口。</li>
+<li><a href="https://github.com/ZhuYooong/ZYFastApp" target="_blank" rel="external">Demo</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在项目初期搭建框架时所用到的代码和第三方库大都是相同或相似的，所以如果在一个已经准备好的基础模版上再进行开发应该可以达到提高项目开发效率和减少不必要的时间损失的目的。&lt;/p&gt;
+&lt;h2&gt;第三方框架&lt;/h2&gt;
+&lt;h3&gt;&lt;a href=&quot;https://github.com/Ca
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
+    
+    
+      <category term="第三方库" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
     
   </entry>
   
