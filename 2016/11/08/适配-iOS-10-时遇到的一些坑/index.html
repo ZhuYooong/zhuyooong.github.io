@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Zhuyooong’ Blog">
 <meta property="og:description" content="关于 Xcode 8 和 iOS 10 的文章其实已经有很多了，完全可以解决适配过程中遇到的大部分问题。我参照的是 iOS 10 的适配问题 这篇文章，除了没有提到关于 Automatically manage signing 的问题，其他问题大致都涉及到了。而且那个自己也很好解决，勾选然后选择正确的 Team 就好了。就算包含了推送等功能，只要之前设置没问题，Xcode 8 也是可以自">
 <meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNc79ly1fcjeleya3rj30u70560t9.jpg">
-<meta property="og:updated_time" content="2017-02-08T14:02:35.000Z">
+<meta property="og:updated_time" content="2017-02-08T14:08:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="适配 iOS 10 时遇到的一些坑">
 <meta name="twitter:description" content="关于 Xcode 8 和 iOS 10 的文章其实已经有很多了，完全可以解决适配过程中遇到的大部分问题。我参照的是 iOS 10 的适配问题 这篇文章，除了没有提到关于 Automatically manage signing 的问题，其他问题大致都涉及到了。而且那个自己也很好解决，勾选然后选择正确的 Team 就好了。就算包含了推送等功能，只要之前设置没问题，Xcode 8 也是可以自">
@@ -138,53 +138,53 @@
 <tbody>
 <tr>
 <td style="text-align:left">主队列</td>
-<td style="text-align:center"><code>dispatch_get_main_queue()</code></td>
-<td style="text-align:right"><code>DispatchQueue.main</code></td>
+<td style="text-align:center">dispatch_get_main_queue()</td>
+<td style="text-align:right">DispatchQueue.main</td>
 </tr>
 <tr>
 <td style="text-align:left">全局并行队列</td>
-<td style="text-align:center"><code>dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)</code></td>
-<td style="text-align:right"><code>DispatchQueue.global()</code></td>
+<td style="text-align:center">dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)</td>
+<td style="text-align:right">DispatchQueue.global()</td>
 </tr>
 <tr>
 <td style="text-align:left">串行队列</td>
-<td style="text-align:center"><code>dispatch_queue_create(&quot;queue0&quot;, DISPATCH_QUEUE_SERIAL)</code></td>
-<td style="text-align:right"><code>DispatchQueue(label: &quot;queue0&quot;)</code></td>
+<td style="text-align:center">dispatch_queue_create(&quot;queue0&quot;, DISPATCH_QUEUE_SERIAL)</td>
+<td style="text-align:right">DispatchQueue(label: &quot;queue0&quot;)</td>
 </tr>
 <tr>
 <td style="text-align:left">并行队列</td>
-<td style="text-align:center"><code>dispatch_queue_create(&quot;queue1&quot;, DISPATCH_QUEUE_CONCURRENT)</code></td>
-<td style="text-align:right"><code>DispatchQueue(label: &quot;queue1&quot;, attributes: .concurrent)</code></td>
+<td style="text-align:center">dispatch_queue_create(&quot;queue1&quot;, DISPATCH_QUEUE_CONCURRENT)</td>
+<td style="text-align:right">DispatchQueue(label: &quot;queue1&quot;, attributes: .concurrent)</td>
 </tr>
 <tr>
 <td style="text-align:left">异步任务</td>
-<td style="text-align:center"><code>dispatch_async</code></td>
-<td style="text-align:right"><code>.async</code></td>
+<td style="text-align:center">dispatch_async</td>
+<td style="text-align:right">.async</td>
 </tr>
 <tr>
 <td style="text-align:left">同步任务</td>
-<td style="text-align:center"><code>dispatch_sync</code></td>
-<td style="text-align:right"><code>.sync</code></td>
+<td style="text-align:center">dispatch_sync</td>
+<td style="text-align:right">.sync</td>
 </tr>
 <tr>
 <td style="text-align:left">只执行一次</td>
-<td style="text-align:center"><code>dispatch_once</code></td>
+<td style="text-align:center">dispatch_once</td>
 <td style="text-align:right">没了</td>
 </tr>
 <tr>
 <td style="text-align:left">组</td>
-<td style="text-align:center"><code>dispatch_group_create()</code></td>
-<td style="text-align:right"><code>DispatchGroup()</code></td>
+<td style="text-align:center">dispatch_group_create()</td>
+<td style="text-align:right">DispatchGroup()</td>
 </tr>
 <tr>
 <td style="text-align:left">操作执行完了再继续</td>
-<td style="text-align:center"><code>dispatch_group_wait</code></td>
-<td style="text-align:right"><code>group.wait()</code></td>
+<td style="text-align:center">dispatch_group_wait</td>
+<td style="text-align:right">group.wait()</td>
 </tr>
 <tr>
 <td style="text-align:left">操作都完成后执行</td>
-<td style="text-align:center"><code>dispatch_group_notify</code></td>
-<td style="text-align:right"><code>group.notify(queue: DispatchQueue.main)</code></td>
+<td style="text-align:center">dispatch_group_notify</td>
+<td style="text-align:right">group.notify(queue: DispatchQueue.main)</td>
 </tr>
 </tbody>
 </table>
@@ -294,10 +294,6 @@
 			
 		
 			
-				<li><a href="/tags/CocoaPods/" title="CocoaPods">CocoaPods<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
 			
 		
@@ -306,7 +302,7 @@
 			
 		
 			
-				<li><a href="/tags/极光推送/" title="极光推送">极光推送<sup>1</sup></a></li>
+				<li><a href="/tags/CocoaPods/" title="CocoaPods">CocoaPods<sup>1</sup></a></li>
 			
 		
 			
@@ -315,6 +311,10 @@
 		
 			
 				<li><a href="/tags/Swift-3/" title="Swift 3">Swift 3<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/极光推送/" title="极光推送">极光推送<sup>1</sup></a></li>
 			
 		
 			
