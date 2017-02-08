@@ -4,51 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>在 Mac 上搭建 Hexo 博客 | Zhuyooong’ Blog</title>
+    <title>适配 iOS 10 时遇到的一些坑 | Zhuyooong’ Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Zhuyooong">
     
 
     
-    <meta name="description" content="软件环境准备
-
-如果通过终端安装出现问题，可以尝试在指令前加入sudo获得 root 权限
-
-安装 homebrew
-ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-
-安装 Git
-brew install git或者在 Git 官网下载安装包">
+    <meta name="description" content="关于 Xcode 8 和 iOS 10 的文章其实已经有很多了，完全可以解决适配过程中遇到的大部分问题。我参照的是 iOS 10 的适配问题 这篇文章，除了没有提到关于 Automatically manage signing 的问题，其他问题大致都涉及到了。而且那个自己也很好解决，勾选然后选择正确的 Team 就好了。就算包含了推送等功能，只要之前设置没问题，Xcode 8 也是可以自">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Mac 上搭建 Hexo 博客">
-<meta property="og:url" content="http://yoursite.com/2016/04/15/在-Mac-上搭建-Hexo-博客/index.html">
+<meta property="og:title" content="适配 iOS 10 时遇到的一些坑">
+<meta property="og:url" content="http://yoursite.com/2016/11/08/适配-iOS-10-时遇到的一些坑/index.html">
 <meta property="og:site_name" content="Zhuyooong’ Blog">
-<meta property="og:description" content="软件环境准备
-
-如果通过终端安装出现问题，可以尝试在指令前加入sudo获得 root 权限
-
-安装 homebrew
-ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-
-安装 Git
-brew install git或者在 Git 官网下载安装包">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/801b780ajw1f7ulhzbxswj20js0gf0we.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/801b780ajw1f7uli0r38vj20ld08fta0.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/801b780ajw1f7uli2aj3kj209w05o0tj.jpg">
-<meta property="og:updated_time" content="2016-09-15T13:34:28.000Z">
+<meta property="og:description" content="关于 Xcode 8 和 iOS 10 的文章其实已经有很多了，完全可以解决适配过程中遇到的大部分问题。我参照的是 iOS 10 的适配问题 这篇文章，除了没有提到关于 Automatically manage signing 的问题，其他问题大致都涉及到了。而且那个自己也很好解决，勾选然后选择正确的 Team 就好了。就算包含了推送等功能，只要之前设置没问题，Xcode 8 也是可以自">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNc79ly1fcjeleya3rj30u70560t9.jpg">
+<meta property="og:updated_time" content="2017-02-08T14:02:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在 Mac 上搭建 Hexo 博客">
-<meta name="twitter:description" content="软件环境准备
-
-如果通过终端安装出现问题，可以尝试在指令前加入sudo获得 root 权限
-
-安装 homebrew
-ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-
-安装 Git
-brew install git或者在 Git 官网下载安装包">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/801b780ajw1f7ulhzbxswj20js0gf0we.jpg">
+<meta name="twitter:title" content="适配 iOS 10 时遇到的一些坑">
+<meta name="twitter:description" content="关于 Xcode 8 和 iOS 10 的文章其实已经有很多了，完全可以解决适配过程中遇到的大部分问题。我参照的是 iOS 10 的适配问题 这篇文章，除了没有提到关于 Automatically manage signing 的问题，其他问题大致都涉及到了。而且那个自己也很好解决，勾选然后选择正确的 Team 就好了。就算包含了推送等功能，只要之前设置没问题，Xcode 8 也是可以自">
+<meta name="twitter:image" content="https://ww3.sinaimg.cn/large/006tNc79ly1fcjeleya3rj30u70560t9.jpg">
 
     
     <link rel="alternative" href="/atom.xml" title="Zhuyooong’ Blog" type="application/atom+xml">
@@ -110,14 +84,14 @@ brew install git或者在 Git 官网下载安装包">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/15/在-Mac-上搭建-Hexo-博客/" title="在 Mac 上搭建 Hexo 博客" itemprop="url">在 Mac 上搭建 Hexo 博客</a>
+      <a href="/2016/11/08/适配-iOS-10-时遇到的一些坑/" title="适配 iOS 10 时遇到的一些坑" itemprop="url">适配 iOS 10 时遇到的一些坑</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Zhuyooong" target="_blank" itemprop="author">Zhuyooong</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-15T11:29:33.000Z" itemprop="datePublished"> 发表于 2016-04-15</time>
+    <time datetime="2016-11-08T13:50:09.000Z" itemprop="datePublished"> 发表于 2016-11-08</time>
     
   </p>
 </header>
@@ -126,62 +100,97 @@ brew install git或者在 Git 官网下载安装包">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">软件环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">安装 homebrew</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">安装 Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">安装 node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">在 github 上创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.</span> <span class="toc-text">安装 hexo</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Hexo 正式搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">创建 SSH key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">建立本地站点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">部署 Hexo 到 GitHub 上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">发表文章</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">关于推送</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">关于 Swift 3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">第三方框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">更优雅的 Swift 框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">GCD</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h1>软件环境准备</h1>
-<ul>
-<li>如果通过终端安装出现问题，可以尝试在指令前加入<code>sudo</code>获得 root 权限</li>
-</ul>
-<h2>安装 <a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">homebrew</a></h2>
-<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre>
-<h2>安装 Git</h2>
-<p><code>brew install git</code>或者在 <a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="external">Git 官网</a>下载安装包</p>
-<ul>
-<li>如果已经安装过 Xcode，也可以通过<code>xcode-select --install</code>安装 Command Line Tools。Command Line Tools 是 Xcode 中的一款工具，自带 Git</li>
-</ul>
-<h2>安装 node.js</h2>
-<p><code>brew install node</code>或者在 <a href="https://nodejs.org/en/" target="_blank" rel="external">node.js 官网</a>直接下载安装包</p>
-<h2>在 <a href="https://github.com" target="_blank" rel="external">github</a> 上创建仓库</h2>
-<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7ulhzbxswj20js0gf0we.jpg" alt=""></p>
-<ul>
-<li>创建仓库完成之后，在本地创建一个名为 hexo 的站点文件夹，把仓库 clone 到里边，起名为 public</li>
-</ul>
-<h2>安装 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo</a></h2>
-<p><code>sudo npm install -g hexo</code></p>
-<ul>
-<li>如果出现<code>Cannot find module</code>错误，那是 GFW 的问题，通过<code>npm install hexo --no-optional</code>换个源试试或者挂代理都可以解决</li>
-</ul>
-<h1>Hexo 正式搭建</h1>
-<h2>创建 SSH key</h2>
-<p>添加 SSH key 是让我们以后同步到 GitHub 上时不用输密码，并不影响博客的搭建和使用。
-可以<a href="http://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html" target="_blank" rel="external">通过终端创建 SSH 秘钥</a>或者通过官网下载 <a href="https://desktop.github.com" target="_blank" rel="external">Github Desktop</a> 就可以完成创建。</p>
-<h2>建立本地站点</h2>
-<p>cd 到之前创建的 hexo 目录下</p>
-<p>初始化 hexo：<code>hexo init</code></p>
-<p>安装依赖：<code>npm install</code></p>
-<p>生成静态页面：<code>hexo generate</code></p>
-<p>开启本地服务器：<code>hexo server</code> or <code>hexo s</code></p>
-<p>现在在浏览器里输入<code>http://0.0.0.0:4000</code>就可以看到效果了</p>
-<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7uli0r38vj20ld08fta0.jpg" alt=""></p>
-<h2>部署 Hexo 到 GitHub 上</h2>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre>
-<p>安装完成后，打开 _config.yml 文件，在文件末尾修改为如下效果：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourID/yourID.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>repo 也可以去直接去你的仓库去复制完整地址填写</p>
-<p><img src="http://ww1.sinaimg.cn/large/801b780ajw1f7uli2aj3kj209w05o0tj.jpg" alt=""></p>
-<h2>发表文章</h2>
-<p>创建新的文章：<code>hexo new “the Title of Article”</code> or <code>hexo n “the Title of Article”</code></p>
-<p>编辑好后，执行如下命令:</p>
-<p>clean 本地项目缓存：<code>hexo clean</code></p>
-<p>生成静态网页：<code>hexo generate</code> or <code>hexo g</code></p>
-<p>布到 github：<code>hexo deploy</code> or <code>hexo d</code></p>
-<ul>
-<li>如果出现<code>Native thread-sleep not available.</code>错误，可以运行<code>apt-get install spawn-sync</code>安装或者<code>apt-get update spawn-sync</code>升级可以解决</li>
-</ul>
+		<p>关于 Xcode 8 和 iOS 10 的文章其实已经有很多了，完全可以解决适配过程中遇到的大部分问题。我参照的是 <a href="http://www.jianshu.com/p/f8151d556930" target="_blank" rel="external">iOS 10 的适配问题</a> 这篇文章，除了没有提到关于 Automatically manage signing 的问题，其他问题大致都涉及到了。而且那个自己也很好解决，勾选然后选择正确的 Team 就好了。就算包含了推送等功能，只要之前设置没问题，Xcode 8 也是可以自动识别配置成功的。所以我这里讨论的只是我在适配过程中遇到的几个坑。</p>
+<h2>关于推送</h2>
+<p>代码上改变最大的就是关于推送的了，具体的改变可以看 <a href="https://onevcat.com/2016/08/notification/" target="_blank" rel="external">活久见的重构 - iOS 10 UserNotifications 框架解析</a>的具体分析。</p>
+<p>而像我这样直接用极光推送 API 实现的就简单多了，可以下载<a href="http://docs.jiguang.cn/jpush/resources/" target="_blank" rel="external">官方 mode</a> 参考。</p>
+<p>首先要导入 <code>#import &lt;UserNotifications/UserNotifications.h&gt;</code>，然后需要遵守 <code>JPUSHRegisterDelegate</code>。官方的是 <code>UNUserNotificationCenterDelegate</code>，在这里极光进行了封装。</p>
+<p>然后注册通知的代码变成了这样：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];</span><br><span class="line">entity.types = UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound;</span><br><span class="line">[JPUSHService registerForRemoteNotificationConfig:entity delegate:self];</span><br></pre></td></tr></table></figure></p>
+<p>当然，为了兼容低版本最好加上以下代码：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#ifdef NSFoundationVersionNumber_iOS_9_x_Max</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<p>获得 Device Token 的方法并没有改变，但是接收通知的代码变成了之前注册的 JPUSHRegisterDelegate 的两个方法。其中接收通知的代码是 <code>- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger options))completionHandler;</code>，我在这个方法里处理应用处于前台时的情况。通知的点击事件是 <code>- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler;</code>，我在这里处理应用处于后台时的情况。</p>
+<p>最后，最最重要的是一定一定一定要记得打开 Push Notifications 的开关！！！这个在之前是不作要求的，但 iOS 10 必须。
+<img src="https://ww3.sinaimg.cn/large/006tNc79ly1fcjeleya3rj30u70560t9.jpg" alt=""></p>
+<h2>关于 Swift 3</h2>
+<p>打开项目满眼的警告其实是早已预料到的，具体可以看 <a href="https://realm.io/cn/news/appbuilders-daniel-steinberg-whats-new-swift-3/" target="_blank" rel="external">Swift 3 新特性一览</a>。还好 Xcode 的转换器虽然说有点坑（不要像我一样傻得按它的提示一个一个加 <code>as AnyObjct？</code>，只要把前面的 <code>[String:AnyObject]</code> 改为 <code>[String:Any]</code> 就可以了），但也可以帮我们解决其中的大半部分。剩下的就是改变非常大需要我们自己手动的了。</p>
+<h3>第三方框架</h3>
+<p>第三方框架对 Swift 3 的支持是不一样的。</p>
+<p>像 Alamofire 这种支持的直接 <code>pod 'Alamofire', '~&gt; 4.0'</code> 升级最新版本就好了。当然在这之前需要先升级 CocoaPods。</p>
+<p>而 SRKControls 这种 master 不支持，但是在其他的 branch 里，或者有热心网友的。<code>pod 'SKPhotoBrowser', :git =&gt; 'https://github.com/suzuki-0000/SKPhotoBrowser.git', :branch =&gt; 'swift3'</code> 或者 <code>pod 'SRKControls', :git =&gt; 'https://github.com/sag333ar/SRKControls.git', :branch =&gt; 'master'</code> 就好了。这需要你在 Issues 或者 branches 里找一找。</p>
+<p>最后就是 KGFloatingDrawer 这种小众的，作者也没有修改的迹象。那就自己动手好了┐（´ー｀）┌ 自己做这个热心网友～当然，如果自己懒得改那就去重找一个支持 Swift 3 的相似框架。但实在不好说哪个更省事一些。</p>
+<h3>更优雅的 Swift 框架</h3>
+<p>为了适应 Swift 3 的代码风格，RxSwift 的 <code>rx_</code> 前缀变成了 <code>rx.</code> ，SnapKit 的 <code>snp_</code> 前缀变成了 <code>snp.</code> ，Kingfisher 的 <code>kf_</code> 前缀变成了 <code>kf.</code>。全局替换下就好了。</p>
+<h3>GCD</h3>
+<p>Swift 3 对 GCD 的改变是我期待已久的事情，原来的风格真的和其它的代码很不搭～</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">说明</th>
+<th style="text-align:center">Old</th>
+<th style="text-align:right">Swift 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">主队列</td>
+<td style="text-align:center"><code>dispatch_get_main_queue()</code></td>
+<td style="text-align:right"><code>DispatchQueue.main</code></td>
+</tr>
+<tr>
+<td style="text-align:left">全局并行队列</td>
+<td style="text-align:center"><code>dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)</code></td>
+<td style="text-align:right"><code>DispatchQueue.global()</code></td>
+</tr>
+<tr>
+<td style="text-align:left">串行队列</td>
+<td style="text-align:center"><code>dispatch_queue_create(&quot;queue0&quot;, DISPATCH_QUEUE_SERIAL)</code></td>
+<td style="text-align:right"><code>DispatchQueue(label: &quot;queue0&quot;)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">并行队列</td>
+<td style="text-align:center"><code>dispatch_queue_create(&quot;queue1&quot;, DISPATCH_QUEUE_CONCURRENT)</code></td>
+<td style="text-align:right"><code>DispatchQueue(label: &quot;queue1&quot;, attributes: .concurrent)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">异步任务</td>
+<td style="text-align:center"><code>dispatch_async</code></td>
+<td style="text-align:right"><code>.async</code></td>
+</tr>
+<tr>
+<td style="text-align:left">同步任务</td>
+<td style="text-align:center"><code>dispatch_sync</code></td>
+<td style="text-align:right"><code>.sync</code></td>
+</tr>
+<tr>
+<td style="text-align:left">只执行一次</td>
+<td style="text-align:center"><code>dispatch_once</code></td>
+<td style="text-align:right">没了</td>
+</tr>
+<tr>
+<td style="text-align:left">组</td>
+<td style="text-align:center"><code>dispatch_group_create()</code></td>
+<td style="text-align:right"><code>DispatchGroup()</code></td>
+</tr>
+<tr>
+<td style="text-align:left">操作执行完了再继续</td>
+<td style="text-align:center"><code>dispatch_group_wait</code></td>
+<td style="text-align:right"><code>group.wait()</code></td>
+</tr>
+<tr>
+<td style="text-align:left">操作都完成后执行</td>
+<td style="text-align:center"><code>dispatch_group_notify</code></td>
+<td style="text-align:right"><code>group.notify(queue: DispatchQueue.main)</code></td>
+</tr>
+</tbody>
+</table>
+<p>其中 <code>dispatch_once</code> 直接被删除了，要用单例只有懒加载了。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">static let shareEventListViewModel = CAEventListViewModel()</span><br><span class="line">fileprivate override init() &#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然其它 C 风格的代码也改了，比如 <code>NSStringEncodingUTF8</code> 现在需要写成 <code>String.Encoding.utf8</code>。这里就不多赘述了。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -189,13 +198,13 @@ brew install git或者在 Git 官网下载安装包">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/编程基础/">编程基础</a>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Hexo/">Hexo</a>
+  <span></span> <a href="/tags/Swift-3/">Swift 3</a>
   </div>
 
 </div>
@@ -204,7 +213,7 @@ brew install git或者在 Git 官网下载安装包">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/04/15/在-Mac-上搭建-Hexo-博客/" data-title="在 Mac 上搭建 Hexo 博客 | Zhuyooong’ Blog" data-tsina="1305539521" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/11/08/适配-iOS-10-时遇到的一些坑/" data-title="适配 iOS 10 时遇到的一些坑 | Zhuyooong’ Blog" data-tsina="1305539521" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -217,19 +226,11 @@ brew install git或者在 Git 官网下载安装包">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/05/12/CocoaPods-的安装和使用/" title="CocoaPods 的安装和使用">
-  <strong>上一篇：</strong><br/>
-  <span>
-  CocoaPods 的安装和使用</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/03/02/WatchOS-总结/"  title="WatchOS 总结">
+<a href="/2016/09/12/正则表达式基础语法对照表/"  title="正则表达式基础语法对照表">
  <strong>下一篇：</strong><br/> 
- <span>WatchOS 总结
+ <span>正则表达式基础语法对照表
 </span>
 </a>
 </div>
@@ -238,7 +239,7 @@ brew install git或者在 Git 官网下载安装包">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/04/15/在-Mac-上搭建-Hexo-博客/" data-title="在 Mac 上搭建 Hexo 博客" data-url="http://yoursite.com/2016/04/15/在-Mac-上搭建-Hexo-博客/"></div>
+	<div class="ds-thread" data-thread-key="2016/11/08/适配-iOS-10-时遇到的一些坑/" data-title="适配 iOS 10 时遇到的一些坑" data-url="http://yoursite.com/2016/11/08/适配-iOS-10-时遇到的一些坑/"></div>
 </section>
 
 
@@ -248,7 +249,7 @@ brew install git或者在 Git 官网下载安装包">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">软件环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">安装 homebrew</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">安装 Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">安装 node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">在 github 上创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.</span> <span class="toc-text">安装 hexo</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Hexo 正式搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">创建 SSH key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">建立本地站点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">部署 Hexo 到 GitHub 上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">发表文章</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">关于推送</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">关于 Swift 3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">第三方框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">更优雅的 Swift 框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">GCD</span></a></li></ol></li></ol>
  
   </div>
 

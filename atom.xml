@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-15T13:17:55.000Z</updated>
+  <updated>2017-02-08T14:02:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,115 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>适配 iOS 10 时遇到的一些坑</title>
+    <link href="http://yoursite.com/2016/11/08/%E9%80%82%E9%85%8D-iOS-10-%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
+    <id>http://yoursite.com/2016/11/08/适配-iOS-10-时遇到的一些坑/</id>
+    <published>2016-11-08T13:50:09.000Z</published>
+    <updated>2017-02-08T14:02:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>关于 Xcode 8 和 iOS 10 的文章其实已经有很多了，完全可以解决适配过程中遇到的大部分问题。我参照的是 <a href="http://www.jianshu.com/p/f8151d556930" target="_blank" rel="external">iOS 10 的适配问题</a> 这篇文章，除了没有提到关于 Automatically manage signing 的问题，其他问题大致都涉及到了。而且那个自己也很好解决，勾选然后选择正确的 Team 就好了。就算包含了推送等功能，只要之前设置没问题，Xcode 8 也是可以自动识别配置成功的。所以我这里讨论的只是我在适配过程中遇到的几个坑。</p>
+<h2>关于推送</h2>
+<p>代码上改变最大的就是关于推送的了，具体的改变可以看 <a href="https://onevcat.com/2016/08/notification/" target="_blank" rel="external">活久见的重构 - iOS 10 UserNotifications 框架解析</a>的具体分析。</p>
+<p>而像我这样直接用极光推送 API 实现的就简单多了，可以下载<a href="http://docs.jiguang.cn/jpush/resources/" target="_blank" rel="external">官方 mode</a> 参考。</p>
+<p>首先要导入 <code>#import &lt;UserNotifications/UserNotifications.h&gt;</code>，然后需要遵守 <code>JPUSHRegisterDelegate</code>。官方的是 <code>UNUserNotificationCenterDelegate</code>，在这里极光进行了封装。</p>
+<p>然后注册通知的代码变成了这样：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];</span><br><span class="line">entity.types = UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound;</span><br><span class="line">[JPUSHService registerForRemoteNotificationConfig:entity delegate:self];</span><br></pre></td></tr></table></figure></p>
+<p>当然，为了兼容低版本最好加上以下代码：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#ifdef NSFoundationVersionNumber_iOS_9_x_Max</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<p>获得 Device Token 的方法并没有改变，但是接收通知的代码变成了之前注册的 JPUSHRegisterDelegate 的两个方法。其中接收通知的代码是 <code>- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger options))completionHandler;</code>，我在这个方法里处理应用处于前台时的情况。通知的点击事件是 <code>- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler;</code>，我在这里处理应用处于后台时的情况。</p>
+<p>最后，最最重要的是一定一定一定要记得打开 Push Notifications 的开关！！！这个在之前是不作要求的，但 iOS 10 必须。
+<img src="https://ww3.sinaimg.cn/large/006tNc79ly1fcjeleya3rj30u70560t9.jpg" alt=""></p>
+<h2>关于 Swift 3</h2>
+<p>打开项目满眼的警告其实是早已预料到的，具体可以看 <a href="https://realm.io/cn/news/appbuilders-daniel-steinberg-whats-new-swift-3/" target="_blank" rel="external">Swift 3 新特性一览</a>。还好 Xcode 的转换器虽然说有点坑（不要像我一样傻得按它的提示一个一个加 <code>as AnyObjct？</code>，只要把前面的 <code>[String:AnyObject]</code> 改为 <code>[String:Any]</code> 就可以了），但也可以帮我们解决其中的大半部分。剩下的就是改变非常大需要我们自己手动的了。</p>
+<h3>第三方框架</h3>
+<p>第三方框架对 Swift 3 的支持是不一样的。</p>
+<p>像 Alamofire 这种支持的直接 <code>pod 'Alamofire', '~&gt; 4.0'</code> 升级最新版本就好了。当然在这之前需要先升级 CocoaPods。</p>
+<p>而 SRKControls 这种 master 不支持，但是在其他的 branch 里，或者有热心网友的。<code>pod 'SKPhotoBrowser', :git =&gt; 'https://github.com/suzuki-0000/SKPhotoBrowser.git', :branch =&gt; 'swift3'</code> 或者 <code>pod 'SRKControls', :git =&gt; 'https://github.com/sag333ar/SRKControls.git', :branch =&gt; 'master'</code> 就好了。这需要你在 Issues 或者 branches 里找一找。</p>
+<p>最后就是 KGFloatingDrawer 这种小众的，作者也没有修改的迹象。那就自己动手好了┐（´ー｀）┌ 自己做这个热心网友～当然，如果自己懒得改那就去重找一个支持 Swift 3 的相似框架。但实在不好说哪个更省事一些。</p>
+<h3>更优雅的 Swift 框架</h3>
+<p>为了适应 Swift 3 的代码风格，RxSwift 的 <code>rx_</code> 前缀变成了 <code>rx.</code> ，SnapKit 的 <code>snp_</code> 前缀变成了 <code>snp.</code> ，Kingfisher 的 <code>kf_</code> 前缀变成了 <code>kf.</code>。全局替换下就好了。</p>
+<h3>GCD</h3>
+<p>Swift 3 对 GCD 的改变是我期待已久的事情，原来的风格真的和其它的代码很不搭～</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">说明</th>
+<th style="text-align:center">Old</th>
+<th style="text-align:right">Swift 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">主队列</td>
+<td style="text-align:center"><code>dispatch_get_main_queue()</code></td>
+<td style="text-align:right"><code>DispatchQueue.main</code></td>
+</tr>
+<tr>
+<td style="text-align:left">全局并行队列</td>
+<td style="text-align:center"><code>dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)</code></td>
+<td style="text-align:right"><code>DispatchQueue.global()</code></td>
+</tr>
+<tr>
+<td style="text-align:left">串行队列</td>
+<td style="text-align:center"><code>dispatch_queue_create(&quot;queue0&quot;, DISPATCH_QUEUE_SERIAL)</code></td>
+<td style="text-align:right"><code>DispatchQueue(label: &quot;queue0&quot;)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">并行队列</td>
+<td style="text-align:center"><code>dispatch_queue_create(&quot;queue1&quot;, DISPATCH_QUEUE_CONCURRENT)</code></td>
+<td style="text-align:right"><code>DispatchQueue(label: &quot;queue1&quot;, attributes: .concurrent)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">异步任务</td>
+<td style="text-align:center"><code>dispatch_async</code></td>
+<td style="text-align:right"><code>.async</code></td>
+</tr>
+<tr>
+<td style="text-align:left">同步任务</td>
+<td style="text-align:center"><code>dispatch_sync</code></td>
+<td style="text-align:right"><code>.sync</code></td>
+</tr>
+<tr>
+<td style="text-align:left">只执行一次</td>
+<td style="text-align:center"><code>dispatch_once</code></td>
+<td style="text-align:right">没了</td>
+</tr>
+<tr>
+<td style="text-align:left">组</td>
+<td style="text-align:center"><code>dispatch_group_create()</code></td>
+<td style="text-align:right"><code>DispatchGroup()</code></td>
+</tr>
+<tr>
+<td style="text-align:left">操作执行完了再继续</td>
+<td style="text-align:center"><code>dispatch_group_wait</code></td>
+<td style="text-align:right"><code>group.wait()</code></td>
+</tr>
+<tr>
+<td style="text-align:left">操作都完成后执行</td>
+<td style="text-align:center"><code>dispatch_group_notify</code></td>
+<td style="text-align:right"><code>group.notify(queue: DispatchQueue.main)</code></td>
+</tr>
+</tbody>
+</table>
+<p>其中 <code>dispatch_once</code> 直接被删除了，要用单例只有懒加载了。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">static let shareEventListViewModel = CAEventListViewModel()</span><br><span class="line">fileprivate override init() &#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然其它 C 风格的代码也改了，比如 <code>NSStringEncodingUTF8</code> 现在需要写成 <code>String.Encoding.utf8</code>。这里就不多赘述了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于 Xcode 8 和 iOS 10 的文章其实已经有很多了，完全可以解决适配过程中遇到的大部分问题。我参照的是 &lt;a href=&quot;http://www.jianshu.com/p/f8151d556930&quot; target=&quot;_blank&quot; rel=&quot;exter
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
+    
+    
+      <category term="Swift 3" scheme="http://yoursite.com/tags/Swift-3/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式基础语法对照表</title>
