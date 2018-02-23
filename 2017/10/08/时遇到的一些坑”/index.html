@@ -4,102 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Markdown语言对照 | Zhuyooong’ Blog</title>
+    <title>适配 iOS 11 时遇到的一些坑 | Zhuyooong’ Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Zhuyooong">
     
 
     
-    <meta name="description" content="标题
-
-H1 :
-
-Header 1 # Header1 or 下一行加三个等号｀===｀
-
-H2 :
-
-Header 2 ## Header 2
-
-H3 :
-
-Header 3 ### Header 3
-
-H4 :
-
-Header 4 #### Header 4
-
-H5 :
-
-Header 5 ##### Header 5
-
-H6 :
-
-Header 6 ###### Header 6
-列表">
+    <meta name="description" content="Safe Area
+什么是 Safe Area？由于iPhone X 屏幕上的刘海和四周的圆角设计，导致某些区域无法用于执行交互，需要开发者对页面做出调整。而 Safe Area就是再减去 UInavigationbar 和 UITabbar 剩下的区域。具体可以看iOS 11 安全区域适配总结这篇文章，已经说得很具体了。
+而我们要面临的实际问题就是 UIViewController 的 auto">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown语言对照">
-<meta property="og:url" content="http://yoursite.com/2016/01/04/Markdown语言对照/index.html">
+<meta property="og:title" content="适配 iOS 11 时遇到的一些坑">
+<meta property="og:url" content="http://yoursite.com/2017/10/08/时遇到的一些坑”/index.html">
 <meta property="og:site_name" content="Zhuyooong’ Blog">
-<meta property="og:description" content="标题
-
-H1 :
-
-Header 1 # Header1 or 下一行加三个等号｀===｀
-
-H2 :
-
-Header 2 ## Header 2
-
-H3 :
-
-Header 3 ### Header 3
-
-H4 :
-
-Header 4 #### Header 4
-
-H5 :
-
-Header 5 ##### Header 5
-
-H6 :
-
-Header 6 ###### Header 6
-列表">
-<meta property="og:image" content="https://www.baidu.com/img/bd_logo1.png">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/801b780ajw1f7ulb8oez2j201c015gld.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/801b780ajw1f7ulbaeyx3j201c01c3ya.jpg">
-<meta property="og:updated_time" content="2016-09-15T13:28:51.000Z">
+<meta property="og:description" content="Safe Area
+什么是 Safe Area？由于iPhone X 屏幕上的刘海和四周的圆角设计，导致某些区域无法用于执行交互，需要开发者对页面做出调整。而 Safe Area就是再减去 UInavigationbar 和 UITabbar 剩下的区域。具体可以看iOS 11 安全区域适配总结这篇文章，已经说得很具体了。
+而我们要面临的实际问题就是 UIViewController 的 auto">
+<meta property="og:updated_time" content="2018-02-23T12:22:59.233Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown语言对照">
-<meta name="twitter:description" content="标题
-
-H1 :
-
-Header 1 # Header1 or 下一行加三个等号｀===｀
-
-H2 :
-
-Header 2 ## Header 2
-
-H3 :
-
-Header 3 ### Header 3
-
-H4 :
-
-Header 4 #### Header 4
-
-H5 :
-
-Header 5 ##### Header 5
-
-H6 :
-
-Header 6 ###### Header 6
-列表">
-<meta name="twitter:image" content="https://www.baidu.com/img/bd_logo1.png">
+<meta name="twitter:title" content="适配 iOS 11 时遇到的一些坑">
+<meta name="twitter:description" content="Safe Area
+什么是 Safe Area？由于iPhone X 屏幕上的刘海和四周的圆角设计，导致某些区域无法用于执行交互，需要开发者对页面做出调整。而 Safe Area就是再减去 UInavigationbar 和 UITabbar 剩下的区域。具体可以看iOS 11 安全区域适配总结这篇文章，已经说得很具体了。
+而我们要面临的实际问题就是 UIViewController 的 auto">
 
     
     <link rel="alternative" href="/atom.xml" title="Zhuyooong’ Blog" type="application/atom+xml">
@@ -161,14 +88,14 @@ Header 6 ###### Header 6
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/04/Markdown语言对照/" title="Markdown语言对照" itemprop="url">Markdown语言对照</a>
+      <a href="/2017/10/08/时遇到的一些坑”/" title="适配 iOS 11 时遇到的一些坑" itemprop="url">适配 iOS 11 时遇到的一些坑</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Zhuyooong" target="_blank" itemprop="author">Zhuyooong</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-04T07:11:28.000Z" itemprop="datePublished"> 发表于 2016-01-04</time>
+    <time datetime="2017-10-08T13:50:09.000Z" itemprop="datePublished"> 发表于 2017-10-08</time>
     
   </p>
 </header>
@@ -177,116 +104,37 @@ Header 6 ###### Header 6
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Header 1 # Header1 or 下一行加三个等号｀===｀</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">Header 2 ## Header 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.</span> <span class="toc-text">Header 3 ### Header 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">Header 4 #### Header 4</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.1.1.</span> <span class="toc-text">Header 5 ##### Header 5</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.1.1.1.</span> <span class="toc-text">Header 6 ###### Header 6</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">文本样式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">其它</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Safe Area</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">UIBarButtonItem 按钮偏移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">Swift4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">@objc 修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">NSAttributedString</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.4.</span> <span class="toc-text">String</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h1>标题</h1>
-<ul>
-<li>H1 :</li>
-</ul>
-<h1>Header 1 <code># Header1</code> or 下一行加三个等号｀===｀</h1>
-<ul>
-<li>H2 :</li>
-</ul>
-<h2>Header 2 <code>## Header 2</code></h2>
-<ul>
-<li>H3 :</li>
-</ul>
-<h3>Header 3 <code>### Header 3</code></h3>
-<ul>
-<li>H4 :</li>
-</ul>
-<h4>Header 4 <code>#### Header 4</code></h4>
-<ul>
-<li>H5 :</li>
-</ul>
-<h5>Header 5 <code>##### Header 5</code></h5>
-<ul>
-<li>H6 :</li>
-</ul>
-<h6>Header 6 <code>###### Header 6</code></h6>
-<h1>列表</h1>
-<ul>
-<li>无序列表（使用星号、加号或减号）
-<ul>
-<li>First</li>
-<li>Second</li>
-<li>Third</li>
-</ul>
-</li>
-<li>有序列表（用数字接着一个英文句点）
-<ol>
-<li>First</li>
-<li>Second</li>
-<li>Third</li>
-</ol>
-</li>
-</ul>
-<h1>文本样式</h1>
-<ul>
-<li>加粗:<strong>Bold</strong> <code>**Bold**</code> or <code>__Bold__</code></li>
-<li>斜体字:<em>Italics</em> <code>*Italics*</code> or <code>_Italics_</code></li>
-<li>斜粗体:<strong><em>text</em></strong> <code>***text***</code> or <code>___text___</code>
-（如果要在文字前后直接插入普通的星号或底线，用反斜线（转义符）：*this text is surrounded by literal asterisks* <code>\*this text is surrounded by literal asterisks\*</code>）</li>
-<li>小型文本：&lt;small&gt;文本内容&lt;/small&gt; <code>&lt;small&gt;文本内容&lt;/small&gt;</code></li>
-<li>删除线:<s>text</s> 两边加~~</li>
-<li>快捷键：&lt;kbd&gt;Ctrl+[&lt;/kbd&gt; <code>&lt;kbd&gt;Ctrl+[&lt;/kbd&gt;</code></li>
-<li>内嵌代码/高亮 :<code>alert('Hello World');</code> <code>`alert('Hello World');`</code> （如果高亮的内容包含 ` 号，可以用 `` 包裹起来）</li>
-<li>代码块:（用 <figure class="highlight plain"><figcaption><span>~~~ 包裹或者每行缩进4个空格或2个制表符)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>lazy var formatter: NSDateFormatter = {
-let dateFormatter = NSDateFormatter()
-dateFormatter.formatterBehavior = .Behavior10_4
-dateFormatter.dateFormat = &quot;HH:mm:ss.SSS&quot;
-return dateFormatter
-}()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* 分割线 :`___` or `***`</span><br><span class="line">___</span><br><span class="line">* 表格：左对齐是:---   居中对齐是:---:   右对齐是---:</span><br><span class="line"></span><br><span class="line">Woow | Woow | Woow</span><br><span class="line">:-----|:-----:| ----:</span><br><span class="line">Woow | Woow | Woow</span><br><span class="line">Woow | Woow | Woow</span><br><span class="line">Woow | Woow | Woow</span><br></pre></td></tr></table></figure></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Woow</th>
-<th style="text-align:center">Woow</th>
-<th style="text-align:right">Woow</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Woow</td>
-<td style="text-align:center">Woow</td>
-<td style="text-align:right">Woow</td>
-</tr>
-<tr>
-<td style="text-align:left">Woow</td>
-<td style="text-align:center">Woow</td>
-<td style="text-align:right">Woow</td>
-</tr>
-<tr>
-<td style="text-align:left">Woow</td>
-<td style="text-align:center">Woow</td>
-<td style="text-align:right">Woow<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 引用</span><br><span class="line">&gt; 大楚兴，陈胜王！</span><br><span class="line"></span><br><span class="line">`&gt; 大楚兴，陈胜王！`(和下文要隔一行)</span><br><span class="line"></span><br><span class="line">##### 区块引用可以嵌套</span><br><span class="line">&gt; This is the first level of quoting.</span><br><span class="line">&gt; &gt; This is nested block quote.</span><br><span class="line">&gt;</span><br><span class="line">&gt; Back to the first level.</span><br><span class="line"></span><br><span class="line">**引用的区块内也可以使用其他的 Markdown 语法**</span><br><span class="line">&gt; ## 这是一个标题。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 1.   这是第一行列表项。</span><br><span class="line">&gt; 2.   这是第二行列表项。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 给出一些例子代码：</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>return shell_exec(&quot;echo $input | $markdown_script&quot;);<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 链接</span><br><span class="line">* 网络链接 :[Baidu](https://www.baidu.com) `[Baidu](https://www.baidu.com)` or</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>[Baidu][id]
-[id]:https://www.baidu.com ```</p>
-<ul>
-<li>本地链接 :[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;) <code>[link text](file:///Users/mac/Desktop/Test/README.md &quot;link text&quot;)</code></li>
-<li>网络图片 :<code>![百度](https://www.baidu.com/img/bd_logo1.png)</code>
-<img src="https://www.baidu.com/img/bd_logo1.png" alt="百度"></li>
-<li>本地图片 :<code>![新浪](http://ww3.sinaimg.cn/large/801b780ajw1f7ulb8oez2j201c015gld.jpg)</code>
-<img src="http://ww3.sinaimg.cn/large/801b780ajw1f7ulb8oez2j201c015gld.jpg" alt="新浪"></li>
-<li>图片链接：<code>[![](http://ww3.sinaimg.cn/large/801b780ajw1f7ulbaeyx3j201c01c3ya.jpg)](https://www.zhihu.com)</code>
-<a href="https://www.zhihu.com" target="_blank" rel="external"><img src="http://ww3.sinaimg.cn/large/801b780ajw1f7ulbaeyx3j201c01c3ya.jpg" alt=""></a></li>
-<li>内部跳转： [标题](# 标题)   <code>[标题](# 标题)</code></li>
-</ul>
-<h1>其它</h1>
-<ul>
-<li>Hexo 只支持最基础的 Markdown 语法，所以需要安装<a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="external">扩展</a>。</li>
-<li>和 Hexo 的 Markdown 引擎差不多的编辑器真心不多，我现在用<a href="https://atom.io" target="_blank" rel="external">Atom</a>，感觉还行（Preference -&gt; Settings -&gt; 选中Soft Wrap开启自动换行）。</li>
-</ul>
+		<h2>Safe Area</h2>
+<p>什么是 Safe Area？由于iPhone X 屏幕上的刘海和四周的圆角设计，导致某些区域无法用于执行交互，需要开发者对页面做出调整。而 Safe Area就是再减去 UInavigationbar 和 UITabbar 剩下的区域。具体可以看<a href="https://www.jianshu.com/p/efbc8619d56b" target="_blank" rel="external">iOS 11 安全区域适配总结</a>这篇文章，已经说得很具体了。
+而我们要面临的实际问题就是 UIViewController 的 <code>automaticallyAdjustsScrollViewInsets</code> 属性被废弃了，所以现在
+UIScrollView 自动调整 ContentInset 的行为需要自己管理，而不是交给 UIViewController 了。就是 UIScrollView 中新增的 UIScrollViewContentInsetAdjustmentBehavior 属性，将其设置成 <code>.never</code> 关闭自动调整。具体代码如下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#define  adjustsScrollViewInsets_NO(scrollView,vc)\</span><br><span class="line">do &#123; \</span><br><span class="line">_Pragma(&quot;clang diagnostic push&quot;) \</span><br><span class="line">_Pragma(&quot;clang diagnostic ignored \&quot;-Warc-performSelector-leaks\&quot;&quot;) \</span><br><span class="line">if ([UIScrollView instancesRespondToSelector:NSSelectorFromString(@&quot;setContentInsetAdjustmentBehavior:&quot;)]) &#123;\</span><br><span class="line">[scrollView   performSelector:NSSelectorFromString(@&quot;setContentInsetAdjustmentBehavior:&quot;) withObject:@(2)];\</span><br><span class="line">&#125; else &#123;\</span><br><span class="line">vc.automaticallyAdjustsScrollViewInsets = NO;\</span><br><span class="line">&#125;\</span><br><span class="line">_Pragma(&quot;clang diagnostic pop&quot;) \</span><br><span class="line">&#125; while (0)</span><br></pre></td></tr></table></figure></p>
+<p>之前的修改之后，有的 UITableView 如果还出现偏移的问题，那也可能是 Self-Sizing 的原因，在 iOS 11 中现在是默认启用。解决办法是手动设置 header 或者 footer 高度：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">self.tableView.estimatedRowHeight = 0;</span><br><span class="line">self.tableView.estimatedSectionHeaderHeight = 0;</span><br><span class="line">self.tableView.estimatedSectionFooterHeight = 0;</span><br></pre></td></tr></table></figure></p>
+<h2>UIBarButtonItem 按钮偏移</h2>
+<p>在 iOS11 之前 navigationBarButton 是直接添加在 navigationBar 上面的，而现在苹果添加了新的类来管理，navigationBarButton 添加在 _UIButtonBarStackView 上面，而 _UIButtonBarStackView 则添加在 _UINavigationBarContentView 上面。
+要想把按钮往边上挪，以前可以通过 UIBarButtonSystemItemFixedSpace，将按钮挤到边缘。现在则由于 _UIButtonBarStackView 的原因，已经失效。现阶段的办法是：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (@available(iOS 11.0, *)) &#123;</span><br><span class="line">[self.rightBtn setContentEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个办法的缺点是治标不治本，按钮的的响应范围其实没有变化。看看以后有更好的解决办法没。
+ps：有了。<a href="http://blog.csdn.net/spicyShrimp/article/details/78201042" target="_blank" rel="external">iOS11 导航栏按钮位置问题的解决——新</a> 很好很强大。</p>
+<h2>Swift4</h2>
+<p>虽说比上次的升级小一些，但是一堆报错还是少不了的。还好 Xcode 的转换器可以帮我们解决大部分问题，需要手动修改的并不多。</p>
+<h3>@objc 修饰符</h3>
+<p>Swift4 中弃用了 @objc 属性推断，所以 #selector 参数指定的实例方法必须使用 @objc 修饰。直接选中定位到相应位置，追加 @objc 修饰即可。</p>
+<h3>NSAttributedString</h3>
+<p>NSFontAttributeName、NSForegroundColorAttributeName 等属性，统统转为 NSAttributedStringKey.font、NSAttributedStringKey.foregroundColor 等，更加 Swift 化。</p>
+<h3>JSON</h3>
+<p>Swift 终于添加了对 JSON 解析的原生支持，可喜可贺。下面只是最简单的使用方法，更多功能可以参考<a href="https://bignerdcoding.com/archives/37.html" target="_blank" rel="external">Swift 4 JSON 解析指南</a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let jsonData = jsonString.data(encoding: .utf8)!</span><br><span class="line">let decoder = JSONDecoder()</span><br><span class="line">do &#123;</span><br><span class="line">let beer = try! decoder.decode(Beer.self, for: jsonData)</span><br><span class="line">&#125; catch let encodeError &#123;</span><br><span class="line">print(encodeError.localizedDescription)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以解码，当然也可以进行编码：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let encoder = JSONEncoder()</span><br><span class="line">do &#123;</span><br><span class="line">let data = try encoder.encode(beer)</span><br><span class="line">let str = String.init(data: data, encoding: .utf8)!</span><br><span class="line">&#125; catch let encodeError &#123;</span><br><span class="line">print(encodeError.localizedDescription)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3>String</h3>
+<p>String 的 characters 属性被废弃了，现在可以直接使用 count 得出长度。
+截取字符串的方法现在修改为 <code>prefix(upTo:)</code>、<code>.dropFirst()</code>de等，返回的参数不是 String 类型，而是新增的 Substring 类型。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -294,13 +142,13 @@ return dateFormatter
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/编程基础/">编程基础</a>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Markdown/">Markdown</a>
+  <span></span> <a href="/tags/Swift-4/">Swift 4</a>
   </div>
 
 </div>
@@ -309,7 +157,7 @@ return dateFormatter
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/01/04/Markdown语言对照/" data-title="Markdown语言对照 | Zhuyooong’ Blog" data-tsina="1305539521" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/10/08/时遇到的一些坑”/" data-title="适配 iOS 11 时遇到的一些坑 | Zhuyooong’ Blog" data-tsina="1305539521" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -322,20 +170,20 @@ return dateFormatter
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/02/02/iOS集成极光推送遇到的几个问题/" title="iOS集成极光推送遇到的几个问题">
-  <strong>上一篇：</strong><br/>
-  <span>
-  iOS集成极光推送遇到的几个问题</span>
+
+<div class="next">
+<a href="/2016/11/08/适配-iOS-10-时遇到的一些坑/"  title="适配 iOS 10 时遇到的一些坑">
+ <strong>下一篇：</strong><br/> 
+ <span>适配 iOS 10 时遇到的一些坑
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/01/04/Markdown语言对照/" data-title="Markdown语言对照" data-url="http://yoursite.com/2016/01/04/Markdown语言对照/"></div>
+	<div class="ds-thread" data-thread-key="2017/10/08/时遇到的一些坑”/" data-title="适配 iOS 11 时遇到的一些坑" data-url="http://yoursite.com/2017/10/08/时遇到的一些坑”/"></div>
 </section>
 
 
@@ -345,7 +193,7 @@ return dateFormatter
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Header 1 # Header1 or 下一行加三个等号｀===｀</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">Header 2 ## Header 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.</span> <span class="toc-text">Header 3 ### Header 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">Header 4 #### Header 4</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.1.1.</span> <span class="toc-text">Header 5 ##### Header 5</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.1.1.1.</span> <span class="toc-text">Header 6 ###### Header 6</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">文本样式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">其它</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Safe Area</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">UIBarButtonItem 按钮偏移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">Swift4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">@objc 修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">NSAttributedString</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.4.</span> <span class="toc-text">String</span></a></li></ol></li></ol>
  
   </div>
 
